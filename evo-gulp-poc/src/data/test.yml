@@ -16,6 +16,11 @@ nav:
     url : /alternate/alternate.html
     slug: alternate
 
+  # This is a comment
+  - name: Docs
+    url : /docs/test.html
+    slug: docs
+
 items:
   - Bob
   - Sue

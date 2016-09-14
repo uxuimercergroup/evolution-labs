@@ -28,6 +28,17 @@ var yaml = require('js-yaml');
 // Require Node FS
 var fs = require('fs');
 
+// Require Supercollider
+var supercollider = require('supercollider');
+
+// Supercollider Config
+supercollider
+  .config({
+    template: 'src/pages/doc.html',
+    handlebars: require('./src/helpers/handlebars.js'),
+  })
+  .adapter('sass')
+  .adapter('js');
 
 // Load all Gulp plugins into one variable
 var $ = plugins;
@@ -80,6 +91,22 @@ gulp.task('pages', function() {
 gulp.task('pages:reset', function(done) {
   panini.refresh();
   done();
+});
+
+// Copy docs into finished HTML files
+gulp.task('docs', function() {
+  panini.refresh();
+
+  return gulp.src('src/content/**/*')
+  .pipe(supercollider.init())
+  .pipe(panini({
+    root: 'src/pages/',
+    layouts: 'src/layouts/',
+    partials: 'src/partials/',
+    data: 'src/data/',
+    helpers: 'src/helpers/'
+  }))
+  .pipe(gulp.dest(PATHS.dist + '/docs'));
 });
 
 // Compile Sass into CSS
@@ -140,7 +167,7 @@ gulp.task('images', function() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build', function(done) {
-  sequence('clean', ['pages', 'sass', 'javascript:core', 'javascript:app', 'images', 'copy'], done);
+  sequence('clean', ['pages', 'docs', 'sass', 'javascript:core', 'javascript:app', 'images', 'copy'], done);
 });
 
 // Start a server with BrowserSync
@@ -160,9 +187,10 @@ gulp.task('reload', function(done) {
 gulp.task('default', ['build', 'server'], function() {
   gulp.watch(PATHS.assets, function(){sequence('copy')});
   gulp.watch(['src/pages/**/*.html'], function(){sequence('pages', 'reload')});
-  gulp.watch(['src/{layouts,partials}/**/*.hbs'], function(){sequence('pages:reset', 'pages', 'reload')});
+  gulp.watch(['src/content/**/*.md'], function(){sequence('docs', 'reload')});
+  gulp.watch(['src/{layouts,partials}/**/*.hbs'], function(){sequence('pages:reset', 'pages', 'docs', 'reload')});
   gulp.watch(['src/data/**/*.{json,yml}'], function(){sequence('pages:reset', 'pages', 'reload')});
-  gulp.watch(['src/assets/scss/**/*.scss'], function(){sequence('sass', 'reload')});
-  gulp.watch(['src/assets/js/**/*.js'], function(){sequence('javascript:core', 'javascript:app', 'reload')}); 
+  gulp.watch(['src/assets/scss/**/*.scss'], function(){sequence('sass', 'docs', 'reload')});
+  gulp.watch(['src/assets/js/**/*.js'], function(){sequence('javascript:core', 'javascript:app', 'docs', 'reload')}); 
   gulp.watch(['src/assets/images/**/*'], function(){sequence('images', 'reload')});
 });

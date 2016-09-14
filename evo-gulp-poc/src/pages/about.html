@@ -1,0 +1,54 @@
+---
+title: "About"
+layout: alternate
+---
+
+<h1>{{title}}</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ducimus eligendi, reiciendis corporis quam facere quaerat qui, aspernatur molestiae velit, vero ea quisquam laborum corrupti repudiandae totam, at aliquam esse.</p>
+
+<p>{{test.animal}}</p>
+
+
+{{#ifequal test.animal 'lion'}}
+<p>Yes, {{test.animal}}</p>
+{{/ifequal}}
+
+{{#ifequal test.animal 'tiger'}}
+<p>Yes, {{test.animal}}</p>
+{{else}}
+<p>Not {{test.animal}}</p>
+{{/ifequal}}
+
+{{#ifequal title 'About'}}
+<p>Yes, {{title}}</p>
+{{else}}
+<p>Not, {{title}}</p>
+{{/ifequal}}
+
+{{#ifpage 'index'}}Index page{{/ifpage}}
+{{#ifpage 'about'}}About page{{/ifpage}}
+
+{{#unlesspage 'index'}}Not index page{{/unlesspage}}
+{{#unlesspage 'about'}}Not about page{{/unlesspage}}
+
+{{#repeat 5}}
+<p>Repeat!</p>
+{{/repeat}}
+
+{{#markdown}}
+# Heading
+
+Paragraph
+{{/markdown}}
+
+{{#code 'css'}}
+.good-design {
+  font-weight: 100;
+  color: #000;
+  box-shadow: 0 -1px 0 #fff;
+}
+{{/code}}
+
+{{layout}}
+
+{{page}}

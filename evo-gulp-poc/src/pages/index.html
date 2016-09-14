@@ -1,0 +1,269 @@
+---
+title: "Homepage"
+---
+
+<h1>{{title}}</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ducimus eligendi, reiciendis corporis quam facere quaerat qui, aspernatur molestiae velit, vero ea quisquam laborum corrupti repudiandae totam, at aliquam esse.</p>
+
+<p>{{test.animal}}</p>
+
+
+{{#ifequal test.animal 'lion'}}
+<p>Yes, {{test.animal}}</p>
+{{/ifequal}}
+
+{{#ifequal test.animal 'tiger'}}
+<p>Yes, {{test.animal}}</p>
+{{else}}
+<p>Not {{test.animal}}</p>
+{{/ifequal}}
+
+{{#ifequal title 'Homepage'}}
+<p>Yes, {{title}}</p>
+{{else}}
+<p>Not, {{title}}</p>
+{{/ifequal}}
+
+{{#ifpage 'index'}}Index page{{/ifpage}}
+{{#ifpage 'about'}}About page{{/ifpage}}
+
+{{#unlesspage 'index'}}Not index page{{/unlesspage}}
+{{#unlesspage 'about'}}Not about page{{/unlesspage}}
+
+{{#repeat 5}}
+<p>Repeat!</p>
+{{/repeat}}
+
+{{#markdown}}
+# Heading
+
+{{#ifpage 'index' 'about'}}
+  <p>This is definitely either the Index or About page.</p>
+{{/ifpage}}
+
+Paragraph
+{{/markdown}}
+
+{{#code 'css'}}
+.good-design {
+  font-weight: 100;
+  color: #000;
+  box-shadow: 0 -1px 0 #fff;
+}
+{{/code}}
+
+{{layout}}
+
+{{page}}
+
+<p>{{lorem count="8"}}</p>
+
+
+{{#each (limit test.items 8)}}
+	<p>{{@index}}. {{this}}</p>
+{{/each}}
+
+<ul>
+{{#slice test.items offset="1" limit="5"}}
+	<li>{{this}}</li>
+{{/slice}}
+</ul>
+
+<ul>
+{{#slice test.items offset="6"}}
+	<li>{{this}}</li>
+{{/slice}}
+</ul>
+
+
+<p>{{after test.items 1}}</p>
+
+<p>{{arrayify test.items}}</p>
+
+<p>{{before test.items 5}}</p>
+
+<p>
+{{#eachIndex test.items}}
+  {{item}} is {{index}} <br>
+{{/eachIndex}}
+</p>
+
+<p>
+{{#filter test.items "Doug"}}
+  Filter found!
+{{else}}
+  Filter not found!
+{{/filter}}
+</p>
+
+<p>{{first test.items 2}}</p>
+
+{{#forEach test.nav}}
+	<a href="{{url}}" title="{{slug}}">{{name}}</a>{{#unless isLast}},<br>{{/unless}}
+{{/forEach}}
+
+<p>
+{{#inArray test.items "Matt"}}
+  inArray found!
+{{else}}
+  inArray not found.
+{{/inArray}}
+</p>
+
+<p>{{isArray test.items}}</p>
+
+<p>{{join test.items}}</p>
+
+<p>{{last test.items 2}}</p>
+
+<p>
+{{#some test.items isString}}
+  Render me if the array has a string.
+{{else}}
+  Render me if it doesn't.
+{{/some}}
+</p>
+
+</p>{{sort test.items}}</p>
+
+<p>
+{{#withAfter test.items 3}}
+  {{this}}
+{{/withAfter}}
+</p>
+
+<p>
+{{#withBefore test.items 3}}
+  {{this}}
+{{/withBefore}}
+</p>
+
+<p>
+{{#withFirst test.items 1}}
+  {{this}}
+{{/withFirst}}
+</p>
+
+<p>
+{{#withLast test.items 4}}
+  {{this}}
+{{/withLast}}
+</p>
+
+
+<p>{{length test.items}}</p>
+
+
+<p>
+{{#and "1" "1"}}
+	And confirmed.
+{{else}}
+	And not confirmed.
+{{/and}}
+</p>
+
+<p>
+{{#compare "2" "!=" "3"}}
+	Compare confirmed.
+{{else}}
+	Compare not confirmed.
+{{/compare}}
+</p>
+
+</p>
+{{#contains test.items "Doug"}}
+  Contains found!
+{{else}}
+  Contains not found.
+{{/contains}}
+</p>
+
+</p>
+{{#gt "3" "2"}}
+  Greater than confirmed.
+{{else}}
+  Greater than not confirmed.
+{{/gt}}
+</p>
+
+</p>
+{{#gte "3" "2"}}
+  Greater than or equal to confirmed.
+{{else}}
+  Greater than or equal to not confirmed.
+{{/gte}}
+</p>
+
+</p>
+{{#has "Doug" "Do"}}
+  Has confirmed.
+{{else}}
+  Has not confirmed.
+{{/has}}
+</p>
+
+</p>
+{{#eq "2" "2"}}
+  Equal to confirmed.
+{{else}}
+  Equal to not confirmed.
+{{/eq}}
+</p>
+
+
+<p>{{absolute "pages/index.html"}}</p>
+
+<p>{{dirname "pages/index.html"}}</p>
+
+<p>{{basename 'pages/index.html'}}</p>
+
+<p>{{stem 'pages/index.html'}}</p>
+
+<p>{{extname "pages/index.html"}}</p>
+
+
+<p>{{camelcase "foo bar baz"}};</p>
+
+<p>{{capitalize "foo bar baz"}}</p>
+
+<p>{{capitalizeAll "foo bar baz"}}</p>
+
+<p>{{chop "_ABC_"}}</p>
+
+<p>{{dashcase "a-b-c d_e"}}</p>
+
+<p>{{dotcase "a-b-c d_e"}}</p>
+
+<p>{{isString "foo"}}</p>
+
+<p>{{lowercase "Foo BAR baZ"}}</p>
+
+<p>{{hyphenate "foo bar baz qux"}}</p>
+
+<p>{{pathcase "a-b-c d_e"}}</p>
+
+<p>{{plusify "foo bar baz"}}</p>
+
+<p>{{reverse "abcde"}}</p>
+
+<p>{{replace "a b a b a b" "a" "z"}}</p>
+
+<p>{{sentence "hello world. goodbye world."}}</p>
+
+<p>{{snakecase "a-b-c d_e"}}</p>
+
+<p>{{split "a,b,c" ","}}</p>
+
+<p>{{#startsWith "Hell" "Hello, world!"}}
+  Whoops
+{{else}}
+  Bro, do you even hello world?
+{{/startsWith}}</p>
+
+<p>{{titleize "this is title case"}}</p>
+
+<p>{{trim " ABC "}}</p>
+
+<p>{{#uppercase}}foo bar baz{{/uppercase}}</p>
+
+<p>{{uppercase "foo bar baz"}}</p>

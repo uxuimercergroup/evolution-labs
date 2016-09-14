@@ -1,0 +1,29 @@
+animal: lion
+
+nav:
+  # This is a comment
+  - name: Home
+    url : /index.html
+    slug: index
+
+  # This is a comment
+  - name: About
+    url : /about.html
+    slug: about
+
+  # This is a comment
+  - name: Alternate
+    url : /alternate/alternate.html
+    slug: alternate
+
+items:
+  - Bob
+  - Sue
+  - John
+  - Doug
+  - Matt
+  - Lucy
+  - Addie
+  - Harrison
+  - Billy Bob
+  - Fred

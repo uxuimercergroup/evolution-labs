@@ -1,0 +1,9 @@
+<header class="header">
+	<h3>Header Partial</h3>
+
+	{{#ifpage 'index' 'about'}}
+	 <p>This is definitely either the Index or About page.</p>
+	{{/ifpage}}
+
+	{{> nav}}
+</header>

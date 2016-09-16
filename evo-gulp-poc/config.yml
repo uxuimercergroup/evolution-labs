@@ -56,3 +56,9 @@ PATHS:
     # Paths to your own project code are here
     - "src/assets/js/!(app).js"
     - "src/assets/js/app.js"
+
+# Deploy settings for deploying files using SFTP
+DEPLOY_OPTIONS:
+  auth: "key"
+  host: "usfkl21as292v"
+  remote_path: "/www/content/uxui/evolution-labs/evo-gulp-poc/"

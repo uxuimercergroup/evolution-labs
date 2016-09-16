@@ -1,17 +1,26 @@
 {
-  "name": "project",
-  "version": "1.0.0",
-  "description": "",
+  "name": "evolution",
+  "version": "5.0.0",
+  "description": "Global Framework for Digital Design, Development and maintained by the Mercer Digital Center of Excellence",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxuimercergroup/evolution"
+  },
+  "author": "Douglas Fraize, Matthew Holmes",
+  "date": "September 15, 2016",
+  "homepage": "http://evolution.mercer.com",
+  "bugs": "https://github.com/uxuimercergroup/evolution/issues",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build --production"
+    "build": "gulp build --production",
+    "deploy": "gulp deploy --production"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",
     "browser-sync": "^2.15.0",
+    "foundation-docs": "zurb/foundation-docs",
     "foundation-sites": "^6.2.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -21,7 +30,10 @@
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-load-plugins": "^1.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-replace-task": "^0.11.0",
     "gulp-sass": "^2.3.2",
+    "gulp-sftp": "^0.1.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-uncss": "^1.0.6",

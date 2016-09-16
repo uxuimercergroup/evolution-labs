@@ -210,6 +210,64 @@ Paragraph
 {{/eq}}
 </p>
 
+<p>
+{{#ifEven "2"}}
+  Even confirmed.
+{{else}}
+  Even not confirmed.
+{{/ifEven}}
+</p>
+
+<p>
+{{#ifOdd "3"}}
+  Odd confirmed.
+{{else}}
+  Odd not confirmed.
+{{/ifOdd}}
+</p>
+
+<p>
+{{#is test.animal "lion"}}
+  The animal is a lion.
+{{else}}
+  The animal is a NOT lion.
+{{/is}}
+</p>
+
+<p>
+{{#isnt test.animal "tiger"}}
+  The animal is NOT a tiger.
+{{else}}
+  The animal is a lion.
+{{/isnt}}
+</p>
+
+</p>
+{{#lt "2" "3"}}
+  Less than confirmed.
+{{else}}
+  Less than not confirmed.
+{{/lt}}
+</p>
+
+</p>
+{{#lte "2" "2"}}
+  Less than or equal to confirmed.
+{{else}}
+  Less than or equal to not confirmed.
+{{/lte}}
+</p>
+
+
+<p>{{sanitize "<span>foo</span>"}}</p>
+
+<p>{{ordinalize 1}}</p>
+
+
+{{#each (limit test.items 8)}}
+<p>{{add @index 1}}. {{this}}</p>
+{{/each}}
+
 
 <p>{{absolute "pages/index.html"}}</p>
 

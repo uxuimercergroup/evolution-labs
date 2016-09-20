@@ -35,6 +35,7 @@ gulp.task('js:core', function(){
   return gulp.src(config.src.js_core)
   .pipe(plugins.sourcemaps.init())
   .pipe(plugins.if(production, plugins.babel()))
+  .pipe(plugins.newer(config.dest.js))
   .pipe(concat.scripts(pkg.name + '.js'))
   .pipe(concat.header(
     '/**\n' +
@@ -57,6 +58,7 @@ gulp.task('js:app', function(){
   return gulp.src(config.src.js_app)
   .pipe(plugins.sourcemaps.init())
   .pipe(plugins.babel())
+  .pipe(plugins.newer(config.dest.js))
   .pipe(concat.scripts('app.js'))
   .pipe(plugins.if(production, plugins.uglify()
     .on('error', e => { console.log(e); })

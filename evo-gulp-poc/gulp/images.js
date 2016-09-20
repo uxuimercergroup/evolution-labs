@@ -21,6 +21,7 @@ var production = !!(argv.production);
 // In production, the images are optimized and compressed
 gulp.task('images', function(){
   return gulp.src(config.src.images)
+  .pipe(plugins.newer(config.dest.images))
   .pipe(plugins.if(production, plugins.imagemin({
     progressive: true
   })))

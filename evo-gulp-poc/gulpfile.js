@@ -69,11 +69,11 @@ gulp.task('server:notify', function(){
 // Watch Task
 gulp.task('watch', function(){
   gulp.watch(config.src.pages, function(){sequence(['pages', 'docs'], 'reload', 'pages:notify')});
-  gulp.watch(config.src.layouts, function(){sequence('pages:reset', ['pages', 'docs'], 'reload', 'pages:notify')});
-  gulp.watch(config.src.data, function(){sequence('pages:reset', 'pages', 'reload', 'pages:notify')});
+  gulp.watch(config.src.layouts, function(){sequence(['pages:all', 'docs:all'], 'reload', 'pages:notify')});
+  gulp.watch(config.src.data, function(){sequence('pages:all', 'reload', 'pages:notify')});
   gulp.watch(config.src.docs, function(){sequence('docs', 'reload', 'pages:notify')});
-  gulp.watch(config.src.scss, function(){sequence(['sass', 'docs'], 'reload', 'sass:notify')});
-  gulp.watch(config.src.js, function(){sequence(['js:core', 'js:app', 'docs'], 'reload', 'js:notify')});
+  gulp.watch(config.src.scss, function(){sequence(['sass', 'docs:all'], 'reload', 'sass:notify')});
+  gulp.watch(config.src.js, function(){sequence(['js:core', 'js:app', 'docs:all'], 'reload', 'js:notify')});
   gulp.watch(config.src.images, function(){sequence(['images'], 'reload', 'images:notify')});
   gulp.watch(config.src.assets, function(){sequence(['copy'], 'copy:notify')});
 });

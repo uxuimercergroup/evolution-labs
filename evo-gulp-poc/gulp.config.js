@@ -49,7 +49,18 @@ module.exports = function(){
           'node_modules/foundation-sites/js/foundation.sticky.js',
           'node_modules/foundation-sites/js/foundation.tabs.js',
           'node_modules/foundation-sites/js/foundation.toggler.js',
-          'node_modules/foundation-sites/js/foundation.tooltip.js'
+          'node_modules/foundation-sites/js/foundation.tooltip.js',
+          // JS Libraries required by jQuery UI
+          'bower_components/jquery-ui/ui/core.js',
+          'bower_components/jquery-ui/ui/widget.js',
+          'bower_components/jquery-ui/ui/mouse.js',
+          'bower_components/jquery-ui/ui/position.js',
+          // Individual jQuery UI components
+          // If you aren't using a component, just remove it from the list
+          'bower_components/jquery-ui/ui/autocomplete.js',
+          'bower_components/jquery-ui/ui/datepicker.js',
+          'bower_components/jquery-ui/ui/menu.js',
+          'bower_components/jquery-ui/ui/slider.js'
         ],
         js_app: [
           // Application or project level JS files

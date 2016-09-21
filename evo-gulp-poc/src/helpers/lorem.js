@@ -2,6 +2,7 @@ var lorem = require('handlebars-helper-lorem');
 
 /**
  * Handlebars lorem ipsum helper that writes out sentences or words of lorem ipsum.
+ * https://github.com/helpers/handlebars-helper-lorem
  * @param {object} options - Handlebars object.
  * @example
  * {{#lorem count="8"}}

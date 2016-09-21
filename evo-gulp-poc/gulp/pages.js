@@ -1,17 +1,9 @@
 // Require Gulp
 var gulp = require('gulp');
-
-// Require Gulp config
-var config = require('../gulp.config')();
-
-// Require Gulp Load Plugins plugin
-var plugins = require('gulp-load-plugins')();
-
-// Require Gulp Notify and Notifier
-var notifier = require('node-notifier');
-
-// Require Panini
-var panini = require('panini');
+    config = require('../gulp.config')();     // Require Gulp config
+    plugins = require('gulp-load-plugins')(); // Require Gulp Load Plugins plugin
+    notifier = require('node-notifier');      // Require Gulp Notify and Notifier
+    panini = require('panini');               // Require Panini
 
 
 // Compile page templates into finished HTML files

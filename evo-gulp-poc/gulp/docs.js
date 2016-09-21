@@ -1,20 +1,9 @@
-// Require Gulp
-var gulp = require('gulp');
-
-// Require Gulp config
-var config = require('../gulp.config')();
-
-// Require Gulp Load Plugins plugin
-var plugins = require('gulp-load-plugins')();
-
-// Require Foundation Docs
-var foundationDocs = require('foundation-docs');
-
-// Require Supercollider
-var supercollider = require('supercollider');
-
-// Require Panini
-var panini = require('panini');
+var gulp = require('gulp');                       // Require Gulp
+    config = require('../gulp.config')();         // Require Gulp config
+    plugins = require('gulp-load-plugins')();     // Require Gulp Load Plugins plugin
+    foundationDocs = require('foundation-docs');  // Require Foundation Docs
+    supercollider = require('supercollider');     // Require Supercollider
+    panini = require('panini');                   // Require Panini
 
 
 // Supercollider Config

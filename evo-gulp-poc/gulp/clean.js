@@ -1,11 +1,6 @@
-// Require Gulp
-var gulp = require('gulp');
-
-// Require Gulp config
-var config = require('../gulp.config')();
-
-// Require Rimraf
-var rimraf = require('rimraf');
+var gulp = require('gulp');					// Require Gulp
+	config = require('../gulp.config')();	// Require Gulp config
+	rimraf = require('rimraf');				// Require Rimraf
 
 
 // Delete the "dist" folder

@@ -1,20 +1,9 @@
-// Require Gulp
-var gulp = require('gulp');
-
-// Require Gulp config
-var config = require('../gulp.config')();
-
-// Require Gulp Load Plugins plugin
-var plugins = require('gulp-load-plugins')();
-
-// Require Gulp Notify and Notifier
-var notifier = require('node-notifier');
-
-// Require Yargs
-var argv = require('yargs').argv;
-
-// Check for --production flag
-var production = !!(argv.production);
+var gulp = require('gulp');                   // Require Gulp
+    config = require('../gulp.config')();     // Require Gulp config
+    plugins = require('gulp-load-plugins')(); // Require Gulp Load Plugins plugin
+    notifier = require('node-notifier');      // Require Gulp Notify and Notifier
+    argv = require('yargs').argv;             // Require Yargs
+    production = !!(argv.production);         // Check for --production flag
 
 
 // Copy images to the "dist" folder

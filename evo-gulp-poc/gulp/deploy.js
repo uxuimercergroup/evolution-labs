@@ -1,8 +1,8 @@
-var gulp = require('gulp');                   // Require Gulp
-    config = require('../gulp.config')();     // Require Gulp config
-    notifier = require('node-notifier');      // Require Gulp Notify and Notifier
-    plugins = require('gulp-load-plugins')(); // Require Gulp Load Plugins plugin
-    sequence = require('run-sequence');       // Require Run Sequence
+var gulp     = require('gulp');                 // Require Gulp
+    config   = require('../gulp.config')();     // Require Gulp config
+    notifier = require('node-notifier');        // Require Gulp Notify and Notifier
+    plugins  = require('gulp-load-plugins')();  // Require Gulp Load Plugins plugin
+    sequence = require('run-sequence');         // Require Run Sequence
 
 
 // Build the "dist" folder and provide settings for deploy

@@ -1,6 +1,6 @@
-var gulp = require('gulp');					// Require Gulp
-	config = require('../gulp.config')();	// Require Gulp config
-	notifier = require('node-notifier');	// Require Gulp Notify and Notifier
+var gulp     = require('gulp');					    // Require Gulp
+    config   = require('../gulp.config')();	// Require Gulp config
+    notifier = require('node-notifier');    // Require Gulp Notify and Notifier
 
 
 // Copy files out of the assets folder

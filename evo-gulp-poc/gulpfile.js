@@ -1,13 +1,13 @@
-var gulp = require('gulp');                     // Require Gulp
-    config = require('./gulp.config')();        // Require Gulp config
-    notify = require("gulp-notify");            // Require Gulp Notify and Notifier
-    notifier = require('node-notifier');        // Require Gulp Notify and Notifier
-    plugins = require('gulp-load-plugins')();   // Require Gulp Load Plugins plugin
-    browser = require('browser-sync').create(); // Require Browser Sync
-    sequence = require('run-sequence');         // Require Run Sequence
-    requireDir = require('require-dir');        // Require Require Dir
-    argv = require('yargs').argv;               // Require Yargs
-    production = !!(argv.production);           // Check for --production flag
+var gulp       = require('gulp');                   // Require Gulp
+    config     = require('./gulp.config')();        // Require Gulp config
+    notify     = require("gulp-notify");            // Require Gulp Notify and Notifier
+    notifier   = require('node-notifier');          // Require Gulp Notify and Notifier
+    plugins    = require('gulp-load-plugins')();    // Require Gulp Load Plugins plugin
+    browser    = require('browser-sync').create();  // Require Browser Sync
+    sequence   = require('run-sequence');           // Require Run Sequence
+    requireDir = require('require-dir');            // Require Require Dir
+    argv       = require('yargs').argv;             // Require Yargs
+    production = !!(argv.production);               // Check for --production flag
 
 
 // Requires all tasks in the gulp directory

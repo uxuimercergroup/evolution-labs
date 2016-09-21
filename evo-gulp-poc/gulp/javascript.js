@@ -1,13 +1,13 @@
-var gulp = require('gulp');                     // Require Gulp
-    config = require('../gulp.config')();       // Require Gulp config
-    plugins = require('gulp-load-plugins')();   // Require Gulp Load Plugins plugin
-    browser = require('browser-sync').create(); // Require Browser Sync
-    concat = require('gulp-concat-util');       // Require Concat Util
-    notifier = require('node-notifier');        // Require Gulp Notify and Notifier
-    pkg = require('../package.json');           // Require package.json data
-    replace = require('gulp-replace-task');     // Require Replace Task
-    argv = require('yargs').argv;               // Require Yargs
-    production = !!(argv.production);           // Check for --production flag
+var gulp       = require('gulp');                   // Require Gulp
+    config     = require('../gulp.config')();       // Require Gulp config
+    plugins    = require('gulp-load-plugins')();    // Require Gulp Load Plugins plugin
+    browser    = require('browser-sync').create();  // Require Browser Sync
+    concat     = require('gulp-concat-util');       // Require Concat Util
+    notifier   = require('node-notifier');          // Require Gulp Notify and Notifier
+    pkg        = require('../package.json');        // Require package.json data
+    replace    = require('gulp-replace-task');      // Require Replace Task
+    argv       = require('yargs').argv;             // Require Yargs
+    production = !!(argv.production);               // Check for --production flag
 
 
 // Combine Core JavaScript into one file

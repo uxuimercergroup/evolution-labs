@@ -5,6 +5,7 @@ var gulp       = require('gulp');					// Require Gulp
 	notifier   = require('node-notifier');			// Require Gulp Notify and Notifier
 	pkg        = require('../package.json');		// Require package.json data
 	replace    = require('gulp-replace-task');		// Require Replace Task
+	sassLint   = require('gulp-sass-lint');     	// Require Sass Lint
 	argv       = require('yargs').argv;				// Require Yargs
 	production = !!(argv.production);				// Check for --production flag
 
@@ -46,7 +47,12 @@ gulp.task('sass', function(){
 	.pipe(plugins.if(production, plugins.cssnano()))
 	.pipe(plugins.if(!production, plugins.sourcemaps.write()))
     .pipe(gulp.dest(config.dest.css))
-    .pipe(browser.reload({stream: true}));
+    .pipe(browser.reload({stream: true}))
+    .on('finish', function() {
+      gulp.src(config.src.scss)
+      .pipe(sassLint())
+	  .pipe(sassLint.format())
+    });
 });
 
 // Sass Notifier Task

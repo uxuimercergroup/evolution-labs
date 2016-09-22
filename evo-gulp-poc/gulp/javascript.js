@@ -30,7 +30,15 @@ gulp.task('js:core', function(){
     .on('error', e => { console.log(e); })
   ))
   .pipe(plugins.if(!production, plugins.sourcemaps.write()))
-  .pipe(gulp.dest(config.dest.js));
+  .pipe(gulp.dest(config.dest.js))
+  .on('finish', function() {
+    gulp.src(config.src.js_core)
+    .pipe(eslint({
+      useEslintrc: true,
+      configFile: '.eslintrc'
+    }))
+    .pipe(eslint.format())
+  });
 });
 
 // Combine Application JavaScript into one file
@@ -45,7 +53,15 @@ gulp.task('js:app', function(){
     .on('error', e => { console.log(e); })
   ))
   .pipe(plugins.if(!production, plugins.sourcemaps.write()))
-  .pipe(gulp.dest(config.dest.js));
+  .pipe(gulp.dest(config.dest.js))
+  .on('finish', function() {
+    gulp.src(config.src.js_app)
+    .pipe(eslint({
+      useEslintrc: true,
+      configFile: '.eslintrc'
+    }))
+    .pipe(eslint.format())
+  });
 });
 
 // Javascript Notifier Task

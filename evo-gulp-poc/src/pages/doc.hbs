@@ -93,3 +93,59 @@
 
 </section>
 {{/if}}
+
+
+
+
+{{#if js}}
+<section>
+  <h2>JavaScript Reference</h2>
+
+  {{#if js.module}}{{#with js.module.[0]}}
+  <section>
+    <h3 class="js-module">Initializing</h3>
+
+    <p>The file <code>{{meta.filename}}</code> must be included in your JavaScript to use this plugin, along with <code>foundation.core.js</code>.{{#if requires}} <strong>This plugin also requires these utility libraries:</strong>{{/if}}</p>
+
+    {{#if requires}}{{#each requires}}
+    <ul>
+      <li><code>{{this}}</code></li>
+    </ul>
+    {{/each}}{{/if}}
+
+  </section>
+  {{/with}}{{/if}}
+
+  {{#each js.class}}
+  <section>
+    <h3 class="js-class">Foundation.{{this.name}}</h3>
+
+    <p>{{this.description}}</p>
+
+    <div class="docs-code"><pre><code>{{this.name}}</code></pre></div>
+
+    {{#if this.fires}}
+      <p><strong>Fires these events:</strong>
+      {{#each this.fires}}
+        {{this}}
+      {{/each}}
+      </p>
+    {{/if}}
+
+    {{#if this.params}}
+    <table class="docs-variable-table">
+      <thead>
+        <tr><th>Name</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      {{#each this.params}}
+      <tr>
+        <td><code>{{this.name}}</code></td>
+        <td>{{this.type.names.[0]}}</td>
+        <td>{{this.description}}</td>
+      </tr>
+      {{/each}}
+    </table>
+    {{/if}}
+  </section>
+  {{/each}}
+{{/if}}

@@ -17,7 +17,10 @@ module.exports = function(){
         ],
         assets_base: paths.src_assets,
         pages: paths.src + 'pages/**/*.html',
-        layouts: paths.src + '{layouts,partials}/**/*.hbs',
+        layouts: [
+          paths.src + '{layouts,partials}/**/*.hbs',
+          paths.src + 'pages/doc.hbs'
+        ],
         data: paths.src + 'data/**/*.{json,yml}',
         docs: paths.src + 'content/**/*.md',
         images: paths.src_assets + 'images/**/*',
@@ -111,6 +114,10 @@ module.exports = function(){
         js: {
           title: 'Scripts generated.',
           message: 'Scripts generated successfully.'
+        },
+        lint: {
+          title: 'Sass and JS files linted.',
+          message: 'Please check the console for errors.'
         },
         pages: {
           title: 'Pages assembled.',

@@ -51,7 +51,7 @@ gulp.task('server:notify', function(){
 
 // Watch Task
 gulp.task('watch', function(){
-  gulp.watch(config.src.pages, function(){sequence(['pages', 'docs'], 'reload', 'pages:notify')});
+  gulp.watch(config.src.pages, function(){sequence(['pages'], 'reload', 'pages:notify')});
   gulp.watch(config.src.layouts, function(){sequence(['pages:all', 'docs:all'], 'reload', 'pages:notify')});
   gulp.watch(config.src.data, function(){sequence('pages:all', 'reload', 'pages:notify')});
   gulp.watch(config.src.docs, function(){sequence('docs', 'reload', 'pages:notify')});

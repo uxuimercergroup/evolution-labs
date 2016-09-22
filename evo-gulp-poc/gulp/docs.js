@@ -1,6 +1,7 @@
 var gulp           = require('gulp');                 // Require Gulp
     config         = require('../gulp.config')();     // Require Gulp config
     plugins        = require('gulp-load-plugins')();  // Require Gulp Load Plugins plugin
+    cacheBust      = require('gulp-cache-bust');      // Require Cache Bust
     foundationDocs = require('foundation-docs');      // Require Foundation Docs
     supercollider  = require('supercollider');        // Require Supercollider
     panini         = require('panini');               // Require Panini
@@ -9,9 +10,10 @@ var gulp           = require('gulp');                 // Require Gulp
 // Supercollider Config
 supercollider
   .config({
-    template: foundationDocs.componentTemplate,
+    template: 'src/pages/doc.hbs',
     marked: foundationDocs.marked,
-    handlebars: foundationDocs.handlebars
+    handlebars: foundationDocs.handlebars,
+    keepFm: true
   })
   .adapter('sass')
   .adapter('js');
@@ -29,8 +31,9 @@ gulp.task('docs', function() {
     layouts: config.panini.layouts,
     partials: config.panini.partials,
     data: config.panini.data,
-    helpers: [config.panini.helpers, foundationDocs.handlebarsHelpers]
+    helpers: config.panini.helpers
   }))
+  .pipe(cacheBust())
   .pipe(gulp.dest(config.dest.docs));
 });
 
@@ -43,7 +46,8 @@ gulp.task('docs:all', function() {
     layouts: config.panini.layouts,
     partials: config.panini.partials,
     data: config.panini.data,
-    helpers: [config.panini.helpers, foundationDocs.handlebarsHelpers]
+    helpers: config.panini.helpers
   }))
+  .pipe(cacheBust())
   .pipe(gulp.dest(config.dest.docs));
 });

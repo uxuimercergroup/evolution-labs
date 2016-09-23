@@ -1,2 +1,2 @@
 # Ignore js files for eslint
-src/assets/js/prism.js
+src/assets/js/app/lib/prism/prism.js

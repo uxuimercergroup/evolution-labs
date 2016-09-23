@@ -1,0 +1,87 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Base Lists Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-inline-list-margin-bottom: $evo-base-margin !default;
+$evo-inline-list-margin-left: $evo-base-margin !default;
+$evo-inline-list-pipes-padding-right: $evo-base-padding !default;
+$evo-inline-list-pipe-border-color: $onyx-dark-30 !default;
+$evo-inline-dl-list-dt-margin-right: $evo-base-margin !default;
+$evo-inline-dl-list-dd-margin-right: $evo-base-margin !default;
+$evo-definition-list-hdr-color: $black !default;
+$evo-definition-list-hdr-border-color: $onyx-dark-30 !default;
+$evo-data-list-dt-margin-bottom: $evo-base-margin !default;
+
+
+@if $use-lists == true{
+
+	// INLINE LIST
+	.evo-inline-list						{
+											@include clearfix;
+											list-style: none;
+											margin: rem-calc(0 0 $evo-inline-list-margin-bottom 0);
+		& > li									{
+												display: block;
+												float: left;
+												margin-left: $evo-inline-list-margin-left;
+			&:first-child							{margin-left: 0;}
+												}
+											}
+
+	// INLINE LIST WITH PIPES
+	.evo-inline-list-pipes					{
+		& > li,
+		& > dd									{
+												border-right: 1px solid $evo-inline-list-pipe-border-color;
+												padding-right: $evo-inline-list-pipes-padding-right;
+			&:last-child							{
+													padding-right: 0;
+													border-right: 0;
+													}
+												}
+											}
+
+	// INLINE DEFINITION LIST
+	.evo-inline-dl-list						{
+											@include clearfix;
+		dt										{
+												float: left;
+												margin-right: $evo-inline-dl-list-dt-margin-right;
+												margin-bottom: 0;
+												}
+		& > dd									{
+												list-style: none;
+												display: block;
+												float: left;
+												margin-right: $evo-inline-dl-list-dd-margin-right;
+												margin-bottom: 0;
+			&:last-child							{margin-right: 0;}
+												}
+											}
+
+	// DATA LISTS
+	.evo-data-list							{
+											list-style: none;
+											margin-left: 0;
+		dt										{
+												margin-bottom: $evo-data-list-dt-margin-bottom;
+												padding-bottom: rem-calc(4);
+												color: $evo-definition-list-hdr-color;
+												border-bottom: 1px solid $evo-definition-list-hdr-border-color;
+												}
+		dd, li									{
+												margin-bottom: rem-calc(3);
+			.evo-data-list-label					{font-family: $evo-font-medium-stack;}
+												}
+											}
+
+	.evo-data-list-stacked					{
+		dd, li									{
+			span									{display: block;}
+												}
+											}
+
+}// endif

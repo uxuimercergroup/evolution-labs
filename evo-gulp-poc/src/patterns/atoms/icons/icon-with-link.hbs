@@ -1,0 +1,8 @@
+{{!--
+a-class: custom class on link that holds icon
+class: custom classes
+href: custom link url
+icon-title: custom title for the icon
+text: your content for link
+--}}
+<a href="{{#if href}}{{href}}{{else}}#/{{/if}}"{{#if a-class}} class="{{a-class}}"{{/if}}><i class="{{#if class}}{{class}}{{else}}evo-icon-user{{/if}}"{{#if icon-title}} title="{{{icon-title}}}"{{/if}}></i>{{#if text}}{{{text}}}{{/if}}</a>

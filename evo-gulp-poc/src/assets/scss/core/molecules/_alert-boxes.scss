@@ -1,0 +1,56 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Alert Box Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-alert-box-bgcolor: $onyx-dark-10 !default;
+$evo-alert-box-border: 0 !default;
+$evo-alert-box-font-color: $onyx-dark-80 !default;
+$evo-alert-alert-icon-color: $garnet-dark !default;
+$evo-alert-success-icon-color: $emerald-dark !default;
+$evo-alert-warning-icon-color: $topaz-dark !default;
+
+
+@if $use-alert-boxes == true{
+	
+	.evo-alert-box				{
+								background-color: $evo-alert-box-bgcolor;
+								border: $evo-alert-box-border;
+		[class^="evo-icon-"]		{color: $evo-alert-box-font-color;}
+		[class*="evo-icon-position-"]
+									{top: 1px;}
+		.close-button				{
+			&:hover						{
+				[class^="evo-icon-"]		{color: scale-color($evo-alert-box-font-color, $lightness: 10%);}
+										}
+									}
+
+		&.alert						{
+			[class*="evo-icon-"]		{color: $evo-alert-alert-icon-color;}
+			.close-button				{
+				&:hover						{
+					[class^="evo-icon-"]		{color: scale-color($evo-alert-alert-icon-color, $lightness: 10%);}
+											}
+										}
+									}
+		&.success					{
+			[class*="evo-icon-"]		{color: $evo-alert-success-icon-color;}
+			.close-button				{
+				&:hover						{
+					[class^="evo-icon-"]		{color: scale-color($evo-alert-success-icon-color, $lightness: 10%);}
+											}
+										}
+									}
+		&.warning					{
+			[class*="evo-icon-"]		{color: $evo-alert-warning-icon-color;}
+			.close-button				{
+				&:hover						{
+					[class^="evo-icon-"]		{color: scale-color($evo-alert-warning-icon-color, $lightness: 10%);}
+											}
+										}
+									}
+								}
+
+}//endif

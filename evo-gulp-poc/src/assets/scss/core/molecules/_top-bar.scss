@@ -1,0 +1,374 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Top Bar Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @notes
+//
+
+// Top bar is for large and up media queries only, hence no mobile first styles for small or medium media queries
+// On small and medium media queries, top bar is replaced by offcanvas menu and mobile header component
+
+
+//
+// @variables
+//
+$evo-top-bar-box-shadow: false !default;
+$evo-top-bar-box-shadow-horizontal: $evo-base-shadow-horizontal !default;
+$evo-top-bar-box-shadow-vertical: $evo-base-shadow-vertical !default;
+$evo-top-bar-box-shadow-blur: $evo-base-shadow-blur !default;
+$evo-top-bar-box-shadow-spread: $evo-base-shadow-spread !default;
+$evo-top-bar-box-shadow-color: $evo-base-shadow-color !default;
+$evo-top-bar-height: $evo-base-navbar-height !default;
+$evo-top-bar-background: $evo-primary-color !default;
+$evo-top-bar-submenu-background: $evo-tertiary-color !default;
+$evo-top-bar-anchor-decoration: none !default;
+$evo-top-bar-icon-font-family: $evo-icon-font-stack !default;
+$evo-top-bar-title-padding: 0 $evo-base-padding !default;
+$evo-top-bar-title-font-family: $evo-font-medium-stack !default;
+$evo-top-bar-title-font-size: rem-calc(18) !default;
+$evo-top-bar-title-letter-spacing: rem-calc(3) !default;
+$evo-top-bar-title-color: $white !default;
+$evo-top-bar-title-text-transform: uppercase !default;
+$evo-top-bar-title-sub-font-family: $evo-base-font-family !default;
+$evo-top-bar-title-image-position-top: -1px !default;
+$evo-top-bar-title-image-position-left: 0 !default;
+$evo-top-bar-dropdown-font-family: $evo-base-font-family !default;
+$evo-top-bar-dropdown-border: 0 !default;
+$evo-top-bar-dropdown-border-radius: 0 !default;
+$evo-top-bar-dropdown-box-shadow-horizontal: $evo-base-shadow-horizontal !default;
+$evo-top-bar-dropdown-box-shadow-vertical: $evo-base-shadow-vertical !default;
+$evo-top-bar-dropdown-box-shadow-blur: $evo-base-shadow-blur !default;
+$evo-top-bar-dropdown-box-shadow-spread: $evo-base-shadow-spread !default;
+$evo-top-bar-dropdown-box-shadow-color: $evo-base-shadow-color !default;
+$evo-top-bar-dropdown-min-width: auto !default;
+$evo-top-bar-dropdown-white-space: nowrap !default;
+$evo-top-bar-dropdown-item-font-family: $evo-base-font-family !default;
+$evo-top-bar-dropdown-item-border: 0 !default;
+$evo-top-bar-dropdown-item-line-height: $evo-top-bar-height !default;
+$evo-top-bar-dropdown-item-active-background: scale-color($evo-top-bar-submenu-background, $saturation: -5%, $lightness: -15%) !default;
+$evo-top-bar-dropdown-item-hover-background: scale-color($evo-top-bar-submenu-background, $saturation: -30%, $lightness: 15%) !default;
+$evo-top-bar-dropdown-label-background: scale-color($evo-top-bar-submenu-background, $saturation: -10%, $lightness: 10%) !default;
+$evo-top-bar-dropdown-label-white-space: nowrap !default;
+$evo-top-bar-dropdown-label-color: $white !default;
+$evo-top-bar-dropdown-label-font-family: $evo-font-medium-stack !default;
+$evo-top-bar-dropdown-label-font-size: rem-calc(12) !default;
+$evo-top-bar-dropdown-label-line-height: 1 !default;
+$evo-top-bar-dropdown-label-padding: 0.65rem $evo-base-padding ($evo-base-padding/2) $evo-base-padding !default;
+$evo-top-bar-dropdown-label-text-transform: uppercase !default;
+$evo-top-bar-dropdown-anchor-color: scale-color($evo-top-bar-submenu-background, $saturation: -30%, $lightness: 60%) !default;
+$evo-top-bar-dropdown-anchor-padding: $evo-base-padding !default;
+$evo-top-bar-dropdown-anchor-hover-color: $white !default;
+$evo-top-bar-dropdown-anchor-icon-font-size: rem-calc(24) !default;
+$evo-top-bar-dropdown-anchor-with-icon-position-top: -2px !default;
+$evo-top-bar-dropdown-anchor-active-border: false !default;
+$evo-top-bar-dropdown-anchor-active-border-width: rem-calc(3) !default;
+$evo-top-bar-dropdown-anchor-active-border-color: $evo-quinary-color !default;
+$evo-top-bar-dropdown-anchor-active-color: $white !default;
+$evo-top-bar-dropdown-anchor-active-background: scale-color($evo-top-bar-background, $saturation: -40%, $lightness: 20%) !default;
+$evo-top-bar-dropdown-submenu-parent-padding-right: rem-calc(40) !default;
+$evo-top-bar-dropdown-submenu-parent-icon: '\edc6' !default;
+$evo-top-bar-dropdown-submenu-parent-icon-position-top: 0 !default;
+$evo-top-bar-dropdown-submenu-parent-icon-position-right: 30px !default;
+$evo-top-bar-dropdown-submenu-parent-submenu-anchor-padding-right: rem-calc(40) !default;
+$evo-top-bar-dropdown-submenu-parent-submenu-icon-position-top: 1px !default;
+$evo-top-bar-dropdown-submenu-parent-submenu-icon-position-right: 28px !default;
+$evo-top-bar-dropdown-submenu-parent-submenu-opens-right-icon: '\edc5' !default;
+$evo-top-bar-dropdown-submenu-parent-submenu-opens-left-icon: '\edc7' !default;
+$evo-top-bar-mega-menu-padding: $evo-base-padding !default;
+$evo-top-bar-mega-menu-background-color: $evo-secondary-color !default;
+$evo-top-bar-mega-menu-max-width: 100% !default;
+
+
+@if $use-top-bar == true{
+
+	@media #{$large-up} {
+
+		.evo-top-bar					{
+										@if $evo-top-bar-box-shadow == true {
+											@include box-shadow($evo-top-bar-box-shadow-horizontal $evo-top-bar-box-shadow-vertical $evo-top-bar-box-shadow-blur $evo-top-bar-box-shadow-spread $evo-top-bar-box-shadow-color);
+											position: relative;
+										}
+										height: $evo-top-bar-height;
+
+			// TOP BAR GLOBAL
+			&,
+			ul								{background: $evo-top-bar-background;}
+			ul ul 							{background: $evo-top-bar-submenu-background;}
+			a								{text-decoration: $evo-top-bar-anchor-decoration;}
+
+			// TOP BAR TITLE
+			.top-bar-title					{
+				a								{
+												display: block;
+												line-height: $evo-top-bar-height;
+												padding: $evo-top-bar-title-padding;
+												font-family: $evo-top-bar-title-font-family;
+												letter-spacing: $evo-top-bar-title-letter-spacing;
+												font-size: $evo-top-bar-title-font-size;
+												color: $evo-top-bar-title-color;
+												text-transform: $evo-top-bar-title-text-transform;
+					span							{font-family: $evo-top-bar-title-sub-font-family;}
+												}
+				img								{
+												position: relative;
+												top: $evo-top-bar-title-image-position-top;
+												left: $evo-top-bar-title-image-position-left;
+												}
+											}
+
+			// TOP BAR CONTENT
+			.evo-top-bar-content			{
+
+				// DROPDOWN MENU
+				.dropdown.menu					{
+												border: $evo-top-bar-dropdown-border;
+					
+					// DROPDOWN MENU ITEM
+					> li							{
+													font-family: $evo-top-bar-dropdown-font-family;
+						
+						// DROPDOWN MENU ITEM ANCHOR
+						> a								{
+														@if $evo-top-bar-dropdown-anchor-active-border == true {
+															border-top: $evo-top-bar-dropdown-anchor-active-border-width solid $transparent;
+															border-bottom: $evo-top-bar-dropdown-anchor-active-border-width solid $transparent;
+															line-height: ($evo-top-bar-height - ($evo-top-bar-dropdown-anchor-active-border-width*2));
+														} @else {
+															line-height: $evo-top-bar-height;
+														}
+														color: $evo-top-bar-dropdown-anchor-color;
+														padding-top: 0;
+														padding-right: $evo-top-bar-dropdown-anchor-padding;
+														padding-bottom: 0;
+														padding-left: $evo-top-bar-dropdown-anchor-padding;
+
+							// DROPDOWN MENU ITEM ANCHOR HOVER
+							&:hover,
+							&:focus							{color: $evo-top-bar-dropdown-anchor-hover-color;}
+							
+							// DROPDOWN MENU ITEM ANCHOR AS ICONS
+							&[class^="evo-icon-"]			{
+															@include box-sizing(content-box);
+															font-size: $evo-top-bar-dropdown-anchor-icon-font-size;
+															}
+							
+							// DROPDOWN MENU ITEM ANCHOR WITH ICONS
+							[class^="evo-icon-"]			{
+															color: inherit;
+															top: $evo-top-bar-dropdown-anchor-with-icon-position-top;
+															}
+														}
+
+						// DROPDOWN MENU ITEM ACTIVE
+						&.active						{
+							
+							// DROPDOWN MENU ITEM ACTIVE ANCHOR
+							> a								{
+															@if $evo-top-bar-dropdown-anchor-active-border == true {
+																border-top: $evo-top-bar-dropdown-anchor-active-border-width solid $transparent;
+																border-bottom: $evo-top-bar-dropdown-anchor-active-border-width solid $evo-top-bar-dropdown-anchor-active-border-color;
+															}
+															color: $evo-top-bar-dropdown-anchor-active-color;
+															background-color: $evo-top-bar-dropdown-anchor-active-background;
+								[class^="evo-icon-"]			{color: inherit;}
+															}
+														}
+
+						// DROPDOWN MENU ITEM WITH SUBMENU
+						&.is-dropdown-submenu-parent	{
+
+							// DROPDOWN MENU ITEM IS ACTIVE AND SUBMENU IS OPEN
+							&.is-active						{
+															background-color: $evo-top-bar-submenu-background;
+								> a								{color: $evo-top-bar-dropdown-anchor-hover-color;}
+															}
+
+							> a								{
+															padding-right: $evo-top-bar-dropdown-submenu-parent-padding-right;
+								
+								// ARROW ICON
+								&:after							{
+																font-family: $evo-top-bar-icon-font-family;
+																content: $evo-top-bar-dropdown-submenu-parent-icon;
+																top: $evo-top-bar-dropdown-submenu-parent-icon-position-top;
+																right: $evo-top-bar-dropdown-submenu-parent-icon-position-right;
+																border: 0;
+																margin-top: 0;
+																}
+
+								// DROPDOWN MENU ITEM WITH SUBMENU WITH ICON AS ITEM TEXT
+								&[class^="evo-icon-"]			{
+																padding-right: $evo-top-bar-dropdown-anchor-padding;
+									&:after							{display: none;}
+																}
+															}
+														}
+													}
+
+						
+						// DROPDOWN MENU ITEM SUBMENU
+						.is-dropdown-submenu 		{
+													@include border-radius($evo-top-bar-dropdown-border-radius);
+													@include box-shadow($evo-top-bar-dropdown-box-shadow-horizontal $evo-top-bar-dropdown-box-shadow-vertical $evo-top-bar-dropdown-box-shadow-blur $evo-top-bar-dropdown-box-shadow-spread $evo-top-bar-dropdown-box-shadow-color);
+													min-width: $evo-top-bar-dropdown-min-width;
+													white-space: $evo-top-bar-dropdown-white-space;
+							li							{
+														font-family: $evo-top-bar-dropdown-item-font-family;
+														border-bottom: $evo-top-bar-dropdown-item-border;
+								&:last-child				{
+															border-bottom: 0;
+									> a							{
+																@include border-radius($evo-top-bar-dropdown-border-radius);
+																@if $evo-top-bar-dropdown-anchor-active-border == true {
+																	line-height: $evo-top-bar-dropdown-item-line-height;
+																	border-top: 0;
+																	border-bottom: 0;
+																} @else {
+																	line-height: $evo-top-bar-dropdown-item-line-height;
+																}
+																}
+															}
+								&.active					{
+									> a							{
+																@if $evo-top-bar-dropdown-anchor-active-border == true {
+																	line-height: $evo-top-bar-dropdown-item-line-height;
+																	border-top: 0;
+																	border-bottom: 0;
+																} @else {
+																	line-height: $evo-top-bar-dropdown-item-line-height;
+																}
+																background-color: $evo-top-bar-dropdown-item-active-background;
+										&:hover,
+										&:focus						{background-color: $evo-top-bar-dropdown-item-active-background;}
+																}
+															}
+								> a							{
+															@if $evo-top-bar-dropdown-anchor-active-border == true {
+																line-height: $evo-top-bar-dropdown-item-line-height;
+																border-top: 0;
+																border-bottom: 0;
+															} @else {
+																line-height: $evo-top-bar-dropdown-item-line-height;
+															}
+									&:hover,
+									&:focus						{background-color: $evo-top-bar-dropdown-item-hover-background;}
+															}
+														}
+
+							// LABEL
+							label 						{
+														background: $evo-top-bar-dropdown-label-background;
+    													white-space: $evo-top-bar-dropdown-label-white-space;
+    													color: $evo-top-bar-dropdown-label-color;
+    													font-family: $evo-top-bar-dropdown-label-font-family;
+														font-size: $evo-top-bar-dropdown-label-font-size;
+														line-height: $evo-top-bar-dropdown-label-line-height;
+														padding: $evo-top-bar-dropdown-label-padding;
+														text-transform: $evo-top-bar-dropdown-label-text-transform;
+														}
+
+							// CHILD SUBMENU
+							.is-dropdown-submenu-parent	{
+								li							{
+									&:first-child				{border-top: 1px solid $transparent;}
+															}
+								> a							{
+															padding-right: $evo-top-bar-dropdown-submenu-parent-submenu-anchor-padding-right;
+									
+									// ARROW ICON
+									&:after						{
+																top: $evo-top-bar-dropdown-submenu-parent-submenu-icon-position-top;
+																right: $evo-top-bar-dropdown-submenu-parent-submenu-icon-position-right;
+																margin-top: 0;
+																}
+															}
+								
+								// CHILD SUBMENU OPENS LEFT
+								&.opens-left				{
+									> a							{
+
+										// ARROW ICON
+										&:after						{content: $evo-top-bar-dropdown-submenu-parent-submenu-opens-left-icon;}
+																}
+															}
+								
+								// CHILD SUBMENU OPENS RIGHT
+								&.opens-right				{
+									> a							{
+
+										// ARROW ICON
+										&:after						{content: $evo-top-bar-dropdown-submenu-parent-submenu-opens-right-icon;}
+																}
+															}
+														}
+													}
+
+					// DROPDOWN MEGA MENU
+					li[data-evo-mega-menu]			{
+						
+						// MEGA MENU ITEM
+						> a								{
+														padding-right: $evo-top-bar-dropdown-submenu-parent-padding-right;
+														position: relative;
+
+							// MEGA MENU ITEM IS ACTIVE
+							&.hover							{
+															background-color: $evo-top-bar-submenu-background;
+															color: $evo-top-bar-dropdown-anchor-hover-color;
+															}
+
+							// ARROW ICON
+							&:after							{
+															font-family: $evo-top-bar-icon-font-family;
+															content: $evo-top-bar-dropdown-submenu-parent-icon;
+															position: absolute;
+															top: $evo-top-bar-dropdown-submenu-parent-icon-position-top;
+															right: $evo-top-bar-dropdown-submenu-parent-icon-position-right;
+															border: 0;
+															margin-top: 0;
+															width: 0;
+															height: 0;
+															}
+
+							// MEGA MENU ITEM  WITH ICON AS ITEM TEXT
+							&[class^="evo-icon-"]			{
+															padding-right: $evo-top-bar-dropdown-anchor-padding;
+								&:after							{display: none;}
+															}
+														}
+
+						// MEGA MENU DROPDOWN PANE
+						.dropdown-pane.is-open			{
+														@include border-radius($evo-top-bar-dropdown-border-radius);
+														@include box-shadow($evo-top-bar-dropdown-box-shadow-horizontal $evo-top-bar-dropdown-box-shadow-vertical $evo-top-bar-dropdown-box-shadow-blur $evo-top-bar-dropdown-box-shadow-spread $evo-top-bar-dropdown-box-shadow-color);
+														display: block;
+														padding: $evo-top-bar-mega-menu-padding;
+														margin-top: rem-calc(-1);
+														border: 0;
+														background-color: $evo-top-bar-mega-menu-background-color;
+														max-width: $evo-top-bar-mega-menu-max-width !important;
+														width: 100% !important;
+														left: 0 !important;
+
+							// MEGA MENU DROPDOWN PANE CONTENT
+							ul								{
+															background: none;
+								li								{
+																font-family: $evo-base-font-family;
+									a								{
+																	text-decoration: $evo-base-anchor-text-decoration;
+										&:hover,
+										&:focus							{text-decoration: $evo-base-anchor-text-decoration-hover;}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+
+	}
+
+}// endif

@@ -1,0 +1,8 @@
+{{!--
+aria-label: ability to use a custom aria label for the icon
+class: custom classes
+href: custom link url
+icon-title: custom title for the icon
+tagname: defaults to the <i> tag but you can put in an <a> tag
+--}}
+<{{#if tagname}}{{tagname}}{{else}}i{{/if}}{{#if href}} href="{{href}}"{{/if}} class="{{#if class}}{{class}}{{else}}evo-icon-user{{/if}}"{{#if icon-title}} title="{{{icon-title}}}"{{/if}}{{#if aria-label}} aria-label="{{aria-label}}"{{/if}}></{{#if tagname}}{{tagname}}{{else}}i{{/if}}>

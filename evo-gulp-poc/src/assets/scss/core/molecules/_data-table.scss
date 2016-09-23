@@ -1,0 +1,247 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Data Table Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+// Data table base
+$evo-data-table-wrapper-margin-bottom: $evo-base-margin !default;
+$evo-data-table-tool-label-color: $onyx-dark-50 !default;
+$evo-data-table-tool-label-font-family: $evo-base-font-family !default;
+$evo-data-table-info-font-size: rem-calc(14) !default;
+$evo-data-table-entries-select-width: rem-calc(75) !default;
+$evo-data-table-margin: rem-calc(8 0) !default;
+$evo-data-table-sort-icons: true !default;
+$evo-data-table-sort-icon-font-family: $evo-icon-font-stack !default;
+$evo-data-table-sort-icon-color: $white !default;
+$evo-data-table-sort-icon-both-color: $onyx-dark-14 !default;
+$evo-data-table-sort-icon-both-icon: '\ee38' !default;
+$evo-data-table-sort-icon-asc-icon: '\edc4' !default;
+$evo-data-table-sort-icon-desc-icon: '\edc6' !default;
+$evo-data-table-sort-icons-disabled-color: $onyx-dark-30 !default;
+$evo-data-table-column-sorted-odd-row: scale-color($table-background, $lightness: -5%) !default;
+$evo-data-table-column-sorted-odd-row-hover: scale-color($table-background, $lightness: -10%) !default;
+$evo-data-table-column-sorted-even-row: scale-color($table-background, $lightness: -15%) !default;
+$evo-data-table-column-sorted-even-row-hover: scale-color($table-background, $lightness: -20%) !default;
+
+// Data table add-ons (Evo only)
+$evo-data-table-total-subtotal-font-family: $evo-font-medium-stack !default;
+$evo-data-table-subtotal-font-color: $white !default;
+$evo-data-table-total-font-color: $white !default;
+
+
+@if $use-data-table == true{
+
+	// DATA TABLE TOOLS
+	.dataTables_wrapper {margin-bottom: $evo-data-table-wrapper-margin-bottom;}
+
+	// DATA TABLE TOOLS LABELS
+	.dataTables_length label,
+	.dataTables_filter label,
+	.dataTables_info 	{
+						color: $evo-data-table-tool-label-color;
+						font-family: $evo-data-table-tool-label-font-family;
+						}
+
+	// DATA TABLE TOOL - NUMBER OF ENTRIES DROPDOWN
+	.dataTables_length 	{
+		label				{
+							float: left;
+							text-align: left;
+							margin-bottom: 0;
+							}
+		select				{
+							width: $evo-data-table-entries-select-width;
+							margin-bottom: 0;
+							}
+						}
+
+	// DATA TABLE TOOL - FILTER INPUT
+	.dataTables_filter	{
+		label				{
+							float: right;
+							margin-bottom: 0;
+							}
+		input				{
+							display: inline-block;
+							width: auto;
+							margin-bottom: 0;
+							margin-left: rem-calc(10);
+							}
+						}
+
+	// DATA TABLE TOOL - INFO, NUMBER OF ENTRIES IN TABLE
+	.dataTables_info	{
+						position: relative;
+						top: 1px;
+						font-size: $evo-data-table-info-font-size;
+						}
+
+	// DATA TABLE TOOL - PAGINATION
+	.dataTables_paginate
+						{
+						float: right;
+						margin: 0;
+		.pagination			{margin-bottom: 0;}
+						}
+
+	// DATA TABLE BASE
+	table.dataTable 	{
+						@include box-sizing(content-box);
+						clear: both;
+						margin: $evo-data-table-margin;
+						max-width: none;
+						width: 100%;
+		
+		// TABLE HEAD AND SORTING ICONS
+		thead				{
+			.sorting,
+			.sorting_asc,
+			.sorting_desc,
+			.sorting_asc_disabled,
+			.sorting_desc_disabled
+								{
+								cursor: pointer;
+								*cursor: hand;
+				@if $evo-data-table-sort-icons == true{
+					&:after				{
+										font-family: $evo-data-table-sort-icon-font-family;
+										float: right;
+										}
+									}
+								}
+			@if $evo-data-table-sort-icons == true{
+				.sorting:after		{
+									content: $evo-data-table-sort-icon-both-icon;
+									color: $evo-data-table-sort-icon-both-color;
+									}
+				.sorting_asc:after,
+				.sorting_desc:after	{color: $evo-data-table-sort-icon-color;}
+
+				.sorting_asc:after,
+				.sorting_asc_disabled:after
+									{content: $evo-data-table-sort-icon-asc-icon;}
+				.sorting_desc:after,
+				.sorting_desc_disabled:after
+									{content: $evo-data-table-sort-icon-desc-icon;}
+				.sorting_asc_disabled:after,
+				.sorting_desc_disabled:after
+									{color: $evo-data-table-sort-icons-disabled-color;}
+								}
+							}
+		
+		// SORTED COLUMN HIGHLIGHTING
+		tbody				{
+			
+			// SORTED ODD ROW CELLS
+			tr.odd				{
+				> [class*="sorting_"]
+									{background-color: $evo-data-table-column-sorted-odd-row;}
+								}
+
+			// ROW HOVER ON SORTED EVEN ROW CELLS
+			tr.odd:hover		{
+				> [class*="sorting_"]
+									{background-color: $evo-data-table-column-sorted-odd-row-hover;}
+								}
+
+			// SORTED EVEN ROW CELLS
+			tr.even				{
+				> [class*="sorting_"]
+									{background-color: $evo-data-table-column-sorted-even-row;}
+								}
+
+			// ROW HOVER ON SORTED EVEN ROW CELLS
+			tr.even:hover		{
+				> [class*="sorting_"]
+									{background-color: $evo-data-table-column-sorted-even-row-hover;}
+								}
+							}
+
+		// TABLE HEADER AND CELLS
+		th,
+		td					{@include box-sizing(content-box);}
+		th:active			{outline: none;}
+						}
+
+	// DATA TABLE SCROLLING
+	.dataTables_scroll	{
+						min-width: rem-calc(768);
+
+		@include breakpoint(medium)
+							{min-width: 100%;}
+
+		.dataTables_scrollBody
+							{overflow-x: hidden !important;}
+						}
+
+	.dataTables_scrollHead table
+						{margin-bottom: 0 !important;}
+
+	.dataTables_scrollBody table
+						{
+						border-top: none;
+						margin-top: 0 !important;
+						margin-bottom: 0 !important;
+		thead				{
+							visibility: hidden;
+			.sorting,
+			.sorting_asc,
+			.sorting_desc,
+			.sorting_asc_disabled,
+			.sorting_desc_disabled
+								{
+				&:after				{content: "";}
+								}
+							}
+						}
+
+	.dataTables_scrollBody tbody tr:first-child th,
+	.dataTables_scrollBody tbody tr:first-child td
+						{border-top: none;}
+
+	.dataTables_scrollFoot table
+						{
+						margin-top: 0 !important;
+						margin-bottom: 0 !important;
+						border-top: none;
+						}
+
+	.dataTables_scroll + .row
+						{margin-top: rem-calc(8);}
+	
+	// DATA TABLE ADD-ONS (EVO ONLY)
+	.evo-table			{
+
+		// FORM ELEMENT TABLE CELL
+		.evo-table-form-element-cell
+							{
+							text-align: center;
+			[type="checkbox"]	{
+								margin: 0;
+								top: rem-calc(1);
+				&:focus				{font-size: rem-calc(13);}
+								}
+							}
+
+		// SUBTOTAL AND TOTAL ROW
+		.evo-table-subtotal-row,
+		.evo-table-total-row
+							{font-family: $evo-data-table-total-subtotal-font-family;}
+		.evo-table-subtotal-row
+							{
+							background-color: smart-scale($table-background, $table-color-scale * 6);
+			&:hover				{background-color: smart-scale($table-background, $table-color-scale * 6) !important;}
+			td					{color: $evo-data-table-subtotal-font-color;}
+							}
+
+		// TOTAL ROW
+		.evo-table-total-row
+							{
+			td					{color: $evo-data-table-total-font-color;}
+							}
+						}
+
+}//endif

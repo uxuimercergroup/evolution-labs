@@ -3,8 +3,10 @@ module.exports = function(){
   var paths = {
     src: 'src/',
     src_assets: 'src/assets/',
+    src_patterns: 'src/patterns/',
     dest: 'dist/',
-    dest_assets: 'dist/assets/'
+    dest_assets: 'dist/assets/',
+    dest_patterns: 'dist/patterns/'
   };
    
   var config = {
@@ -13,6 +15,7 @@ module.exports = function(){
       },
       src: {
         assets: [
+          paths.src_assets + 'docs/**/*',
           paths.src_assets + 'fonts/**/*'
         ],
         assets_base: paths.src_assets,
@@ -44,7 +47,7 @@ module.exports = function(){
           'node_modules/foundation-sites/js/foundation.interchange.js',
           'node_modules/foundation-sites/js/foundation.magellan.js',
           'node_modules/foundation-sites/js/foundation.offcanvas.js',
-          'node_modules/foundation-sites/js/foundation.orbit.js',
+          'node_modules/foundation-sites/js/foundation.orbit.js', // Requires Evolution Animations JS
           'node_modules/foundation-sites/js/foundation.responsiveMenu.js',
           'node_modules/foundation-sites/js/foundation.responsiveToggle.js',
           'node_modules/foundation-sites/js/foundation.reveal.js',
@@ -53,7 +56,7 @@ module.exports = function(){
           'node_modules/foundation-sites/js/foundation.tabs.js',
           'node_modules/foundation-sites/js/foundation.toggler.js',
           'node_modules/foundation-sites/js/foundation.tooltip.js',
-          // JS Libraries required by jQuery UI
+          // Core JS Libraries required by jQuery UI
           'bower_components/jquery-ui/ui/core.js',
           'bower_components/jquery-ui/ui/widget.js',
           'bower_components/jquery-ui/ui/mouse.js',
@@ -63,13 +66,44 @@ module.exports = function(){
           'bower_components/jquery-ui/ui/autocomplete.js',
           'bower_components/jquery-ui/ui/datepicker.js',
           'bower_components/jquery-ui/ui/menu.js',
-          'bower_components/jquery-ui/ui/slider.js'
+          'bower_components/jquery-ui/ui/slider.js',
+          // jQuery Plugins
+          // If you aren't using a component, just remove it from the list
+          'node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
+          'node_modules/datatables.net/js/jquery.dataTables.js',
+          'node_modules/datatables.net-zf/js/dataTables.foundation.js',
+          'bower_components/jquery.maskedinput/dist/jquery.maskedinput.js',
+          'src/assets/js/core/lib/jquery/plugins/jquery.autosize.input.js',
+          // Mobile
+          'src/assets/js/core/lib/mobile/ios-orientationchange-fix.js',
+          // Evolution core JS
+          'src/assets/js/core/atoms/buttons.js',
+          'src/assets/js/core/atoms/helpers.js',
+          'src/assets/js/core/molecules/autocomplete.js',
+          'src/assets/js/core/molecules/data-table.js',
+          'src/assets/js/core/molecules/datepicker.js',
+          'src/assets/js/core/molecules/slider.js'
+        ],
+        js_core_animation: [
+          // Evolution Animations JS
+          'node_modules/motion-ui/dist/motion-ui.js',
+          'bower_components/AniJS/dist/anijs.js',
+          'bower_components/AniJS/dist/helpers/dom/anijs-helper-dom.js',
+          'bower_components/AniJS/dist/helpers/scrollreveal/anijs-helper-scrollreveal.js',
+          'bower_components/AniJS/dist/event_systems/jquery/anijs-jquery-event-system.js'
         ],
         js_app: [
           // Application or project level JS files
-          paths.src_assets + 'js/!(app).js',
-          paths.src_assets + 'js/app.js'
+          'node_modules/clipboard/dist/clipboard.js',
+          paths.src_assets + 'js/app/**/!(app).js',
+          paths.src_assets + 'js/app.js',
+          paths.src_patterns + 'organisms/**/*.js'
         ],
+        patterns_base: paths.src_patterns,
+        patterns: {
+          scss: paths.src_patterns + '/**/*.scss',
+          js: paths.src_patterns + '/**/*.js'
+        },
         scss : paths.src_assets + 'scss/**/*.scss'
       },
       dest: {
@@ -77,7 +111,8 @@ module.exports = function(){
         css: paths.dest_assets + 'css/',
         docs: paths.dest + 'docs/',
         images: paths.dest_assets + 'images/',
-        js: paths.dest_assets + 'js/'
+        js: paths.dest_assets + 'js/',
+        patterns: paths.dest_patterns
       },
       autoprefixer: {
         browsers: [
@@ -123,6 +158,10 @@ module.exports = function(){
           title: 'Pages assembled.',
           message: 'Layouts, templates, partials, and data assembled successfully.'
         },
+        patterns: {
+          title: 'Patterns packaged.',
+          message: 'HTML, CSS, and JS for patterns packaged successfully.'
+        },
         sass: {
           title: 'Sass files preprocessed.',
           message: 'Sass files preprocessed successfully.'
@@ -138,6 +177,13 @@ module.exports = function(){
         partials: paths.src + '/partials/',
         data: paths.src + '/data/',
         helpers: paths.src + '/helpers/'
+      },
+      sass: {
+        include_paths: [
+          'node_modules/foundation-sites/scss',
+          'node_modules/motion-ui/src'
+        ],
+        output_style: 'expanded'
       },
       uncss: {
         html: [

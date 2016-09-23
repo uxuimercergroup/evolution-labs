@@ -17,12 +17,29 @@
     "prod": "gulp --production",
     "build": "gulp build --production",
     "deploy": "gulp deploy --production",
-    "lint": "gulp lint"
+    "lint": "gulp lint",
+    "patterns": "gulp patterns",
+    "patterns_prod": "gulp patterns --production"
+  },
+  "project": {
+    "name": "Evolution",
+    "version": "5.0.0",
+    "description": "Global Framework for Digital Design, Development and maintained by the Mercer Digital Center of Excellence",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/uxuimercergroup/evolution"
+    },
+    "author": "Douglas Fraize, Matthew Holmes",
+    "date": "September 23, 2016",
+    "homepage": "http://evolution.mercer.com",
+    "product_suite": "core"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.14.0",
     "browser-sync": "^2.15.0",
+    "clipboard": "^1.5.12",
+    "datatables.net-zf": "^1.10.11",
     "foundation-docs": "zurb/foundation-docs",
     "foundation-sites": "^6.2.3",
     "gulp": "^3.9.1",
@@ -47,6 +64,8 @@
     "handlebars-helper-lorem": "^0.2.0",
     "handlebars-helpers": "^0.7.5",
     "helper-moment": "^0.1.0",
+    "jquery-ui-touch-punch": "^0.2.3",
+    "motion-ui": "^1.2.2",
     "panini": "^1.3.0",
     "require-dir": "^0.3.0",
     "rimraf": "^2.5.4",
@@ -54,5 +73,50 @@
     "supercollider": "^1.4.2",
     "yargs": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jquery_version": "2.2.4",
+  "jquery_ui_version": "1.11.4",
+  "foundation_version": "6.2.3",
+  "organisms": {
+    "conversational_form": {
+      "name": "Conversational Form",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "fat_footer": {
+      "name": "Fat Footer",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "item_selection_panel": {
+      "name": "Item Selection Panel",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "pricing_table": {
+      "name": "Pricing Table",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "showcase_panel": {
+      "name": "Showcase Panel",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "social_media_badges": {
+      "name": "Social Media Badges",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "stepper": {
+      "name": "Stepper",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    },
+    "thin_footer": {
+      "name": "Thin Footer",
+      "version": "1.0.1",
+      "date": "September 1, 2016"
+    }
+  }
 }

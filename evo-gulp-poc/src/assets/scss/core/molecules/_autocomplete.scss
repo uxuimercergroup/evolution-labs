@@ -1,0 +1,71 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Autocomplete Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-autocomplete-background-color: $white !default;
+$evo-autocomplete-max-height: rem-calc(107) !default;
+$evo-autocomplete-item-font-color: $body-font-color !default;
+$evo-autocomplete-item-line-height: 1.5 !default;
+$evo-autocomplete-item-border: 1px solid $transparent !default;
+$evo-autocomplete-item-hover-background-color: $evo-secondary-color !default;
+
+
+@if $use-autocomplete == true{
+
+	.ui-helper-hidden-accessible
+							{display: none;}
+
+	// AUTOCOMPLETE
+	.ui-menu				{
+							@include border-radius(0 0 $evo-base-radius $evo-base-radius);
+							@include box-shadow($evo-base-shadow-horizontal $evo-base-shadow-vertical $evo-base-shadow-blur $evo-base-shadow-spread $evo-base-shadow-color);
+							background-color: $evo-autocomplete-background-color;
+							border: $dropdown-border;
+							border-top: 0;
+							display: block;
+							position: absolute;
+							z-index: $evo-base-zindex-autocomplete;
+							padding: 0;
+							margin: 0;
+							width: auto;
+							list-style: none;
+							max-height: $evo-autocomplete-max-height;
+							overflow-y: auto;
+							overflow-x: hidden;
+							outline: none;
+		.ui-menu-item			{
+								@include text-overflow;
+								margin: 0;
+								padding: rem-calc(5);
+								display: block;
+								width: 100%;
+								color: $evo-autocomplete-item-font-color;
+								line-height: $evo-autocomplete-item-line-height;
+								border-bottom: $evo-autocomplete-item-border;
+								cursor: pointer;
+			.ui-menu-secondary		{
+									@include text-overflow;
+									margin-left: rem-calc(5);
+									display: inline;
+				@include breakpoint(medium)
+										{
+										margin-left: 0;
+										display: block;
+										}
+									}
+								}
+
+		.ui-state-focus			{background-color: $evo-autocomplete-item-hover-background-color;}
+								
+		.ui-menu-item:last-child
+								{
+								border-bottom: 0;
+			.ui-state-hover,
+			.ui-state-active		{@include border-radius(0 0 $evo-base-radius $evo-base-radius);}
+								}
+							}
+
+}//endif

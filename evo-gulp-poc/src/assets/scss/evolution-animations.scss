@@ -1,0 +1,17 @@
+/*------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }} - Animations CSS
+DATE: {{ evo_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+-------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+// Import Foundation Motion UI from package manager
+@import "motion-ui";
+
+// Export mixin which prints out the Sass for Foundation Motion UI transitions
+@include motion-ui-transitions;
+
+// Evolution atoms partials
+@import	"core/atoms/animations";

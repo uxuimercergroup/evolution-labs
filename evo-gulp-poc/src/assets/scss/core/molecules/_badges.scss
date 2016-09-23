@@ -1,0 +1,36 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Badges Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-badge-border-radius: rem-calc(1000) !default;
+$evo-badge-small-font-size: $evo-base-small-font-size !default;
+$evo-badge-medium-font-size: $evo-base-font-size !default;
+$evo-badge-large-font-size: rem-calc(18) !default;
+
+
+@if $use-badges == true{
+
+	// BADGES
+	.evo-badge		{
+					@include border-radius($evo-badge-border-radius);
+		[class*="evo-icon-"]
+						{
+						color: inherit;
+						font-size: inherit;
+						margin: 0;
+						top: 1px;
+						}
+
+		// BADGE SIZE HELPERS
+		&[data-evo-badge-size="small"]
+						{font-size: $evo-badge-small-font-size;}
+		&[data-evo-badge-size="medium"]
+						{font-size: $evo-badge-medium-font-size;}
+		&[data-evo-badge-size="large"]
+						{font-size: $evo-badge-large-font-size;}
+					}
+
+}//endif

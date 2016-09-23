@@ -1,0 +1,32 @@
+{{!--
+aria-label: button aria label
+aria-disabled: used with <a> tag button to mark it as disabled for assistive technology
+button-name: custom name used for button
+button-title: title of the button
+button-type: button - if no button type is set then <a> tag is used by default
+button-value: custom value for button
+custom-class: custom class for button
+data-open: reveal modal open id value
+data-toggle: dropdown menu toggle id value
+disabled: if the button is disabled [TRUE] is the value
+dropdown: if the button is a dropdown style [TRUE] is the value
+expanded: if the button is going to be 100% width [TRUE] is the value
+hollow: if the button is going to be a hollow button [TRUE] is the value
+href: if the button is using the <a> tag then set a href value
+icon-position: both, left, right
+icon-position-left-class: icon class of custom icomoon icon for left side of button
+icon-position-right-class: icon class of custom icomoon icon for right side of button
+id: custom id for button
+interactive-data-value: data value for interactive button - must match value used in init of interactive button in JS
+min-width: sets a min-width on the button [TRUE] is the value
+secondary: if the button is going to be a secondary button [TRUE] is the value
+size: tiny, small, large, xlarge, xxlarge - default size is basic, no size option needed
+tabindex: the tab index order number
+text: your button content
+type: button, submit, reset
+--}}
+{{#is button-type 'button'}}
+<button class="button{{#if size}} {{size}}{{/if}}{{#if expanded}} expanded{{/if}}{{#if secondary}} secondary{{/if}}{{#if hollow}} hollow{{/if}}{{#if dropdown}} dropdown{{/if}}{{#if disabled}} disabled{{/if}} evo-button{{#if custom-class}} {{custom-class}}{{/if}}"{{#if icon-position}} data-evo-button-icons="{{icon-position}}"{{/if}}{{#if interactive-data-value}} data-evo-button-interactive="{{interactive-data-value}}"{{/if}}{{#if id}} id="{{id}}"{{/if}}{{#if button-name}} name="{{button-name}}"{{/if}}{{#if button-value}} value="{{button-value}}"{{/if}}{{#if type}} type="{{type}}"{{/if}}{{#if disabled}} disabled{{/if}}{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}{{#if button-title}} title="{{{button-title}}}"{{/if}}{{#if min-width}} data-evo-button-min-width{{/if}}{{#if data-toggle}} data-toggle="{{data-toggle}}"{{/if}}{{#if data-open}} data-open="{{data-open}}"{{/if}}>{{#is icon-position 'both'}}<i class="{{#if icon-position-left-class}}{{icon-position-left-class}} {{else}}evo-icon-plus-circle {{/if}}evo-icon-position-left"></i>{{/is}}{{#is icon-position 'left'}}<i class="{{#if icon-position-left-class}}{{icon-position-left-class}} {{else}}evo-icon-plus-circle {{/if}}evo-icon-position-left"></i>{{/is}}{{#if icon-position}}<span class="evo-button-text">{{/if}}{{#if text}}{{{text}}}{{else}}Button text{{/if}}{{#if icon-position}}</span>{{/if}}{{#is icon-position 'both'}}<i class="{{#if icon-position-right-class}}{{icon-position-right-class}} {{else}}evo-icon-arrow-right5 {{/if}}evo-icon-position-right"></i>{{/is}}{{#is icon-position 'right'}}<i class="{{#if icon-position-right-class}}{{icon-position-right-class}} {{else}}evo-icon-arrow-right5 {{/if}}evo-icon-position-right"></i>{{/is}}</button>
+{{else}}
+<a href="{{#if href}}{{href}}{{else}}#/{{/if}}" class="button{{#if size}} {{size}}{{/if}}{{#if expanded}} expanded{{/if}}{{#if secondary}} secondary{{/if}}{{#if hollow}} hollow{{/if}}{{#if dropdown}} dropdown{{/if}}{{#if disabled}} disabled{{/if}} evo-button{{#if custom-class}} {{custom-class}}{{/if}}"{{#if icon-position}} data-evo-button-icons="{{icon-position}}"{{/if}}{{#if interactive-data-value}} data-evo-button-interactive="{{interactive-data-value}}"{{/if}}{{#if id}} id="{{id}}"{{/if}} role="button"{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}{{#if button-title}} title="{{{button-title}}}"{{/if}}{{#if aria-label}} aria-label="{{aria-label}}"{{/if}}{{#if aria-disabled}} aria-disabled{{/if}}{{#if min-width}} data-evo-button-min-width{{/if}}{{#if data-toggle}} data-toggle="{{data-toggle}}"{{/if}}{{#if data-open}} data-open="{{data-open}}"{{/if}}>{{#is icon-position 'both'}}<i class="{{#if icon-position-left-class}}{{icon-position-left-class}} {{else}}evo-icon-plus-circle {{/if}}evo-icon-position-left"></i>{{/is}}{{#is icon-position 'left'}}<i class="{{#if icon-position-left-class}}{{icon-position-left-class}} {{else}}evo-icon-plus-circle {{/if}}evo-icon-position-left"></i>{{/is}}{{#if icon-position}}<span class="evo-button-text">{{/if}}{{#if text}}{{{text}}}{{else}}Button text{{/if}}{{#if icon-position}}</span>{{/if}}{{#is icon-position 'both'}}<i class="{{#if icon-position-right-class}}{{icon-position-right-class}} {{else}}evo-icon-arrow-right5 {{/if}}evo-icon-position-right"></i>{{/is}}{{#is icon-position 'right'}}<i class="{{#if icon-position-right-class}}{{icon-position-right-class}} {{else}}evo-icon-arrow-right5 {{/if}}evo-icon-position-right"></i>{{/is}}</a>
+{{/is}}

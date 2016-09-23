@@ -1,0 +1,10 @@
+{{!--
+class: custom class
+placeholder: placeholder text
+required: if the field is going to be required and will use the abide validation [TRUE] is the value
+aria-describedby: clarify textarea's purpose
+data-abide-ignore: select is ignored by Abide validation
+tabindex: the tab index order number
+textarea-title: title of the textarea
+--}}
+<textarea{{#if class}} class="{{class}}"{{/if}}{{#if placeholder}} placeholder="{{placeholder}}"{{/if}}{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}{{#if textarea-title}} title="{{{textarea-title}}}"{{/if}}{{#if required}} required{{/if}}{{#if aria-describedby}} aria-describedby="{{aria-describedby}}"{{/if}}{{#if data-abide-ignore}} data-abide-ignore{{/if}}></textarea>

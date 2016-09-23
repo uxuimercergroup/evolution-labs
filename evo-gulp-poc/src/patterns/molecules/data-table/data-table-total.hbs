@@ -1,0 +1,32 @@
+<!-- DATA TABLE WITH TOTAL ROW - BEGINS -->
+<div class="evo-table-small-mediaquery">
+	<table class="hover evo-table" data-evo-data-table="evo-data-table-example" width="100%" cellpadding="0" cellspacing="0" border="0" title="" summary="" role="grid">
+		<thead>
+			<tr>
+				<th scope="column">Engine</th>
+				<th scope="column">Browser</th>
+				<th scope="column">Platform(s)</th>
+				<th scope="column">Version</th>
+				<th scope="column">CSS Grade</th>
+			</tr>
+		</thead>
+		<tbody>
+		{{#each global.kitchen_sink_demo_data}}
+			<tr>
+				<td>{{ renderingEngine }}</td>
+				<td>{{ browser }}</td>
+				<td>{{ platform }}</td>
+				<td>{{ engine }}</td>
+				<td>{{ cssGrade }}</td>
+			</tr>
+		{{/each}}
+		</tbody>
+		<tfoot>
+			<tr class="evo-table-total-row">
+				<td class="text-right" colspan="4">Total</td>
+				<td class="text-right">58</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<!-- DATA TABLE WITH TOTAL ROW - ENDS -->

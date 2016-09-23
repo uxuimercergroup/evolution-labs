@@ -1,0 +1,14 @@
+{{!--
+class: custom class
+required: if the field is going to be required and will use the abide validation [TRUE] is the value
+aria-describedby: clarify select's purpose
+data-abide-ignore: select is ignored by Abide validation
+tabindex: the tab index order number
+select-title: custom title
+--}}
+<select{{#if class}} class="{{class}}"{{/if}}{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}{{#if select-title}} title="{{{select-title}}}"{{/if}}{{#if required}} required{{/if}}{{#if aria-describedby}} aria-describedby="{{aria-describedby}}"{{/if}}{{#if data-abide-ignore}} data-abide-ignore{{/if}}>
+	<option value="">Choose one&hellip;</option>
+	<option value="1">Item 1</option>
+	<option value="2">Item 2</option>
+	<option value="3">Item 3</option>
+</select>

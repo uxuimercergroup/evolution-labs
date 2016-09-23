@@ -1,0 +1,59 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Pagination Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-pagination-icon-font-family: $evo-icon-font-stack !default;
+$evo-pagination-icon-font-size: rem-calc(12) !default;
+$evo-pagination-icon-position-top: 1px !default;
+$evo-pagination-icon-previous: '\edc7' !default;
+$evo-pagination-icon-previous-position-left: -4px !default;
+$evo-pagination-icon-next: '\edc5' !default;
+$evo-pagination-icon-next-position-right: 4px !default;
+
+
+//
+// @mixins
+//
+@mixin pagination-nav-icon {
+	position: relative;
+	font-family: $evo-pagination-icon-font-family;
+	font-size: $evo-pagination-icon-font-size;
+	top: $evo-pagination-icon-position-top;
+	margin: 0;
+}
+
+
+@if $use-pagination == true{
+
+	// PAGINATION
+	.pagination						{
+		li								{
+			&.disabled,
+			a								{
+				&:hover							{text-decoration: none;}
+											}
+										}
+		.previous a::before,
+		.previous.disabled::before,
+		.pagination-previous a::before,
+		.pagination-previous.disabled::before
+										{
+										@include pagination-nav-icon;
+										content: $evo-pagination-icon-previous;
+										left: $evo-pagination-icon-previous-position-left;
+										}
+		.next a::after,
+		.next.disabled::after,
+		.pagination-next a::after,
+		.pagination-next.disabled::after
+										{
+										@include pagination-nav-icon;
+										content: $evo-pagination-icon-next;
+										left: $evo-pagination-icon-next-position-right;
+										}
+									}
+
+}//endif

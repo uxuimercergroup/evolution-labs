@@ -1,0 +1,20 @@
+<!-- TABLE STACKED (small screen) - BEGINS -->
+<table class="hover stack evo-table" id="" border="0" cellpadding="0" cellspacing="0" title="" summary="" role="grid">
+	<thead>
+		<tr>
+			<th width="400" scope="column">Browser</th>
+			<th scope="column">Platform</th>
+			<th width="100" scope="column">CSS Grade</th>
+		</tr>
+	</thead>
+	<tbody>
+	{{#slice global.kitchen_sink_demo_data limit="10"}}
+		<tr>
+			<td>{{ browser }}</td>
+			<td>{{ platform }}</td>
+			<td>{{ cssGrade }}</td>
+		</tr>
+	{{/slice}}
+	</tbody>
+</table>
+<!-- TABLE STACKED (small screen) - ENDS -->

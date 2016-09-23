@@ -1,0 +1,214 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }}
+{{ fat_footer_meta_name }} v{{ fat_footer_meta_version }} - SASS
+DATE: {{ fat_footer_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+--------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+//
+// @core sass imports - IMPORTANT: DO NOT MODIFY!
+//
+@import	"../../../assets/scss/core/global";
+@import	"../../../assets/scss/core/foundation-settings";
+@import	"../../../assets/scss/core/settings";
+
+//
+// @variables - IMPORTANT: DO NOT MODIFY! MODIFY VARIABLE OVERRIDES ONLY.
+//
+
+// Organism default variables
+$evo-fat-footer-content-section-background-color: $onyx-dark-2 !default;
+$evo-fat-footer-content-section-border-top-width: 1px !default;
+$evo-fat-footer-content-section-border-top-style: solid !default;
+$evo-fat-footer-content-section-border-top-color: $onyx-dark-10 !default;
+$evo-fat-footer-content-section-padding-top: rem-calc(20) !default;
+$evo-fat-footer-content-section-min-height: rem-calc(200) !default;
+$evo-fat-footer-logo-margin-bottom: rem-calc(25) !default;
+$evo-fat-footer-content-header-font-color: $onyx-dark !default;
+$evo-fat-footer-content-header-font: rem-calc(12) !default;
+$evo-fat-footer-anchor-color: $evo-base-anchor-color !default;
+$evo-fat-footer-anchor-hover-color: $evo-base-anchor-color-hover !default;
+$evo-fat-footer-anchor-font-size: rem-calc(14) !default;
+$evo-fat-footer-brand-bar-background-color: $onyx-dark-10 !default;
+$evo-fat-footer-brand-bar-min-height: rem-calc(50) !default;
+$evo-fat-footer-brand-bar-font-color: $onyx-bright !default;
+$evo-fat-footer-brand-bar-logo-margin-top: rem-calc(12) !default;
+$evo-fat-footer-copyright: rem-calc(16) !default;
+$evo-fat-footer-social-media-badge-margin-bottom: rem-calc(20) !default;
+$evo-fat-footer-social-media-badge-font-color: $evo-primary-color !default;
+$evo-fat-footer-social-media-badge-font-color-hover: $evo-fat-footer-social-media-badge-font-color !default;
+$evo-fat-footer-social-media-badge-font-color-focus: $evo-fat-footer-social-media-badge-font-color !default;
+$evo-fat-footer-social-media-badge-font-color-visited: $evo-fat-footer-social-media-badge-font-color !default;
+
+//
+// @Product organism component theme variables - IMPORTANT: DO NOT MODIFY!
+//
+
+// Product setting
+$evo-product: core;
+
+// Communication
+@if $evo-product == comm {
+
+// Benefits Portals
+} @else if $evo-product == bp {
+
+	$evo-fat-footer-content-section-background-color: $evo-tertiary-color;
+	$evo-fat-footer-content-section-border-top-color: $evo-primary-color;
+	$evo-fat-footer-content-header-font-color: $evo-quinary-color;
+	$evo-fat-footer-anchor-color: $white;
+	$evo-fat-footer-anchor-hover-color: $white;
+	$evo-fat-footer-brand-bar-background-color: $evo-primary-color;
+	$evo-fat-footer-brand-bar-font-color: $white;
+	$evo-fat-footer-social-media-badge-font-color: $white;
+	$evo-fat-footer-social-media-badge-font-color-hover: $evo-fat-footer-social-media-badge-font-color;
+	$evo-fat-footer-social-media-badge-font-color-focus: $evo-fat-footer-social-media-badge-font-color;
+	$evo-fat-footer-social-media-badge-font-color-visited: $evo-fat-footer-social-media-badge-font-color;
+
+}
+
+//
+// @variable overrides
+//
+// $evo-fat-footer-content-section-background-color: $onyx-dark-2;
+// $evo-fat-footer-content-section-border-top-width: 1px;
+// $evo-fat-footer-content-section-border-top-style: solid;
+// $evo-fat-footer-content-section-border-top-color: $onyx-dark-10;
+// $evo-fat-footer-content-section-padding-top: rem-calc(20);
+// $evo-fat-footer-content-section-min-height: rem-calc(200);
+// $evo-fat-footer-logo-margin-bottom: rem-calc(25);
+// $evo-fat-footer-content-header-font-color: $onyx-dark;
+// $evo-fat-footer-content-header-font: rem-calc(12);
+// $evo-fat-footer-anchor-color: $evo-base-anchor-color;
+// $evo-fat-footer-anchor-hover-color: $evo-base-anchor-color-hover;
+// $evo-fat-footer-anchor-font-size: rem-calc(14);
+// $evo-fat-footer-brand-bar-background-color: $onyx-dark-10;
+// $evo-fat-footer-brand-bar-min-height: rem-calc(50);
+// $evo-fat-footer-brand-bar-font-color: $onyx-bright;
+// $evo-fat-footer-brand-bar-logo-margin-top: rem-calc(12);
+// $evo-fat-footer-copyright: rem-calc(16);
+// $evo-fat-footer-social-media-badge-margin-bottom: rem-calc(20);
+// $evo-fat-footer-social-media-badge-font-color: $evo-primary-color;
+// $evo-fat-footer-social-media-badge-font-color-hover: $evo-fat-footer-social-media-badge-font-color;
+// $evo-fat-footer-social-media-badge-font-color-focus: $evo-fat-footer-social-media-badge-font-color;
+// $evo-fat-footer-social-media-badge-font-color-visited: $evo-fat-footer-social-media-badge-font-color;
+
+
+// FAT FOOTER - BEGINS
+	.evo-fat-footer 	{
+
+	// FOOTER CONTENT SECTION - BEGINS
+		.evo-footer-content-section
+							{
+							background-color: $evo-fat-footer-content-section-background-color;
+							border-top-width: $evo-fat-footer-content-section-border-top-width;
+							border-top-style: $evo-fat-footer-content-section-border-top-style;
+							border-top-color: $evo-fat-footer-content-section-border-top-color;
+							padding-top: $evo-fat-footer-content-section-padding-top;
+							min-height: $evo-fat-footer-content-section-min-height;
+
+		// SOCIAL MEDIA BADGE - BEGINS
+			.evo-social-media-badges-ctn 
+								{
+								margin-bottom: $evo-fat-footer-social-media-badge-margin-bottom;
+								text-align: center;
+				a[class^="evo-icon-"]
+									{
+									color: $evo-fat-footer-social-media-badge-font-color;
+					&:hover				{color: $evo-fat-footer-social-media-badge-font-color-hover;}
+					&:focus				{color: $evo-fat-footer-social-media-badge-font-color-focus;}
+					&:visited			{color: $evo-fat-footer-social-media-badge-font-color-visited;}
+									}
+
+				@include breakpoint(medium)
+									{text-align: left;}
+
+								}
+		// SOCIAL MEDIA BADGE - ENDS
+
+		// CONTENT SECTION LOGO - BEGINS
+			.evo-fat-footer-logo
+								{
+								margin-bottom: $evo-fat-footer-logo-margin-bottom;
+								text-align: center;
+
+				@include breakpoint(medium)
+									{text-align: left;}
+
+								}
+		// CONTENT SECTION LOGO - ENDS
+
+							}
+	// FOOTER CONTENT SECTION - ENDS
+
+	// FOOTER LINK HEADERS - BEGINS
+		.evo-footer-link-hdr
+							{
+							color: $evo-fat-footer-content-header-font-color;
+							font-size: $evo-fat-footer-content-header-font;
+							}
+	// FOOTER LINK HEADERS - ENDS
+
+	// FOOTER LINKS - BEGINS
+		.evo-footer-links	{
+							text-align: center;
+			li					{
+				a					{
+									color: $evo-fat-footer-anchor-color;
+									display: block;
+									font-size: $evo-fat-footer-anchor-font-size;
+									line-height: rem-calc(25);
+					&:hover				{color: $evo-fat-footer-anchor-hover-color;}
+									}
+								}
+
+			@include breakpoint(medium)
+								{
+								text-align: left;
+				li					{padding-bottom: rem-calc(5);}
+								}
+							}
+	// FOOTER LINKS - END
+
+	// BRAND BAR - BEGINS
+		.evo-fat-footer-brand-bar
+							{
+							background-color: $evo-fat-footer-brand-bar-background-color;
+							min-height: $evo-fat-footer-brand-bar-min-height;
+			small				{color: $evo-fat-footer-brand-bar-font-color;}
+							}
+	// BRAND BAR - ENDS
+
+	// COPYRIGHT - BEGINS
+		.evo-footer-copyright
+							{
+							margin-top: $evo-fat-footer-copyright;
+							text-transform: uppercase;
+							letter-spacing: rem-calc(1.2);
+							text-align: center;
+			
+			@include breakpoint(medium)
+								{text-align: left;}
+
+							}
+	// COPYRIGHT - ENDS
+
+	// FOOTER LOGO - BEGINS
+		.evo-brand-bar-footer-logo
+							{
+							margin-top: $evo-fat-footer-brand-bar-logo-margin-top;
+							text-align: center;
+			a					{text-align: center;}
+
+			@include breakpoint(medium)
+								{
+								text-align: right;
+				a					{text-align: left;}
+								}
+							}
+	// FOOTER LOGO - ENDS
+						}
+// FAT FOOTER - ENDS

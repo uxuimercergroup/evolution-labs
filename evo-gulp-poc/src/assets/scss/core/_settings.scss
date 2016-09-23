@@ -1,0 +1,461 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Settings Partial
+//-------------------------------------------------------------------------------------------
+
+// ==========================================================================================
+// OUTPUT SETTINGS
+// ==========================================================================================
+
+// These are the default Mercer Evolution core output settings. This is what will be turned on/off
+// from Mercer Evolution and included in the evolution library CSS file. These settings can be
+// modified on a project by project basis to customize an Evolution CSS file for your project
+// based on what components you will need from Mercer Evolution.
+
+// ATOM OUTPUTS
+// ------------------------------------------------------------------------------------------
+$use-buttons:								true;
+$use-callout:								true;
+$use-colors:								true;
+$use-form:									true;
+$use-grid:									true;
+$use-helpers:								true;
+$use-icons:									true;
+$use-lists:									true;
+$use-tables:								true;
+$use-type:									true;
+
+// MOLECULE OUTPUTS
+// ------------------------------------------------------------------------------------------
+$use-accordion:								true;
+$use-alert-boxes:							true;
+$use-autocomplete:							true;
+$use-badges:								true;
+$use-breadcrumbs:							true;
+$use-carousel:								true;
+$use-data-table:							true;
+$use-datepicker:							true;
+$use-dropdowns:								true;
+$use-labels:								true;
+$use-off-canvas:							true;
+$use-pagination:							true;
+$use-progress-bar:							true;
+$use-reveal:								true;
+$use-slider:								true;
+$use-tabs:									true;
+$use-tooltip:								true;
+$use-top-bar:								true;
+
+
+// ==========================================================================================
+// ATOM SETTINGS
+// ==========================================================================================
+
+// BUTTONS
+// ------------------------------------------------------------------------------------------
+// $evo-button-min-width: 					rem-calc(120);
+// $evo-button-tiny-text-transform: 		uppercase;
+// $evo-button-hollow-secondary-color: 		$onyx-dark-40;
+// $evo-button-icon-font-family: 			$evo-icon-font-stack;
+// $evo-button-dropdown-icon: 				'\edc6';
+// $evo-button-close-icon-color: 			$evo-primary-color;
+// $evo-button-close-icon-hover-color: 		scale-color($evo-button-close-icon-color, $lightness: 10%);
+
+
+// CALLOUT
+// ------------------------------------------------------------------------------------------
+// $evo-callout-background-color: 			$white;
+// $evo-callout-border: 					$callout-border;
+
+
+// FORM
+// ------------------------------------------------------------------------------------------
+// $evo-form-required-icon-font-color: 		$evo-alert-color;
+// $evo-form-label-font-family: 			$evo-font-medium-stack;
+
+
+// HELPERS
+// ------------------------------------------------------------------------------------------
+
+// KEYLINES
+// $evo-keyline-right-border-right-color: 	$onyx-dark-30;
+// $evo-keyline-left-border-left-color:		$onyx-dark-30;
+
+// SPACER SIZES
+// $evo-spacer-size:						5px;
+// $evo-spacer-xsmall:						($evo-spacer-size*1);
+// $evo-spacer-small:						($evo-spacer-size*2);
+// $evo-spacer-medium:						($evo-spacer-size*3);
+// $evo-spacer-large:						($evo-spacer-size*4);
+// $evo-spacer-xlarge:						($evo-spacer-size*5);
+// $evo-spacer-xxlarge:						($evo-spacer-size*6);
+// $evo-spacer-xxxlarge:					($evo-spacer-size*7);
+
+
+// ICONS
+// ------------------------------------------------------------------------------------------
+// $evo-icon-font-color:					$evo-base-font-color;
+
+
+// LISTS
+// ------------------------------------------------------------------------------------------
+// $evo-inline-list-margin-bottom: 			$evo-base-margin;
+// $evo-inline-list-margin-left: 			$evo-base-margin;
+// $evo-inline-list-pipes-padding-right:	$evo-base-padding;
+// $evo-inline-list-pipe-border-color:		$onyx-dark-30;
+// $evo-inline-dl-list-dt-margin-			right: $evo-base-margin;
+// $evo-inline-dl-list-dd-margin-			right: $evo-base-margin;
+// $evo-definition-list-hdr-color: 			$black;
+// $evo-definition-list-hdr-border-color:	$onyx-dark-30;
+// $evo-data-list-dt-margin-bottom:			$evo-base-margin;
+
+
+// TYPOGRAPHY
+// ------------------------------------------------------------------------------------------
+
+// SMALL TEXT
+// $evo-small-font-color: 					$onyx-dark-50;
+
+// TEXT SELECTION
+// $evo-text-selection-text-color: 			$white;
+// $evo-text-selection-background-color: 	$onyx-dark-80;
+
+// HEADERS
+// $evo-hdr-rule-border-size: 				1px;
+// $evo-hdr-rule-border-style:				dotted;
+// $evo-hdr-rule-margin-bottom: 			rem-calc(10);
+// $evo-hdr-rule-border-color:				$onyx-dark-30;
+// $evo-hdr-background-color: 				$evo-secondary-color;
+
+
+// ==========================================================================================
+// MOLECULE SETTINGS
+// ==========================================================================================
+
+// ACCORDION
+// ------------------------------------------------------------------------------------------
+// $evo-accordion-background-color: 		$white;
+// $evo-accordion-title-font-family: 		$evo-font-medium-stack;
+// $evo-accordion-title-font-size: 			inherit;
+// $evo-accordion-title-font-color: 		inherit;
+// $evo-accordion-icon-font-family: 		$evo-icon-font-stack;
+// $evo-accordion-icon-open-icon: 			'\ed5c';
+// $evo-accordion-icon-close-icon: 			'\ed5d';
+// $evo-accordion-icon-font-color: 			$evo-primary-color;
+
+
+// ALERT BOXES
+// ------------------------------------------------------------------------------------------
+// $evo-alert-box-bgcolor: 					$onyx-dark-10;
+// $evo-alert-box-border: 					0;
+// $evo-alert-box-font-color: 				$onyx-dark-80;
+// $evo-alert-warning-icon-color: 			$topaz-dark;
+// $evo-alert-success-icon-color: 			$emerald-dark;
+// $evo-alert-alert-icon-color: 			$garnet-dark;
+
+
+// AUTOCOMPLETE
+// ------------------------------------------------------------------------------------------
+// $evo-autocomplete-background-color: 		$white;
+// $evo-autocomplete-max-height: 			rem-calc(107);
+// $evo-autocomplete-item-font-color: 		$body-font-color;
+// $evo-autocomplete-item-line-height: 		1.5;
+// $evo-autocomplete-item-border: 			1px solid $transparent;
+// $evo-autocomplete-item-hover-background-color: $evo-secondary-color;
+
+
+// BADGES
+// ------------------------------------------------------------------------------------------
+// $evo-badge-border-radius: 				rem-calc(1000);
+// $evo-badge-small-font-size: 				$evo-base-small-font-size;
+// $evo-badge-medium-font-size: 			$evo-base-font-size;
+// $evo-badge-large-font-size: 				rem-calc(18);
+
+
+// CAROUSEL
+// ------------------------------------------------------------------------------------------
+// $evo-carousel-nav-icon-color: 			$onyx-dark-40;
+// $evo-carousel-nav-icon-color-hover: 		scale-color($evo-carousel-nav-icon-color, $lightness: 30%);
+// $evo-carousel-nav-icon-position-top: 	-27px;
+
+
+// DATA TABLE
+// ------------------------------------------------------------------------------------------
+// $evo-data-table-wrapper-margin-bottom: 	$evo-base-margin;
+// $evo-data-table-tool-label-color: 		$onyx-dark-50;
+// $evo-data-table-tool-label-font-family: 	$evo-base-font-family;
+// $evo-data-table-info-font-size: 			rem-calc(14);
+// $evo-data-table-entries-select-width: 	rem-calc(75);
+// $evo-data-table-margin: 					rem-calc(8 0);
+// $evo-data-table-sort-icons: 				true;
+// $evo-data-table-sort-icon-font-family: 	$evo-icon-font-stack;
+// $evo-data-table-sort-icon-color: 		$white;
+// $evo-data-table-sort-icon-both-color: 	$onyx-dark-14;
+// $evo-data-table-sort-icon-both-icon: 	'\ee38';
+// $evo-data-table-sort-icon-asc-icon: 		'\edc4';
+// $evo-data-table-sort-icon-desc-icon: 	'\edc6';
+// $evo-data-table-sort-icons-disabled-color: $onyx-dark-30;
+// $evo-data-table-column-sorted-odd-row: scale-color($table-background, $lightness: -5%);
+// $evo-data-table-column-sorted-odd-row-hover: scale-color($table-background, $lightness: -10%);
+// $evo-data-table-column-sorted-even-row: scale-color($table-background, $lightness: -15%);
+// $evo-data-table-column-sorted-even-row-hover: scale-color($table-background, $lightness: -20%);
+
+// Data table add-ons (Evo only)
+// $evo-data-table-total-subtotal-font-family: $evo-font-medium-stack;
+// $evo-data-table-subtotal-font-color: 	$white;
+// $evo-data-table-total-font-color: 		$white;
+
+
+// DATEPICKER
+// ------------------------------------------------------------------------------------------
+// $evo-datepicker-icon-font-family: 		$evo-icon-font-stack;
+// $evo-datepicker-border-radius: 			$global-radius;
+// $evo-datepicker-max-width: 				rem-calc(268);
+// $evo-datepicker-margin-top: 				rem-calc(5);
+// $evo-datepicker-padding: 				rem-calc(5 4);
+// $evo-datepicker-background-color: 		$white;
+// $evo-datepicker-border: 					1px solid $evo-secondary-color;
+// $evo-datepicker-th-font-color: 			$onyx-dark-80;
+// $evo-datepicker-th-padding: 				rem-calc(7 3);
+// $evo-datepicker-link-color: 				$onyx-dark-70;
+// $evo-datepicker-link-padding: 			rem-calc(7);
+// $evo-datepicker-hdr-background-color: 	$onyx-dark-14;
+// $evo-datepicker-hdr-padding: 			rem-calc(4 0);
+// $evo-datepicker-hdr-nav-icon-color: 		$onyx-dark-50;
+// $evo-datepicker-hdr-nav-icon-prev: 		'\edc7';
+// $evo-datepicker-hdr-nav-icon-next: 		'\edc5';
+// $evo-datepicker-hdr-font-color: 			$onyx-dark-80;
+// $evo-datepicker-hdr-font-family: 		$evo-font-medium-stack;
+// $evo-datepicker-current-day-background-color: $evo-primary-color;
+// $evo-datepicker-current-day-font-family: $evo-font-medium-stack;
+// $evo-datepicker-current-day-font-color: 	$white;
+// $evo-datepicker-today-background-color: 	$onyx-dark-70;
+// $evo-datepicker-today-font-family: 		$evo-font-medium-stack;
+// $evo-datepicker-today-font-color: 		$onyx-dark-14;
+// $evo-datepicker-hover-background-color: 	$evo-secondary-color;
+// $evo-datepicker-hover-font-color: 		$onyx-dark-80;
+// $evo-datepicker-unselectable-font-color: $onyx-dark-30;
+// $evo-datepicker-unselectable-background-color: $white;
+// $evo-datepicker-unselectable-border: 	1px solid $evo-secondary-color;
+// $evo-datepicker-multi-max-width: 		rem-calc(536);
+// $evo-datepicker-input-icon-position-top: 12px;
+// $evo-datepicker-input-icon-margin-left: 	rem-calc(-24);
+// $evo-datepicker-input-icon-size: 		rem-calc(16);
+// $evo-datepicker-input-icon: 				'\ea62';
+// $evo-datepicker-input-icon-color: 		$onyx-dark-50;
+// $evo-datepicker-input-icon-hover-background-color: $transparent;
+// $evo-datepicker-input-min-width: 		rem-calc(110);
+
+
+// LABELS
+// ------------------------------------------------------------------------------------------
+// $evo-label-alert-icon-color: 			$garnet-dark;
+// $evo-label-success-icon-color: 			$emerald-dark;
+// $evo-label-warning-icon-color: 			$topaz-dark;
+
+
+// OFF-CANVAS
+// ------------------------------------------------------------------------------------------
+// $evo-off-canvas-title-bar-box-shadow: 	false;
+// $evo-off-canvas-title-bar-box-shadow-horizontal: $evo-base-shadow-horizontal;
+// $evo-off-canvas-title-bar-box-shadow-vertical: $evo-base-shadow-vertical;
+// $evo-off-canvas-title-bar-box-shadow-blur: $evo-base-shadow-blur;
+// $evo-off-canvas-title-bar-box-shadow-spread: $evo-base-shadow-spread;
+// $evo-off-canvas-title-bar-box-shadow-color: $evo-base-shadow-color;
+// $evo-off-canvas-title-bar-background-color: $evo-primary-color;
+// $evo-off-canvas-title-bar-color: 		$white;
+// $evo-off-canvas-title-bar-height: 		rem-calc(55);
+// $evo-off-canvas-title-bar-title-text-align: center;
+// $evo-off-canvas-title-bar-title-padding: rem-calc(0 10);
+// $evo-off-canvas-title-bar-title-font-size: rem-calc(18);
+// $evo-off-canvas-title-bar-title-font-family: $evo-font-medium-stack;
+// $evo-off-canvas-title-bar-title-letter-spacing: rem-calc(3);
+// $evo-off-canvas-title-bar-title-color: 	$white;
+// $evo-off-canvas-title-bar-title-text-transform: uppercase;
+// $evo-off-canvas-title-bar-title-image-margin: rem-calc(-3 0 0 0);
+// $evo-off-canvas-title-bar-icon-font-size: rem-calc(24);
+// $evo-off-canvas-title-bar-icon-color: 	$white;
+// $evo-off-canvas-title-bar-icon-position-top: 0;
+// $evo-off-canvas-title-bar-icon-position-left: 0;
+// $evo-off-canvas-title-bar-icon-hover-color: $white;
+// $evo-off-canvas-label-background-color: 	$evo-quaternary-color;
+// $evo-off-canvas-label-color: 			$white;
+// $evo-off-canvas-label-font-family: 		$evo-base-font-family;
+// $evo-off-canvas-label-font-size: 		$evo-base-small-font-size;
+// $evo-off-canvas-label-line-height: 		1;
+// $evo-off-canvas-label-font-family: 		$evo-base-font-family;
+// $evo-off-canvas-label-letter-spacing: 	rem-calc(3);
+// $evo-off-canvas-label-text-transform: 	uppercase;
+// $evo-off-canvas-label-padding: 			rem-calc(22 24);
+// $evo-off-canvas-item-anchor-color: 		$evo-tertiary-color;
+// $evo-off-canvas-item-anchor-font-family: $evo-base-font-family;
+// $evo-off-canvas-item-anchor-font-size: 	$evo-base-font-size;
+// $evo-off-canvas-item-anchor-line-height: 1.25;
+// $evo-off-canvas-item-anchor-letter-spacing: normal;
+// $evo-off-canvas-item-anchor-text-transform: none;
+// $evo-off-canvas-item-anchor-padding: 	rem-calc(17 24);
+// $evo-off-canvas-item-anchor-border: 		1px solid $onyx-dark-14;
+// $evo-off-canvas-item-anchor-icon-font-family: $evo-icon-font-stack;
+// $evo-off-canvas-item-anchor-icon-font-size: $evo-base-font-size;
+// $evo-off-canvas-item-anchor-icon-position-top: 0;
+// $evo-off-canvas-back-background-color: 	$evo-tertiary-color;
+// $evo-off-canvas-back-color: 				$evo-off-canvas-label-color;
+// $evo-off-canvas-back-font-family: 		$evo-base-font-family;
+// $evo-off-canvas-back-font-size: 			$evo-off-canvas-label-font-size;
+// $evo-off-canvas-back-line-height: 		$evo-off-canvas-label-line-height;
+// $evo-off-canvas-back-letter-spacing: 	$evo-off-canvas-label-letter-spacing;
+// $evo-off-canvas-back-text-transform: 	$evo-off-canvas-label-text-transform;
+// $evo-off-canvas-back-padding: 			$evo-off-canvas-label-padding;
+// $evo-off-canvas-back-icon-font-family: 	$evo-icon-font-stack;
+// $evo-off-canvas-back-icon-position-top: 	-1px;
+// $evo-off-canvas-left-item-anchor-padding-right: rem-calc(40);
+// $evo-off-canvas-left-item-submenu-parent-anchor-padding-right: rem-calc(14);
+// $evo-off-canvas-left-item-submenu-parent-icon: '\edc5';
+// $evo-off-canvas-left-item-submenu-parent-icon-margin-left: rem-calc(5);
+// $evo-off-canvas-left-back-icon: 			'\edc7';
+// $evo-off-canvas-left-back-icon-margin-right: 0;
+// $evo-off-canvas-left-back-icon-position-left: -5px;
+// $evo-off-canvas-left-back-icon-width: 	rem-calc(16);
+// $evo-off-canvas-right-item-submenu-parent-anchor-padding: rem-calc(16 24);
+// $evo-off-canvas-right-item-submenu-parent-icon: '\edc7';
+// $evo-off-canvas-right-item-submenu-parent-icon-position-top: 1px;
+// $evo-off-canvas-right-item-submenu-parent-icon-position-left: -5px;
+// $evo-off-canvas-right-item-submenu-parent-icon-margin-right: 0;
+// $evo-off-canvas-right-back-icon: 		'\edc5';
+// $evo-off-canvas-right-back-icon-margin-left: rem-calc(2);
+// $evo-off-canvas-right-back-icon-width: 	$evo-off-canvas-left-back-icon-width;
+
+
+// PAGINATION
+// ------------------------------------------------------------------------------------------
+// $evo-pagination-icon-font-family: 		$evo-icon-font-stack;
+// $evo-pagination-icon-font-size: 			rem-calc(12);
+// $evo-pagination-icon-position-top: 		1px;
+// $evo-pagination-icon-previous: 			'\edc7';
+// $evo-pagination-icon-previous-position-left: -4px;
+// $evo-pagination-icon-next: 				'\edc5';
+// $evo-pagination-icon-next-position-right: 4px;
+
+
+// SLIDER
+// ------------------------------------------------------------------------------------------
+// $evo-slider-container-padding: 			rem-calc(12 10 9 10);
+
+// HEADER
+// $evo-slider-header-margin-bottom: 		rem-calc(15);
+// $evo-slider-header-value-font-color: 	$onyx-dark-50;
+// $evo-slider-header-value-font-size: 		rem-calc(14);
+// $evo-slider-header-value-font-padding-left: rem-calc(5);
+
+// SLIDER
+// $evo-slider-border-radius: 				0;
+// $evo-slider-background-color: 			$onyx-dark-10;
+// $evo-slider-range-background-color: 		$onyx-dark-30;
+// $evo-slider-height: 						rem-calc(6);
+// $evo-slider-width: 						100%;
+
+// SLIDER HANDLE
+// $evo-slider-handle-border-radius: 		rem-calc(30);
+// $evo-slider-handle-background-color: 	$onyx-dark-50;
+// $evo-slider-handle-border-size: 			rem-calc(3);
+// $evo-slider-handle-border-style: 		solid;
+// $evo-slider-handle-border-color: 		$white;
+// $evo-slider-handle-shadow-horizontal: 	0;
+// $evo-slider-handle-shadow-vertical: 		rem-calc(1);
+// $evo-slider-handle-shadow-blur: 			rem-calc(3);
+// $evo-slider-handle-shadow-spread: 		0;
+// $evo-slider-handle-shadow-color: 		$black;
+// $evo-slider-handle-height: 				rem-calc(24);
+// $evo-slider-handle-width: 				rem-calc(24);
+// $evo-slider-handle-margin-left: 			rem-calc(-11);
+// $evo-slider-handle-position-top: 		-10px;
+// $evo-slider-handle-position-top-ie9: 	-11px;
+
+// SLIDER TICK MARKS
+// $evo-slider-tick-marker-margin: 			rem-calc(3 0 0 0);
+// $evo-slider-tick-marker-width: 			rem-calc(1);
+// $evo-slider-tick-marker-height: 			rem-calc(10);
+// $evo-slider-tick-marker-color: 			$evo-slider-background-color;
+// $evo-slider-tick-marker-container-margin-top: rem-calc(7);
+// $evo-slider-tick-marker-number-font-size: $small-font-size;
+// $evo-slider-tick-marker-number-min-position-left: -5px;
+// $evo-slider-tick-marker-number-max-position-right: -10px;
+// $evo-slider-tick-marker-min-max-margin: 	rem-calc(-28 0 0 0);
+// $evo-slider-tick-marker-min-position-left: 5px;
+// $evo-slider-tick-marker-max-position-right: 10px;
+
+
+// TABS
+// ------------------------------------------------------------------------------------------
+// $evo-tabs-global-border-radius: 			$evo-base-radius;
+// $evo-tabs-item-font-color: 				$evo-base-font-color;
+// $evo-tabs-item-background-color: 		$evo-secondary-color;
+// $evo-tabs-panel-border: 					1px solid $onyx-dark-30;
+
+
+// TOP BAR
+// ------------------------------------------------------------------------------------------
+// $evo-top-bar-box-shadow: 				false;
+// $evo-top-bar-box-shadow-horizontal: 		$evo-base-shadow-horizontal;
+// $evo-top-bar-box-shadow-vertical: 		$evo-base-shadow-vertical;
+// $evo-top-bar-box-shadow-blur: 			$evo-base-shadow-blur;
+// $evo-top-bar-box-shadow-spread: 			$evo-base-shadow-spread;
+// $evo-top-bar-box-shadow-color: 			$evo-base-shadow-color;
+// $evo-top-bar-height: 					$evo-base-navbar-height;
+// $evo-top-bar-background: 				$evo-primary-color;
+// $evo-top-bar-submenu-background: 		$evo-tertiary-color;
+// $evo-top-bar-anchor-decoration: 			none;
+// $evo-top-bar-icon-font-family: 			$evo-icon-font-stack;
+// $evo-top-bar-title-padding: 				0 $evo-base-padding;
+// $evo-top-bar-title-font-family: 			$evo-font-medium-stack;
+// $evo-top-bar-title-font-size: 			rem-calc(18);
+// $evo-top-bar-title-letter-spacing: 		rem-calc(3);
+// $evo-top-bar-title-color: 				$white;
+// $evo-top-bar-title-text-transform: 		uppercase;
+// $evo-top-bar-title-sub-font-family: 		$evo-base-font-family;
+// $evo-top-bar-title-image-position-top: 	-1px;
+// $evo-top-bar-title-image-position-left: 	0;
+// $evo-top-bar-dropdown-font-family: 		$evo-base-font-family;
+// $evo-top-bar-dropdown-border: 			0;
+// $evo-top-bar-dropdown-border-radius: 	0;
+// $evo-top-bar-dropdown-box-shadow-horizontal: $evo-base-shadow-horizontal;
+// $evo-top-bar-dropdown-box-shadow-vertical: $evo-base-shadow-vertical;
+// $evo-top-bar-dropdown-box-shadow-blur: $evo-base-shadow-blur;
+// $evo-top-bar-dropdown-box-shadow-spread: $evo-base-shadow-spread;
+// $evo-top-bar-dropdown-box-shadow-color: $evo-base-shadow-color;
+// $evo-top-bar-dropdown-min-width: 		auto;
+// $evo-top-bar-dropdown-white-space: 		nowrap;
+// $evo-top-bar-dropdown-item-font-family: 	$evo-base-font-family;
+// $evo-top-bar-dropdown-item-border: 		0;
+// $evo-top-bar-dropdown-item-line-height: 	$evo-top-bar-height;
+// $evo-top-bar-dropdown-item-active-background: scale-color($evo-top-bar-submenu-background, $saturation: -5%, $lightness: -15%);
+// $evo-top-bar-dropdown-item-hover-background: scale-color($evo-top-bar-submenu-background, $saturation: -30%, $lightness: 15%);
+// $evo-top-bar-dropdown-label-background: 	scale-color($evo-top-bar-submenu-background, $saturation: -10%, $lightness: 10%);
+// $evo-top-bar-dropdown-label-white-space: nowrap;
+// $evo-top-bar-dropdown-label-color: 		$white;
+// $evo-top-bar-dropdown-label-font-family: $evo-font-medium-stack;
+// $evo-top-bar-dropdown-label-font-size: 	rem-calc(12);
+// $evo-top-bar-dropdown-label-line-height: 1;
+// $evo-top-bar-dropdown-label-padding: 	0.65rem $evo-base-padding ($evo-base-padding/2) $evo-base-padding;
+// $evo-top-bar-dropdown-label-text-transform: uppercase;
+// $evo-top-bar-dropdown-anchor-color: 		scale-color($evo-top-bar-submenu-background, $saturation: -30%, $lightness: 60%);
+// $evo-top-bar-dropdown-anchor-padding: 	$evo-base-padding;
+// $evo-top-bar-dropdown-anchor-hover-color: $white;
+// $evo-top-bar-dropdown-anchor-icon-font-size: rem-calc(24);
+// $evo-top-bar-dropdown-anchor-with-icon-position-top: -2px;
+// $evo-top-bar-dropdown-anchor-active-border: true;
+// $evo-top-bar-dropdown-anchor-active-border-width: rem-calc(3);
+// $evo-top-bar-dropdown-anchor-active-border-color: $evo-quinary-color;
+// $evo-top-bar-dropdown-anchor-active-color: $white;
+// $evo-top-bar-dropdown-anchor-active-background: scale-color($evo-top-bar-background, $saturation: -40%, $lightness: 20%);
+// $evo-top-bar-dropdown-submenu-parent-padding-right: rem-calc(40);
+// $evo-top-bar-dropdown-submenu-parent-icon: '\edc6';
+// $evo-top-bar-dropdown-submenu-parent-icon-position-top: 0;
+// $evo-top-bar-dropdown-submenu-parent-icon-position-right: 30px;
+// $evo-top-bar-dropdown-submenu-parent-submenu-anchor-padding-right: rem-calc(40);
+// $evo-top-bar-dropdown-submenu-parent-submenu-icon-position-top: 1px;
+// $evo-top-bar-dropdown-submenu-parent-submenu-icon-position-right: 28px;
+// $evo-top-bar-dropdown-submenu-parent-submenu-opens-right-icon: '\edc5';
+// $evo-top-bar-dropdown-submenu-parent-submenu-opens-left-icon: '\edc7';
+// $evo-top-bar-mega-menu-padding: 			$evo-base-padding;
+// $evo-top-bar-mega-menu-background-color: $evo-secondary-color;
+// $evo-top-bar-mega-menu-max-width: 		100%;

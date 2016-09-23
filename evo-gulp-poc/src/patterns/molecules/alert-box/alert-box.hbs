@@ -1,0 +1,13 @@
+{{!--
+text: your content
+type: alert, warning, success, custom
+custom-icon-class: icon class of custom icomoon icon when custom type is used
+custom-class: your custom class
+form-alert: set to [TRUE] if using alert box along with form validation
+--}}
+<!-- {{uppercase type}} BOX - BEGINS -->
+<div class="callout evo-callout evo-alert-box{{#is type 'warning'}} warning{{/is}}{{#is type 'success'}} success{{/is}}{{#is type 'alert'}} alert{{/is}}{{#if custom-class}} {{ custom-class }}{{/if}}" data-closable{{#if form-alert}} data-abide-error{{/if}} aria-live="assertive" role="alertdialog"{{#if form-alert}} style="display: none;"{{/if}}>
+	<i class="{{#is type 'warning'}}evo-icon-warning2 {{/is}}{{#is type 'success'}}evo-icon-checkmark-circle {{/is}}{{#is type 'alert'}}evo-icon-notification2 {{/is}}{{#is type 'custom'}}{{ custom-icon-class }} {{/is}}evo-icon-position-left"></i>{{#if text}}{{{text}}}{{else}}Message text would go here&hellip;{{/if}}
+	{{> close-button}}
+</div>
+<!-- {{uppercase type}} BOX - ENDS -->

@@ -1,0 +1,144 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Global Partial
+//-------------------------------------------------------------------------------------------
+
+// ==========================================================================================
+// GLOBAL IMPORTS
+// ==========================================================================================
+
+@import	"global/colors";
+@import	"global/mixins";
+@import	"global/util";
+
+
+// ==========================================================================================
+// GLOBAL VARIABLES
+// ==========================================================================================
+
+// COLOR PALETTE
+$evo-primary-color:							$sapphire-dark !default;
+$evo-secondary-color:						$onyx-dark-6 !default;
+$evo-tertiary-color:						$sapphire-medium !default;
+$evo-quaternary-color:						$sapphire-bright !default;
+$evo-quinary-color:							$sapphire-light !default;
+$evo-alert-color:							#EF4E45 !default;
+$evo-success-color:							#72BE44 !default;
+$evo-warning-color:							#FCC770 !default;
+$evo-info-color:							#A6E2EF !default;
+$evo-highlight-color:						#F7F0B2 !default;
+
+$system-color-palette: (
+	alert-color: 							(color: $evo-alert-color),
+	success-color: 							(color: $evo-success-color),
+	warning-color: 							(color: $evo-warning-color),
+	info-color: 							(color: $evo-info-color),
+	highlight-color: 						(color: $evo-highlight-color)
+);
+
+// GRID
+$evo-base-grid-width:						rem-calc(980) !default;
+
+// BODY
+$evo-base-body-background:					$white !default;
+
+// LAYOUT
+$evo-base-margin:							1rem !default;
+$evo-base-padding:							1rem !default;
+
+// RADIUS
+$evo-base-radius:							3px !default;
+
+// SHADOWS
+$evo-base-shadow-base-color: 				$black !default;
+$evo-base-shadow-horizontal: 				0 !default;
+$evo-base-shadow-vertical: 				 	3px !default;
+$evo-base-shadow-blur: 				 		5px !default;
+$evo-base-shadow-spread: 				 	0 !default;
+$evo-base-shadow-color:						rgba($evo-base-shadow-base-color, .25) !default;
+
+// NAVIGATION BARS (OFF-CANVAS & TOP BAR)
+$evo-base-navbar-height:					rem-calc(55) !default;
+
+// Z-INDEX MASTER LIST
+// Used for a bird's eye view of components dependent on the z-axis
+$evo-base-zindex-slider:					10 !default;
+$evo-base-zindex-slider-handle:				11 !default;
+$evo-base-zindex-datepicker:				9000 !default;
+$evo-base-zindex-autocomplete:				9001 !default;
+
+
+// TYPOGRAPHY
+// ------------------------------------------------------------------------------------------
+$evo-base-font-file-path:					"../fonts" !default;
+$evo-base-font-stack:						arial, Tahoma, Geneva, sans-serif !default;
+
+// FONT STACKS
+
+	// Thin
+	$evo-font-thin-family:						proxima_nova_ththin !default;
+	$evo-font-thin-file-path:					"#{$evo-base-font-file-path}/ProximaNova-Thin-webfont" !default;
+	$evo-font-thin-stack:						"#{$evo-font-thin-family}", $evo-base-font-stack !default;
+
+	// Regular
+	$evo-font-regular-family:					proxima_nova_rgregular !default;
+	$evo-font-regular-file-path:				"#{$evo-base-font-file-path}/ProximaNova-Reg-webfont" !default;
+	$evo-font-regular-stack:					"#{$evo-font-regular-family}", $evo-base-font-stack !default;
+
+	// Italic
+	$evo-font-italic-family:					proxima_novaregular_italic !default;
+	$evo-font-italic-file-path:					"#{$evo-base-font-file-path}/ProximaNova-RegIt-webfont" !default;
+	$evo-font-italic-stack:						"#{$evo-font-italic-family}", $evo-base-font-stack !default;
+
+	// Medium
+	$evo-font-medium-family:					proxima_nova_ltsemibold !default;
+	$evo-font-medium-file-path:					"#{$evo-base-font-file-path}/ProximaNova-Sbold-webfont" !default;
+	$evo-font-medium-stack:						"#{$evo-font-medium-family}", $evo-base-font-stack !default;
+
+	// Bold
+	$evo-font-bold-family:						proxima_nova_rgbold !default;
+	$evo-font-bold-file-path:					"#{$evo-base-font-file-path}/ProximaNova-Bold-webfont" !default;
+	$evo-font-bold-stack:						"#{$evo-font-bold-family}", $evo-base-font-stack !default;
+
+	// Bold Italic
+	$evo-font-bold-italic-family:				proxima_novabold_italic !default;
+	$evo-font-bold-italic-file-path:			"#{$evo-base-font-file-path}/ProximaNova-BoldIt-webfont" !default;
+	$evo-font-bold-italic-stack:				"#{$evo-font-bold-italic-family}", $evo-base-font-stack !default;
+
+// ICON FONT STACKS
+
+	// Core icon font set
+	$evo-icon-font-family:						evo_icon_font !default;
+	$evo-icon-font-file-path:					"#{$evo-base-font-file-path}/evo-icon-font" !default;
+	$evo-icon-font-stack:						"#{$evo-icon-font-family}" !default;
+
+	// Application icon font set
+	$evo-icon-app-font-family:					evo_icon_font_app !default;
+	$evo-icon-app-font-file-path:				"#{$evo-base-font-file-path}/evo-icon-font-app" !default;
+	$evo-icon-app-font-stack:					"#{$evo-icon-app-font-family}" !default;
+
+// GLOBAL
+$evo-base-font-color:						$black !default;
+$evo-base-font-size:						rem-calc(16) !default;
+$evo-base-line-height:						1.5 !default;
+$evo-base-small-font-size:					rem-calc(13) !default;
+$evo-base-font-family:						$evo-font-regular-stack !default;
+$evo-base-font-antialiased:					true !default;
+
+// HEADERS
+$evo-base-header-color:						inherit !default;
+
+// LINKS
+$evo-base-anchor-color: 					$evo-primary-color;
+$evo-base-anchor-color-hover: 				scale-color($evo-base-anchor-color, $lightness: -14%);
+$evo-base-anchor-text-decoration:			none;
+$evo-base-anchor-text-decoration-hover:		underline;
+
+
+// TABLE
+// ------------------------------------------------------------------------------------------
+$evo-base-table-color:						$onyx-dark-2 !default;
+
+
+// REVEAL
+// ------------------------------------------------------------------------------------------
+$evo-base-reveal-background:				$white !default;

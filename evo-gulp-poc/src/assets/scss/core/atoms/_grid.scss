@@ -1,0 +1,29 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Grid Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+
+
+@if $use-grid == true{
+
+	// ==========================================================================================
+	// HELPERS
+	// ==========================================================================================
+
+	// CONTAIN TO GRID
+	// Apply class to element to contain its width to the grid row max-width ($grid-row-width, a foundation variable) and center it on the page.
+	.evo-contain-to-grid					{
+											@include clearfix;
+											max-width: $grid-row-width !important;
+											margin: 0 auto;
+											}
+
+	// FOUNDATION GRID FIX FOR NESTED ROWS INSIDE EXPANDED ROWS
+	// http://stackoverflow.com/questions/35508083/zurb-foundation-6-nested-expanded-grid-with-no-padding
+	.row.expanded .row 						{@include grid-row-nest($grid-column-gutter);}
+
+}//endif

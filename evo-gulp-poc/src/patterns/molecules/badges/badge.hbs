@@ -1,0 +1,12 @@
+{{!--
+background-color: background color, for example: sapphire-dark
+custom-class: your custom class
+font-color: font color, for example: sapphire-dark
+icon-class: icon class of custom icomoon icon
+size: small, medium, large
+system-color: primary, secondary, alert, success, warning
+text: your content
+--}}
+<!-- BADGE - BEGINS -->
+<span class="badge {{#if system-color}}{{system-color}} {{/if}}evo-badge{{#if custom-class}} {{custom-class}}{{/if}}"{{#if size}} data-evo-badge-size="{{size}}"{{/if}}{{#if font-color}} data-evo-font-color="{{font-color}}"{{/if}}{{#if background-color}} data-evo-background-color="{{background-color}}"{{/if}}>{{#if text}}{{{text}}}{{/if}}{{#if icon-class}}<i class="{{icon-class}}"></i>{{/if}}</span>
+<!-- BADGE - ENDS -->

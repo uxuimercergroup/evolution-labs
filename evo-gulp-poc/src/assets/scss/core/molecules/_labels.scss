@@ -1,0 +1,37 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Labels Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-label-alert-icon-color: $garnet-dark !default;
+$evo-label-success-icon-color: $emerald-dark !default;
+$evo-label-warning-icon-color: $topaz-dark !default;
+
+
+@if $use-labels == true{
+
+	// LABELS
+	.evo-label		{
+		[class^="evo-icon-"]
+						{
+						font-size: inherit;
+						color: inherit;
+						top: 1px;
+						}
+		&.alert			{
+			[class^="evo-icon-"]
+							{color: $evo-label-alert-icon-color;}
+						}
+		&.success		{
+			[class^="evo-icon-"]
+							{color: $evo-label-success-icon-color;}
+						}
+		&.warning		{
+			[class^="evo-icon-"]
+							{color: $evo-label-warning-icon-color;}
+						}
+					}
+
+}//endif

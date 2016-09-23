@@ -1,0 +1,6 @@
+{{!--
+class: your custom class
+for: for attribute for label to connect to id of other element label is for
+text: your content
+--}}
+<label{{#if class}} class="{{class}}"{{/if}}{{#if for}} for="{{for}}"{{/if}}>{{#if text}}{{{text}}}{{else}}Input Label{{/if}}</label>

@@ -1,0 +1,75 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution - Core v{{ evo_meta_version }}
+{{ social_media_badges_meta_name }} v{{ social_media_badges_meta_version }} - SASS
+DATE: {{ social_media_badges_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+--------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+//
+// @core sass imports - IMPORTANT: DO NOT MODIFY!
+//
+@import	"../../../assets/scss/core/global";
+@import	"../../../assets/scss/core/foundation-settings";
+@import	"../../../assets/scss/core/settings";
+
+//
+// @variables - IMPORTANT: DO NOT MODIFY! MODIFY VARIABLE OVERRIDES ONLY.
+//
+
+// Organism default variables
+$evo-social-media-badge-font-color: $evo-primary-color !default;
+$evo-social-media-badge-font-color-hover: $evo-social-media-badge-font-color !default;
+$evo-social-media-badge-font-color-focus: $evo-social-media-badge-font-color !default;
+$evo-social-media-badge-font-color-visited: $evo-social-media-badge-font-color !default;
+
+//
+// @Product suite organism theme variables - IMPORTANT: DO NOT MODIFY!
+//
+
+// Product suite setting
+$evo-product: core;
+
+// Communications
+@if $evo-product == comm {
+
+	$evo-social-media-badge-font-color: $evo-primary-color;
+	$evo-social-media-badge-font-color-hover: $evo-social-media-badge-font-color;
+	$evo-social-media-badge-font-color-focus: $evo-social-media-badge-font-color;
+	$evo-social-media-badge-font-color-visited: $evo-social-media-badge-font-color;
+
+// Benefits Portals
+} @else if $evo-product == bp {
+
+	$evo-social-media-badge-font-color: $evo-primary-color;
+	$evo-social-media-badge-font-color-hover: $evo-social-media-badge-font-color;
+	$evo-social-media-badge-font-color-focus: $evo-social-media-badge-font-color;
+	$evo-social-media-badge-font-color-visited: $evo-social-media-badge-font-color;
+
+}
+
+//
+// @variable overrides
+//
+// $evo-social-media-badge-font-color: $onyx-medium;
+// $evo-social-media-badge-font-color-hover: $evo-social-media-badge-font-color;
+// $evo-social-media-badge-font-color-focus: $evo-social-media-badge-font-color;
+// $evo-social-media-badge-font-color-visited: $evo-social-media-badge-font-color;
+
+
+// SOCIAL MEDIA BADGES - BEGINS
+	.evo-social-media-badges-ctn 
+						{
+
+		a[class^="evo-icon-"]
+							{
+							color: $evo-social-media-badge-font-color;
+			&:hover				{color: $evo-social-media-badge-font-color-hover;}
+			&:focus				{color: $evo-social-media-badge-font-color-focus;}
+			&:visited			{color: $evo-social-media-badge-font-color-visited;}
+							}
+
+						}
+// SOCIAL MEDIA BADGES - ENDS

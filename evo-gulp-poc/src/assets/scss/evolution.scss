@@ -1,0 +1,55 @@
+/*------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }} - Core CSS
+DATE: {{ evo_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+-------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+// Evolution global partials
+@import	"core/global";
+
+// Foundation custom settings partial for Evolution
+@import "core/foundation-settings";
+
+// Evolution settings
+@import "core/settings";
+
+// Import Foundation framework from package manager
+@import "foundation";
+
+// Export mixin which prints out the Sass for everything in Foundation
+@include foundation-everything();
+
+// Evolution atoms partials
+@import	"core/atoms/buttons";
+@import	"core/atoms/callout";
+@import	"core/atoms/colors";
+@import	"core/atoms/form";
+@import	"core/atoms/grid";
+@import	"core/atoms/helpers";
+@import	"core/atoms/icons";
+@import	"core/atoms/lists";
+@import	"core/atoms/tables";
+@import	"core/atoms/type";
+
+// Evolution molecules partials
+@import	"core/molecules/accordion";
+@import	"core/molecules/alert-boxes";
+@import	"core/molecules/autocomplete";
+@import	"core/molecules/badges";
+@import	"core/molecules/breadcrumbs";
+@import	"core/molecules/carousel";
+@import	"core/molecules/data-table";
+@import	"core/molecules/datepicker";
+@import	"core/molecules/dropdowns";
+@import	"core/molecules/labels";
+@import	"core/molecules/off-canvas";
+@import	"core/molecules/pagination";
+@import	"core/molecules/progress-bar";
+@import	"core/molecules/reveal";
+@import	"core/molecules/slider";
+@import	"core/molecules/tabs";
+@import	"core/molecules/tooltip";
+@import	"core/molecules/top-bar";

@@ -1,0 +1,216 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }}
+{{ item_selection_panel_meta_name }} v{{ item_selection_panel_meta_version }} - SASS
+DATE: {{ item_selection_panel_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+--------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+//
+// @core sass imports - IMPORTANT: DO NOT MODIFY!
+//
+@import	"../../../assets/scss/core/global";
+@import	"../../../assets/scss/core/foundation-settings";
+@import	"../../../assets/scss/core/settings";
+
+//
+// @variables - IMPORTANT: DO NOT MODIFY! MODIFY VARIABLE OVERRIDES ONLY.
+//
+
+// Organism default variables
+$evo-item-selection-panel-text-align: center !default;
+$evo-item-selection-panel-list-item-padding: rem-calc(15) !default;
+$evo-item-selection-panel-item-icon-border-radius: 100% !default;
+$evo-item-selection-panel-item-icon-border-width: rem-calc(2) !default;
+$evo-item-selection-panel-item-icon-border-style: solid !default;
+$evo-item-selection-panel-item-icon-border-color: $onyx-light !default;
+$evo-item-selection-panel-item-icon-font-color: $onyx-medium !default;
+$evo-item-selection-panel-item-icon-padding: rem-calc(22) !default;
+$evo-item-selection-panel-item-icon-small-padding: rem-calc(10) !default;
+$evo-item-selection-panel-item-icon-medium-padding: rem-calc(16) !default;
+$evo-item-selection-panel-item-icon-x-large-padding: rem-calc(28) !default;
+$evo-item-selection-panel-item-label-margin: rem-calc(10) auto 0 auto !default;
+$evo-item-selection-panel-item-label-font-family: $evo-base-font-family !default;
+$evo-item-selection-panel-item-label-font-size: rem-calc(16) !default;
+$evo-item-selection-panel-item-label-font-color: $onyx-bright !default;
+$evo-item-selection-panel-item-label-line-height: 1.25 !default;
+$evo-item-selection-panel-item-selected-icon-shadow-horizontal: 0 !default;
+$evo-item-selection-panel-item-selected-icon-shadow-vertical: rem-calc(2) !default;
+$evo-item-selection-panel-item-selected-icon-shadow-blur: rem-calc(6) !default;
+$evo-item-selection-panel-item-selected-icon-shadow-spread: 0 !default;
+$evo-item-selection-panel-item-selected-icon-shadow-color: $evo-base-shadow-color !default;
+$evo-item-selection-panel-item-selected-icon-border-color: $evo-primary-color !default;
+$evo-item-selection-panel-item-selected-icon-font-color: $white !default;
+$evo-item-selection-panel-item-selected-icon-background-color: $evo-primary-color !default;
+$evo-item-selection-panel-item-selected-label-font-family: $evo-font-medium-stack !default;
+$evo-item-selection-panel-item-selected-label-font-color: $evo-primary-color !default;
+$evo-item-selection-panel-photo-item-icon-padding: rem-calc(6) !default;
+$evo-item-selection-panel-photo-item-icon-width: rem-calc(80) !default;
+$evo-item-selection-panel-photo-item-icon-height: rem-calc(80) !default;
+$evo-item-selection-panel-photo-item-label-margin: rem-calc(8) auto 0 auto !default;
+
+//
+// @Product suite organism theme variables - IMPORTANT: DO NOT MODIFY!
+//
+
+// Product suite setting
+$evo-product: core;
+
+// Communications
+@if $evo-product == comm {
+
+	$evo-item-selection-panel-item-icon-border-color: $onyx-light;
+	$evo-item-selection-panel-item-icon-font-color: $evo-primary-color;
+	$evo-item-selection-panel-item-label-font-color: $onyx-bright;
+	$evo-item-selection-panel-item-selected-icon-border-color: $evo-primary-color;
+	$evo-item-selection-panel-item-selected-icon-font-color: $white;
+	$evo-item-selection-panel-item-selected-icon-background-color: $evo-primary-color;
+	$evo-item-selection-panel-item-selected-label-font-color: $evo-primary-color;
+
+// Benefits Portals
+} @else if $evo-product == bp {
+
+	$evo-item-selection-panel-item-icon-border-color: $onyx-light;
+	$evo-item-selection-panel-item-icon-font-color: $evo-primary-color;
+	$evo-item-selection-panel-item-label-font-color: $onyx-bright;
+	$evo-item-selection-panel-item-selected-icon-border-color: $evo-primary-color;
+	$evo-item-selection-panel-item-selected-icon-font-color: $white;
+	$evo-item-selection-panel-item-selected-icon-background-color: $evo-primary-color;
+	$evo-item-selection-panel-item-selected-label-font-color: $evo-primary-color;
+
+}
+
+//
+// @variable overrides
+//
+// $evo-item-selection-panel-text-align: center;
+// $evo-item-selection-panel-list-item-padding: rem-calc(15);
+// $evo-item-selection-panel-item-icon-border-radius: 100%;
+// $evo-item-selection-panel-item-icon-border-width: rem-calc(2);
+// $evo-item-selection-panel-item-icon-border-style: solid;
+// $evo-item-selection-panel-item-icon-border-color: $onyx-light;
+// $evo-item-selection-panel-item-icon-font-color: $onyx-medium;
+// $evo-item-selection-panel-item-icon-padding: rem-calc(22);
+// $evo-item-selection-panel-item-icon-small-padding: rem-calc(10);
+// $evo-item-selection-panel-item-icon-medium-padding: rem-calc(16);
+// $evo-item-selection-panel-item-icon-x-large-padding: rem-calc(28);
+// $evo-item-selection-panel-item-label-margin: rem-calc(10) auto 0 auto;
+// $evo-item-selection-panel-item-label-font-family: $evo-base-font-family;
+// $evo-item-selection-panel-item-label-font-size: rem-calc(16);
+// $evo-item-selection-panel-item-label-font-color: $onyx-bright;
+// $evo-item-selection-panel-item-label-line-height: 1.25;
+// $evo-item-selection-panel-item-selected-icon-shadow-horizontal: 0;
+// $evo-item-selection-panel-item-selected-icon-shadow-vertical: rem-calc(2);
+// $evo-item-selection-panel-item-selected-icon-shadow-blur: rem-calc(6);
+// $evo-item-selection-panel-item-selected-icon-shadow-spread: 0;
+// $evo-item-selection-panel-item-selected-icon-shadow-color: $evo-base-shadow-color;
+// $evo-item-selection-panel-item-selected-icon-border-color: $evo-primary-color;
+// $evo-item-selection-panel-item-selected-icon-font-color: $white;
+// $evo-item-selection-panel-item-selected-icon-background-color: $evo-primary-color;
+// $evo-item-selection-panel-item-selected-label-font-family: $evo-font-medium-stack;
+// $evo-item-selection-panel-item-selected-label-font-color: $evo-primary-color;
+// $evo-item-selection-panel-photo-item-icon-padding: rem-calc(6);
+// $evo-item-selection-panel-photo-item-icon-width: rem-calc(80);
+// $evo-item-selection-panel-photo-item-icon-height: rem-calc(80);
+// $evo-item-selection-panel-photo-item-label-margin: rem-calc(8) auto 0 auto;
+
+
+// ITEM SELECTION PANEL - BEGINS
+	.evo-item-selection-panel			{
+										text-align: $evo-item-selection-panel-text-align;
+
+	// ITEM SELECTION PANEL LIST - BEGINS
+		ul									{
+			li									{
+												padding-bottom: $evo-item-selection-panel-list-item-padding;
+												}
+											}
+	// ITEM SELECTION PANEL LIST - ENDS
+
+	// ITEM SELECTION PANEL ITEM - BEGINS
+		.evo-item-selection-panel-item		{
+											@include user-select(none);
+											cursor: pointer;
+			.evo-item-selection-panel-item-icon	{
+												@include border-radius($evo-item-selection-panel-item-icon-border-radius);
+												border: $evo-item-selection-panel-item-icon-border-width $evo-item-selection-panel-item-icon-border-style $evo-item-selection-panel-item-icon-border-color;
+												color: $evo-item-selection-panel-item-icon-font-color;
+												padding: $evo-item-selection-panel-item-icon-padding;
+												width: auto;
+				&.evo-icon-size-small				{padding: $evo-item-selection-panel-item-icon-small-padding;}
+				&.evo-icon-size-medium				{padding: $evo-item-selection-panel-item-icon-medium-padding;}
+				&.evo-icon-size-large				{padding: $evo-item-selection-panel-item-icon-padding;}
+				&.evo-icon-size-x-large				{padding: $evo-item-selection-panel-item-icon-x-large-padding;}
+												}
+			.evo-item-selection-panel-item-label
+												{
+												margin: $evo-item-selection-panel-item-label-margin;
+												font-family: $evo-item-selection-panel-item-label-font-family;
+												font-size: $evo-item-selection-panel-item-label-font-size;
+												color: $evo-item-selection-panel-item-label-font-color;
+												line-height: $evo-item-selection-panel-item-label-line-height;
+												display: block;
+												}
+			.evo-item-selection-panel-item-checkbox
+												{
+												position: absolute;
+												left: rem-calc(-9999);
+												width: 0;
+												height: 0;
+												}
+											}
+	// ITEM SELECTION PANEL ITEM - ENDS
+
+	// ITEM SELECTION PANEL ITEM SELECTED - BEGINS
+		.evo-item-selection-panel-item-selected
+											{
+			.evo-item-selection-panel-item-icon	{
+												@include box-shadow($evo-item-selection-panel-item-selected-icon-shadow-horizontal $evo-item-selection-panel-item-selected-icon-shadow-vertical $evo-item-selection-panel-item-selected-icon-shadow-blur $evo-item-selection-panel-item-selected-icon-shadow-spread $evo-item-selection-panel-item-selected-icon-shadow-color);
+												border-width: 0;
+												color: $evo-item-selection-panel-item-selected-icon-font-color;
+												padding: ($evo-item-selection-panel-item-icon-padding + $evo-item-selection-panel-item-icon-border-width);
+												background-color: $evo-item-selection-panel-item-selected-icon-background-color;
+				&.evo-icon-size-small				{padding: ($evo-item-selection-panel-item-icon-small-padding + $evo-item-selection-panel-item-icon-border-width);}
+				&.evo-icon-size-medium				{padding: ($evo-item-selection-panel-item-icon-medium-padding + $evo-item-selection-panel-item-icon-border-width);}
+				&.evo-icon-size-large				{padding: ($evo-item-selection-panel-item-icon-padding + $evo-item-selection-panel-item-icon-border-width);}
+				&.evo-icon-size-x-large				{padding: ($evo-item-selection-panel-item-icon-x-large-padding + $evo-item-selection-panel-item-icon-border-width);}
+												}
+			.evo-item-selection-panel-item-label
+												{
+												font-family: $evo-item-selection-panel-item-selected-label-font-family;
+												color: $evo-item-selection-panel-item-selected-label-font-color;
+												}
+											}
+	// ITEM SELECTION PANEL ITEM SELECTED - ENDS
+
+	// ITEM SELECTION PANEL ITEM SELECTED - PHOTO ICONS - BEGINS
+		&[data-evo-item-selection-panel-type="photo"]
+											{
+			.evo-item-selection-panel-item		{
+				.evo-item-selection-panel-item-icon	{
+													@include box-sizing(content-box);
+													padding: $evo-item-selection-panel-photo-item-icon-padding;
+													width: $evo-item-selection-panel-photo-item-icon-width;
+													height: $evo-item-selection-panel-photo-item-icon-height;
+													}
+				.evo-item-selection-panel-item-label
+													{
+													margin: $evo-item-selection-panel-photo-item-label-margin;
+													}
+												}
+
+			.evo-item-selection-panel-item-selected
+												{
+				.evo-item-selection-panel-item-icon	{
+													border-width: $evo-item-selection-panel-item-icon-border-width;
+													border-color: $evo-item-selection-panel-item-selected-icon-border-color;
+													background: none;
+													}
+												}	
+											}
+	// ITEM SELECTION PANEL ITEM SELECTED - PHOTO ICONS - ENDS
+
+										}
+// ITEM SELECTION PANEL - ENDS

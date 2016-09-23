@@ -1,0 +1,24 @@
+{{!--
+aria-describedby: clarify input's purpose
+class: custom class
+checked: set the default select checkbox [TRUE] is the value
+data-abide-ignore: input is ignored by Abide validation
+data-equalto: match a password field to another password field
+id: custom id
+input-autocomplete: on, off
+input-name: name used for radio and checkboxes
+input-title: title of the input
+input-value: custom value
+max: maximum number for type="number" input
+min: minimum number for type="number" input
+pattern: specifies a regular expression that the <input> element's value is checked against
+placeholder: placeholder text
+readonly: set input to be read only [TRUE] is the value
+required: if the field is going to be required and will use the abide validation [TRUE] is the value
+tabindex: the tab index order number
+type: text, radio, checkbox, etc.
+ui-autocomplete: set input to be used as a jQuery UI autocomplete text input
+ui-datepicker: set input to be used as a jQuery UI datepicker text input
+ui-datepicker-masked: set datepicker input to use input mask [TRUE] is the value
+--}}
+<input{{#if type}} type="{{type}}"{{/if}}{{#if class}} class="{{class}}"{{/if}}{{#if placeholder}} placeholder="{{placeholder}}"{{/if}}{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}{{#if input-title}} title="{{{input-title}}}"{{/if}}{{#if id}} id="{{id}}"{{/if}}{{#if input-name}} name="{{input-name}}"{{/if}}{{#if input-value}} value="{{input-value}}"{{/if}}{{#if checked}} checked{{/if}}{{#if readonly}} readonly{{/if}}{{#if input-autocomplete}} autocomplete="{{input-autocomplete}}"{{/if}}{{#if min}} min="{{min}}"{{/if}}{{#if max}} max="{{max}}"{{/if}}{{#if required}} required{{/if}}{{#if pattern}} pattern="{{pattern}}"{{/if}}{{#if aria-describedby}} aria-describedby="{{aria-describedby}}"{{/if}}{{#if data-equalto}} data-equalto="{{data-equalto}}"{{/if}}{{#if data-abide-ignore}} data-abide-ignore{{/if}}{{#if ui-autocomplete}} data-evo-autocomplete="{{ui-autocomplete}}"{{/if}}{{#if ui-datepicker}} data-evo-datepicker="{{ui-datepicker}}"{{/if}}{{#if ui-datepicker-masked}} data-evo-datepicker-masked{{/if}}>

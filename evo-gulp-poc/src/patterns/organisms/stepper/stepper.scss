@@ -1,0 +1,107 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }}
+{{ stepper_meta_name }} v{{ stepper_meta_version }} - SASS
+DATE: {{ stepper_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+--------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+//
+// @core sass imports - IMPORTANT: DO NOT MODIFY!
+//
+@import	"../../../assets/scss/core/global";
+@import	"../../../assets/scss/core/foundation-settings";
+@import	"../../../assets/scss/core/settings";
+
+//
+// @variables - IMPORTANT: DO NOT MODIFY! MODIFY VARIABLE OVERRIDES ONLY.
+//
+
+// Organism default variables
+$evo-stepper-item-border-radius: rem-calc(30) !default;
+$evo-stepper-item-margin: rem-calc(3 10 3 0) !default;
+$evo-stepper-item-width: rem-calc(14) !default;
+$evo-stepper-item-height: rem-calc(14) !default;
+$evo-stepper-item-background-color: $onyx-dark-20 !default;
+$evo-stepper-item-margin-last-child: 0 !default;
+$evo-stepper-item-complete-background-color: $onyx-dark-10 !default;
+$evo-stepper-item-active-margin: rem-calc(0 10 0 0) !default;
+$evo-stepper-item-active-width: rem-calc(20) !default;
+$evo-stepper-item-active-height: rem-calc(20) !default;
+$evo-stepper-item-active-background-color: $evo-primary-color !default;
+
+//
+// @Product organism theme variables - IMPORTANT: DO NOT MODIFY!
+//
+
+// Product setting
+$evo-product: core;
+
+// Communications
+@if $evo-product == comm {
+
+	$evo-stepper-item-background-color: $onyx-dark-20;
+	$evo-stepper-item-complete-background-color: $onyx-dark-10;
+	$evo-stepper-item-active-background-color: $evo-primary-color;
+
+// Benefits Portals
+} @else if $evo-product == bp {
+
+	$evo-stepper-item-background-color: $onyx-dark-20;
+	$evo-stepper-item-complete-background-color: $onyx-dark-10;
+	$evo-stepper-item-active-background-color: $evo-primary-color;
+
+}
+
+//
+// @variable overrides
+//
+// $evo-stepper-item-border-radius: rem-calc(30);
+// $evo-stepper-item-margin: rem-calc(3 10 3 0);
+// $evo-stepper-item-width: rem-calc(14);
+// $evo-stepper-item-height: rem-calc(14);
+// $evo-stepper-item-background-color: $onyx-dark-20;
+// $evo-stepper-item-margin-last-child: 0;
+// $evo-stepper-item-complete-background-color: $onyx-dark-10;
+// $evo-stepper-item-active-margin: rem-calc(0 10 0 0);
+// $evo-stepper-item-active-width: rem-calc(20);
+// $evo-stepper-item-active-height: rem-calc(20);
+// $evo-stepper-item-active-background-color: $evo-primary-color;
+
+
+// STEPPER - BEGINS
+	.evo-stepper					{
+									@include clearfix;
+
+	// STEPPER ITEM - BEGINS
+		.evo-stepper-item				{
+										@include border-radius($evo-stepper-item-border-radius);
+										display: block;
+										float: left;
+										margin: $evo-stepper-item-margin;
+										width: $evo-stepper-item-width;
+										height: $evo-stepper-item-height;
+										background-color: $evo-stepper-item-background-color;
+			&:last-child					{margin-right: $evo-stepper-item-margin-last-child;}
+										}
+
+		// STEPPER ITEM - COMPLETE - BEGINS
+			[data-evo-stepper-state="complete"]
+										{background-color: $evo-stepper-item-complete-background-color;}
+		// STEPPER ITEM - COMPLETE - ENDS
+
+		// STEPPER ITEM - ACTIVE - BEGINS
+			[data-evo-stepper-state="active"]
+										{
+										margin: $evo-stepper-item-active-margin;
+										width: $evo-stepper-item-active-width;
+										height: $evo-stepper-item-active-height;
+										background-color: $evo-stepper-item-active-background-color;
+										}
+		// STEPPER ITEM - ACTIVE - ENDS
+
+	// STEPPER ITEM - ENDS
+									}
+// STEPPER - ENDS

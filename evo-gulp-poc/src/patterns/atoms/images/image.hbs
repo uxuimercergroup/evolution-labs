@@ -1,0 +1,9 @@
+{{!--
+alt: alt text to show on hover of the image
+class: your custom class
+height: set the height of an image
+image-title: Custom title text for image
+src: image location
+width: set the width of a image
+--}}
+<img {{#if class}}class="{{class}}"{{/if}} src="{{assets}}/images/{{#if src}}{{src}}{{else}}placeholders/placeholder_square.png{{/if}}" {{#if alt}}alt="{{{alt}}}"{{/if}} {{#if width}}width="{{width}}"{{/if}} {{#if height}}height="{{height}}"{{/if}} {{#if image-title}}title="{{{image-title}}}"{{/if}}>

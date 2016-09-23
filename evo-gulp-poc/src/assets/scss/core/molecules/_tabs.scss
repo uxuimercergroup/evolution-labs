@@ -1,0 +1,46 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Tabs Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-tabs-global-border-radius: $evo-base-radius !default;
+$evo-tabs-item-font-color: $evo-base-font-color !default;
+$evo-tabs-item-background-color: $evo-secondary-color !default;
+$evo-tabs-panel-border: 1px solid $onyx-dark-30 !default;
+
+
+@if $use-tabs == true {
+
+	// TABS CONTAINER
+	.evo-tabs						{border: 0;}
+
+	// TABS TITLE
+	.evo-tabs-title					{
+									margin-right: rem-calc(3);
+		> a								{
+										@include border-radius($evo-tabs-global-border-radius $evo-tabs-global-border-radius 0 0);
+										background-color: $evo-tabs-item-background-color;
+										border: $evo-tabs-panel-border;
+										border-bottom: 0;
+										color: $evo-tabs-item-font-color;
+										line-height: 1.32;
+										text-decoration: none;
+			&:hover							{@include transition(background-color 0.3s ease-in-out);}
+										}
+		// ACTIVE TAB
+		> a:focus,
+		> a[aria-selected='true']		{
+										@include transition(background-color 0.5s ease-in-out);
+										position: relative;
+										top: 1px;
+										}
+									}
+
+	// TABS CONTENT
+	.evo-tabs-content				{
+									@include border-radius(0 $evo-tabs-global-border-radius $evo-tabs-global-border-radius $evo-tabs-global-border-radius);
+									border: $evo-tabs-panel-border;
+									}
+}

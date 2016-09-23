@@ -1,0 +1,323 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Off-canvas Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @notes
+//
+
+// Off-canvas is for small and medium media queries only, hence no desktop styles for large and up media queries
+// On large and up media queries, off-canvas menu and mobile header component are replaced by top bar
+
+
+//
+// @variables
+//
+$evo-off-canvas-title-bar-box-shadow: false !default;
+$evo-off-canvas-title-bar-box-shadow-horizontal: $evo-base-shadow-horizontal !default;
+$evo-off-canvas-title-bar-box-shadow-vertical: $evo-base-shadow-vertical !default;
+$evo-off-canvas-title-bar-box-shadow-blur: $evo-base-shadow-blur !default;
+$evo-off-canvas-title-bar-box-shadow-spread: $evo-base-shadow-spread !default;
+$evo-off-canvas-title-bar-box-shadow-color: $evo-base-shadow-color !default;
+$evo-off-canvas-title-bar-background-color: $evo-primary-color !default;
+$evo-off-canvas-title-bar-color: $white !default;
+$evo-off-canvas-title-bar-height: $evo-base-navbar-height !default;
+$evo-off-canvas-title-bar-title-text-align: center !default;
+$evo-off-canvas-title-bar-title-padding: rem-calc(0 10) !default;
+$evo-off-canvas-title-bar-title-font-size: rem-calc(18) !default;
+$evo-off-canvas-title-bar-title-font-family: $evo-font-medium-stack !default;
+$evo-off-canvas-title-bar-title-letter-spacing: rem-calc(3) !default;
+$evo-off-canvas-title-bar-title-color: $white !default;
+$evo-off-canvas-title-bar-title-text-transform: uppercase !default;
+$evo-off-canvas-title-bar-title-image-margin: rem-calc(-3 0 0 0) !default;
+$evo-off-canvas-title-bar-icon-font-size: rem-calc(24) !default;
+$evo-off-canvas-title-bar-icon-color: $white !default;
+$evo-off-canvas-title-bar-icon-position-top: 0 !default;
+$evo-off-canvas-title-bar-icon-position-left: 0 !default;
+$evo-off-canvas-title-bar-icon-hover-color: $white !default;
+$evo-off-canvas-label-background-color: $evo-quaternary-color !default;
+$evo-off-canvas-label-color: $white !default;
+$evo-off-canvas-label-font-family: $evo-base-font-family !default;
+$evo-off-canvas-label-font-size: $evo-base-small-font-size !default;
+$evo-off-canvas-label-line-height: 1 !default;
+$evo-off-canvas-label-font-family: $evo-base-font-family !default;
+$evo-off-canvas-label-letter-spacing: rem-calc(3) !default;
+$evo-off-canvas-label-text-transform: uppercase !default;
+$evo-off-canvas-label-padding: rem-calc(22 24) !default;
+$evo-off-canvas-item-anchor-color: $evo-tertiary-color !default;
+$evo-off-canvas-item-anchor-font-family: $evo-base-font-family !default;
+$evo-off-canvas-item-anchor-font-size: $evo-base-font-size !default;
+$evo-off-canvas-item-anchor-line-height: 1.25 !default;
+$evo-off-canvas-item-anchor-letter-spacing: normal !default;
+$evo-off-canvas-item-anchor-text-transform: none !default;
+$evo-off-canvas-item-anchor-padding: rem-calc(17 24) !default;
+$evo-off-canvas-item-anchor-border: 1px solid $onyx-dark-14 !default;
+$evo-off-canvas-item-anchor-icon-font-family: $evo-icon-font-stack !default;
+$evo-off-canvas-item-anchor-icon-font-size: $evo-base-font-size !default;
+$evo-off-canvas-item-anchor-icon-position-top: 0 !default;
+$evo-off-canvas-back-background-color: $evo-tertiary-color !default;
+$evo-off-canvas-back-color: $evo-off-canvas-label-color !default;
+$evo-off-canvas-back-font-family: $evo-base-font-family !default;
+$evo-off-canvas-back-font-size: $evo-off-canvas-label-font-size !default;
+$evo-off-canvas-back-line-height: $evo-off-canvas-label-line-height !default;
+$evo-off-canvas-back-letter-spacing: $evo-off-canvas-label-letter-spacing !default;
+$evo-off-canvas-back-text-transform: $evo-off-canvas-label-text-transform !default;
+$evo-off-canvas-back-padding: $evo-off-canvas-label-padding !default;
+$evo-off-canvas-back-icon-font-family: $evo-icon-font-stack !default;
+$evo-off-canvas-back-icon-position-top: -1px !default;
+$evo-off-canvas-left-item-anchor-padding-right: rem-calc(40) !default;
+$evo-off-canvas-left-item-submenu-parent-anchor-padding-right: rem-calc(14) !default;
+$evo-off-canvas-left-item-submenu-parent-icon: '\edc5' !default;
+$evo-off-canvas-left-item-submenu-parent-icon-margin-left: rem-calc(5) !default;
+$evo-off-canvas-left-back-icon: '\edc7' !default;
+$evo-off-canvas-left-back-icon-margin-right: 0 !default;
+$evo-off-canvas-left-back-icon-position-left: -5px !default;
+$evo-off-canvas-left-back-icon-width: rem-calc(16) !default;
+$evo-off-canvas-right-item-submenu-parent-anchor-padding: rem-calc(16 24) !default;
+$evo-off-canvas-right-item-submenu-parent-icon: '\edc7' !default;
+$evo-off-canvas-right-item-submenu-parent-icon-position-top: 1px !default;
+$evo-off-canvas-right-item-submenu-parent-icon-position-left: -5px !default;
+$evo-off-canvas-right-item-submenu-parent-icon-margin-right: 0 !default;
+$evo-off-canvas-right-back-icon: '\edc5' !default;
+$evo-off-canvas-right-back-icon-margin-left: rem-calc(2) !default;
+$evo-off-canvas-right-back-icon-width: $evo-off-canvas-left-back-icon-width !default;
+
+
+@if $use-off-canvas == true{
+
+	// OFF-CANVAS
+	.evo-off-canvas					{
+									overflow-y: hidden; // Fixes a bug with off-canvas and AniJS scroll reveal
+
+		// TITLE BAR
+		.title-bar						{
+										@if $evo-off-canvas-title-bar-box-shadow == true {
+											@include box-shadow($evo-off-canvas-title-bar-box-shadow-horizontal $evo-off-canvas-title-bar-box-shadow-vertical $evo-off-canvas-title-bar-box-shadow-blur $evo-off-canvas-title-bar-box-shadow-spread $evo-off-canvas-title-bar-box-shadow-color);
+										}
+										position: relative;
+										background: $evo-off-canvas-title-bar-background-color;
+										color: $evo-off-canvas-title-bar-color;
+										height: $evo-off-canvas-title-bar-height;
+										line-height: $evo-off-canvas-title-bar-height;
+
+			// TITLE BAR LEFT AND RIGHT ICON CONTAINERS
+			.title-bar-left,
+			.title-bar-right				{
+											float: none;
+											text-align: inherit;
+											height: $evo-off-canvas-title-bar-height;
+											width: $evo-off-canvas-title-bar-height;
+											position: absolute;
+											top: 0;
+											}
+			.title-bar-left					{left: 0;}
+			.title-bar-right				{right: 0;}
+			
+			// TITLE BAR TITLE
+			.title-bar-title				{
+											display: block;
+											position: absolute;
+											top: 0;
+											left: $evo-off-canvas-title-bar-height;
+											right: $evo-off-canvas-title-bar-height;
+											text-align: $evo-off-canvas-title-bar-title-text-align;
+											height: $evo-off-canvas-title-bar-height;
+											padding: $evo-off-canvas-title-bar-title-padding;
+											font-size: $evo-off-canvas-title-bar-title-font-size;
+											font-family: $evo-off-canvas-title-bar-title-font-family;
+											font-weight: normal;
+											letter-spacing: $evo-off-canvas-title-bar-title-letter-spacing;
+											color: $evo-off-canvas-title-bar-title-color;
+											text-transform: $evo-off-canvas-title-bar-title-text-transform;
+				a								{
+												display: block;
+												text-decoration: none;
+												color: $evo-off-canvas-title-bar-title-color;
+												}
+				img								{margin: $evo-off-canvas-title-bar-title-image-margin;}
+											}
+
+			// TITLE BAR ICONS
+			.menu-icon						{
+											color: $evo-off-canvas-title-bar-icon-color;
+											display: block;
+											height: $evo-off-canvas-title-bar-height;
+											width: $evo-off-canvas-title-bar-height;
+											margin: 0;
+											vertical-align: top;
+											border-radius: 0;
+				&:after							{content: none;}
+				[class^="evo-icon-"]			{
+												font-size: $evo-off-canvas-title-bar-icon-font-size;
+												color: $evo-off-canvas-title-bar-icon-color;
+												top: $evo-off-canvas-title-bar-icon-position-top;
+												left: $evo-off-canvas-title-bar-icon-position-left;
+												}
+				&:hover							{
+					[class^="evo-icon-"]			{color: $evo-off-canvas-title-bar-icon-hover-color;}
+												}
+											}
+										}
+
+		// OFF-CANVAS MENU
+		.off-canvas						{
+										min-height: 100%; // Fixes bug with off-canvas menu background color not spanning entire height of container
+										overflow: hidden;
+			
+			// DRILLDOWN MENU
+			.is-drilldown					{
+											overflow: visible; // Fixes bug with off-canvas menu hiding part of drilldown menu
+
+				// DRILLDOWN ITEMS
+				li								{
+
+					// DRILLDOWN LABELS
+					label							{
+													background-color: $evo-off-canvas-label-background-color;
+													color: $evo-off-canvas-label-color;
+													font-family: $evo-off-canvas-label-font-family;
+													font-size: $evo-off-canvas-label-font-size;
+													height: $evo-off-canvas-title-bar-height;
+													line-height: $evo-off-canvas-label-line-height;
+													font-family: $evo-off-canvas-label-font-family;
+													letter-spacing: $evo-off-canvas-label-letter-spacing;
+													text-transform: $evo-off-canvas-label-text-transform;
+													padding: $evo-off-canvas-label-padding;
+													}
+
+					// DRILLDOWN LINKS
+					a								{
+													display: block;
+													color: $evo-off-canvas-item-anchor-color;
+													font-family: $evo-off-canvas-item-anchor-font-family;
+													font-size: $evo-off-canvas-item-anchor-font-size;
+													line-height: $evo-off-canvas-item-anchor-line-height;
+													letter-spacing: $evo-off-canvas-item-anchor-letter-spacing;
+													text-transform: $evo-off-canvas-item-anchor-text-transform;
+													text-decoration: none;
+													padding: $evo-off-canvas-item-anchor-padding;
+													border-bottom: $evo-off-canvas-item-anchor-border;
+													}
+
+					// DRILLDOWN MENU BACK BUTTON
+					&.js-drilldown-back				{
+						> a								{
+														background-color: $evo-off-canvas-back-background-color;
+														color: $evo-off-canvas-back-color;
+														font-family: $evo-off-canvas-back-font-family;
+														font-size: $evo-off-canvas-back-font-size;
+														height: $evo-off-canvas-title-bar-height;
+														line-height: $evo-off-canvas-back-line-height;
+														letter-spacing: $evo-off-canvas-back-letter-spacing;
+														text-transform: $evo-off-canvas-back-text-transform;
+														padding: $evo-off-canvas-back-padding;
+														border-bottom: 0; 
+							&:before,
+							&:after							{
+															font-family: $evo-off-canvas-back-icon-font-family;
+															font-size: $evo-off-canvas-item-anchor-icon-font-size;
+															position: relative;
+															top: $evo-off-canvas-back-icon-position-top;
+															border: 0;
+															margin-top: 0;
+															width: auto;
+															height: auto;
+															}
+														}
+													}
+												}
+
+				// DRILLDOWN ITEMS SUBMENU PARENT
+				.is-drilldown-submenu-parent	{
+					> a								{
+						&:before,
+						&:after							{
+														font-family: $evo-off-canvas-item-anchor-icon-font-family;
+														font-size: $evo-off-canvas-item-anchor-icon-font-size;
+														position: relative;
+														top: $evo-off-canvas-item-anchor-icon-position-top;
+														right: 0;
+														border: 0;
+														margin-top: 0;
+														width: auto;
+														height: auto;
+														}
+													}
+												}
+				
+				// DRILLDOWN ITEMS SUBMENU
+				.is-drilldown-submenu			{background-color: $offcanvas-background;}
+											}
+
+			// LEFT OFF-CANVAS MENU
+			&.position-left					{
+				.is-drilldown					{
+					li								{
+						a								{padding-right: $evo-off-canvas-left-item-anchor-padding-right;}
+						&.js-drilldown-back				{
+							> a								{
+								&:before						{
+																content: $evo-off-canvas-left-back-icon;
+																margin-right: $evo-off-canvas-left-back-icon-margin-right;
+																left: $evo-off-canvas-left-back-icon-position-left;
+																width: $evo-off-canvas-left-back-icon-width;
+																}
+								&:after							{display: none;}
+															}
+														}													
+													}
+					.is-drilldown-submenu-parent	{
+						> a								{
+														padding-right: $evo-off-canvas-left-item-submenu-parent-anchor-padding-right;
+							&:before						{display: none;}
+							&:after							{
+															float: right;
+															content: $evo-off-canvas-left-item-submenu-parent-icon;
+															margin-left: $evo-off-canvas-left-item-submenu-parent-icon-margin-left;
+															}
+														}
+													}
+												}
+											}
+				
+			// RIGHT OFF-CANVAS MENU
+			&.position-right				{
+				.is-drilldown					{
+					li								{
+						&.js-drilldown-back				{
+							> a								{
+								&:before						{display: none;}
+								&::after						{
+																content: $evo-off-canvas-right-back-icon;
+																margin-left: $evo-off-canvas-right-back-icon-margin-left;
+																width: $evo-off-canvas-right-back-icon-width;
+																display: inline-block;
+																vertical-align: middle;
+																}
+															}
+														}
+													}
+					.is-drilldown-submenu-parent	{
+						> a								{
+														padding: $evo-off-canvas-right-item-submenu-parent-anchor-padding;
+							&:before						{
+															content: $evo-off-canvas-right-item-submenu-parent-icon;
+															top: $evo-off-canvas-right-item-submenu-parent-icon-position-top;
+															left: $evo-off-canvas-right-item-submenu-parent-icon-position-left;
+															margin-right: $evo-off-canvas-right-item-submenu-parent-icon-margin-right;
+															}
+							&:after							{display: none;}
+														}
+													}
+												}
+											}
+										}
+
+		// OFF-CANVAS EXIT - CONTENT OVERLAY
+		.js-off-canvas-exit				{
+										@include box-shadow(-1px 0 1px $evo-base-shadow-color, 1px 0 1px $evo-base-shadow-color);
+										z-index: 9999;
+										}
+									}
+
+}// endif

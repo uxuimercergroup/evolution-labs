@@ -1,0 +1,96 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Base Form Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-form-required-icon-font-color: $evo-alert-color !default;
+$evo-form-label-font-family: $evo-font-medium-stack !default;
+
+
+@if $use-form == true{
+
+	form											{
+		
+		// FORM REQUIRED ICON
+		.evo-form-required-icon							{color: $evo-form-required-icon-font-color;}
+
+		// FORM BUTTONS CONTAINER
+		.evo-form-buttons								{margin-top: ($evo-base-margin/2);}
+													}
+
+	// FORM LABELS AND LEGENDS
+	label,
+	legend											{
+													font-family: $evo-form-label-font-family;
+													font-size: $evo-base-font-size;
+		[class^="evo-icon-"]							{top: rem-calc(2);}
+													}
+	legend											{margin-bottom: 0;}
+
+	// FORM ELEMENTS
+	input[type="text"],
+	input[type="text"][readonly],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	select,
+	textarea										{
+													font-family: $evo-base-font-family;
+		&:focus											{
+														outline: 0;
+														border: $input-border-focus;
+														}
+
+		// FORM ELEMENTS WITH TOOLTIPS
+		&.evo-tooltip									{
+														border-bottom: $input-border;
+			&:hover											{border-bottom: $input-border;}
+			&:focus											{border-bottom: $input-border-focus;}
+														}
+													}
+
+	// RADIO BUTTONS AND CHECKBOXES
+	input[type="radio"] + label,
+	input[type="checkbox"] + label					{
+													font-size: $evo-base-font-size;
+													font-family: $evo-base-font-family;
+													}
+
+	// HIDDEN INPUTS
+	input[type="hidden"]							{display: none;}
+
+	// INPUT GROUPS
+	.input-group									{
+		.input-group-button								{
+			.evo-button										{font-size: .9em;}
+														}
+													}
+
+	// ABIDE VALIDATION
+	[data-abide]									{
+		.form-error										{font-family: $evo-font-medium-stack;}
+													}
+
+
+	//=== MEDIA QUERIES =========================================================================
+
+	// REMOVE ZOOM OF FORMS ELEMENTS ON IOS DEVICES
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		select:focus,
+		textarea:focus,
+		input:focus 								{font-size: $evo-base-font-size;}
+	}
+
+}//endif

@@ -1,0 +1,228 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Global Helpers Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+// KEYLINES
+$evo-keyline-right-border-right-color: 		$onyx-dark-30 !default;
+$evo-keyline-left-border-left-color:		$onyx-dark-30 !default;
+
+// SPACER SIZES
+$evo-spacer-size:							rem-calc(5) !default;
+$evo-spacer-xsmall:							($evo-spacer-size*1) !default;
+$evo-spacer-small:							($evo-spacer-size*2) !default;
+$evo-spacer-medium:							($evo-spacer-size*3) !default;
+$evo-spacer-large:							($evo-spacer-size*4) !default;
+$evo-spacer-xlarge:							($evo-spacer-size*5) !default;
+$evo-spacer-xxlarge:						($evo-spacer-size*6) !default;
+$evo-spacer-xxxlarge:						($evo-spacer-size*7) !default;
+
+
+@if $use-helpers == true{
+
+	// PAGE ELEMENT HELPERS
+	// ------------------------------------------------------------------------------------------
+
+	// IMAGES
+	img										{
+											max-width: 100%;
+											height: auto;
+
+		&.evo-image-left						{
+												float: left;
+												margin-top: rem-calc(5);
+												margin-right: rem-calc(20);
+												margin-bottom: rem-calc(3);
+												}
+		&.evo-image-right						{
+												float: right;
+												margin-top: rem-calc(5);
+												margin-left: rem-calc(20);
+												margin-bottom: rem-calc(3);
+												}
+											}
+
+	// KEYLINES
+	.evo-keyline-right						{
+											border-right: 0;
+
+		@include breakpoint(medium)				{border-right: 1px solid $evo-keyline-right-border-right-color;}
+
+											}
+	.evo-keyline-left						{
+											border-left: 0;
+
+		@include breakpoint(medium)				{border-left: 1px solid $evo-keyline-left-border-left-color;}
+
+											}
+
+	// VISIBILITY
+	.evo-hide								{display: none;}
+
+
+	// LAYOUT HELPERS
+	// ------------------------------------------------------------------------------------------
+
+	// VERTICAL MIDDLE
+	.evo-vertical-middle					{
+											display: table;
+											height: 100%;
+		.evo-vertical-middle-element			{
+												display: table-cell;
+												vertical-align: middle;
+												}
+											}
+
+	// MARGIN ENABLERS/DISABLERS
+
+	// ADD MARGIN
+	.evo-margin								{margin: $evo-base-margin !important;}
+	.evo-margin-top							{margin-top: $evo-base-margin !important;}
+	.evo-margin-right						{margin-right: $evo-base-margin !important;}
+	.evo-margin-bottom						{margin-bottom: $evo-base-margin !important;}
+	.evo-margin-left						{margin-left: $evo-base-margin !important;}
+
+	// SUBTRACT MARGIN
+	.evo-no-margin							{margin: 0 !important;}
+	.evo-no-margin-top						{margin-top: 0 !important;}
+	.evo-no-margin-right					{margin-right: 0 !important;}
+	.evo-no-margin-bottom					{margin-bottom: 0 !important;}
+	.evo-no-margin-left						{margin-left: 0 !important;}
+
+	// PADDING ENABLERS/DISABLERS
+
+	// ADD PADDING
+	.evo-padding							{padding: $evo-base-padding !important;}
+	.evo-padding-top						{padding-top: $evo-base-padding !important;}
+	.evo-padding-right						{padding-right: $evo-base-padding !important;}
+	.evo-padding-bottom						{padding-bottom: $evo-base-padding !important;}
+	.evo-padding-left						{padding-left: $evo-base-padding !important;}
+
+	// SUBTRACT PADDING
+	.evo-no-padding							{padding:0 !important;}
+	.evo-no-padding-top						{padding-top: 0 !important;}
+	.evo-no-padding-right					{padding-right: 0 !important;}
+	.evo-no-padding-bottom					{padding-bottom: 0 !important;}
+	.evo-no-padding-left					{padding-left: 0 !important;}
+
+
+	// SPACERS
+
+	// MARGIN SPACERS
+	.evo-spacer-margin-x-small				{margin: $evo-spacer-xsmall !important;}
+	.evo-spacer-margin-small				{margin: $evo-spacer-small !important;}
+	.evo-spacer-margin-medium				{margin: $evo-spacer-medium !important;}
+	.evo-spacer-margin-large				{margin: $evo-spacer-large !important;}
+	.evo-spacer-margin-x-large				{margin: $evo-spacer-xlarge !important;}
+	.evo-spacer-margin-xx-large				{margin: $evo-spacer-xxlarge !important;}
+	.evo-spacer-margin-xxx-large			{margin: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-margin-top-x-small			{margin-top: $evo-spacer-xsmall !important;}
+	.evo-spacer-margin-top-small			{margin-top: $evo-spacer-small !important;}
+	.evo-spacer-margin-top-medium			{margin-top: $evo-spacer-medium !important;}
+	.evo-spacer-margin-top-large			{margin-top: $evo-spacer-large !important;}
+	.evo-spacer-margin-top-x-large			{margin-top: $evo-spacer-xlarge !important;}
+	.evo-spacer-margin-top-xx-large			{margin-top: $evo-spacer-xxlarge !important;}
+	.evo-spacer-margin-top-xxx-large		{margin-top: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-margin-right-x-small		{margin-right: $evo-spacer-xsmall !important;}
+	.evo-spacer-margin-right-small			{margin-right: $evo-spacer-small !important;}
+	.evo-spacer-margin-right-medium			{margin-right: $evo-spacer-medium !important;}
+	.evo-spacer-margin-right-large			{margin-right: $evo-spacer-large !important;}
+	.evo-spacer-margin-right-x-large		{margin-right: $evo-spacer-xlarge !important;}
+	.evo-spacer-margin-right-xx-large		{margin-right: $evo-spacer-xxlarge !important;}
+	.evo-spacer-margin-right-xxx-large		{margin-right: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-margin-bottom-x-small		{margin-bottom: $evo-spacer-xsmall !important;}
+	.evo-spacer-margin-bottom-small			{margin-bottom: $evo-spacer-small !important;}
+	.evo-spacer-margin-bottom-medium		{margin-bottom: $evo-spacer-medium !important;}
+	.evo-spacer-margin-bottom-large			{margin-bottom: $evo-spacer-large !important;}
+	.evo-spacer-margin-bottom-x-large		{margin-bottom: $evo-spacer-xlarge !important;}
+	.evo-spacer-margin-bottom-xx-large		{margin-bottom: $evo-spacer-xxlarge !important;}
+	.evo-spacer-margin-bottom-xxx-large		{margin-bottom: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-margin-left-x-small			{margin-left: $evo-spacer-xsmall !important;}
+	.evo-spacer-margin-left-small			{margin-left: $evo-spacer-small !important;}
+	.evo-spacer-margin-left-medium			{margin-left: $evo-spacer-medium !important;}
+	.evo-spacer-margin-left-large			{margin-left: $evo-spacer-large !important;}
+	.evo-spacer-margin-left-x-large			{margin-left: $evo-spacer-xlarge !important;}
+	.evo-spacer-margin-left-xx-large		{margin-left: $evo-spacer-xxlarge !important;}
+	.evo-spacer-margin-left-xxx-large		{margin-left: $evo-spacer-xxxlarge !important;}
+
+	// PADDING SPACERS
+	.evo-spacer-padding-x-small				{padding: $evo-spacer-xsmall !important;}
+	.evo-spacer-padding-small				{padding: $evo-spacer-small !important;}
+	.evo-spacer-padding-medium				{padding: $evo-spacer-medium !important;}
+	.evo-spacer-padding-large				{padding: $evo-spacer-large !important;}
+	.evo-spacer-padding-x-large				{padding: $evo-spacer-xlarge !important;}
+	.evo-spacer-padding-xx-large			{padding: $evo-spacer-xxlarge !important;}
+	.evo-spacer-padding-xxx-large			{padding: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-padding-top-x-small			{padding-top: $evo-spacer-xsmall !important;}
+	.evo-spacer-padding-top-small			{padding-top: $evo-spacer-small !important;}
+	.evo-spacer-padding-top-medium			{padding-top: $evo-spacer-medium !important;}
+	.evo-spacer-padding-top-large			{padding-top: $evo-spacer-large !important;}
+	.evo-spacer-padding-top-x-large			{padding-top: $evo-spacer-xlarge !important;}
+	.evo-spacer-padding-top-xx-large		{padding-top: $evo-spacer-xxlarge !important;}
+	.evo-spacer-padding-top-xxx-large		{padding-top: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-padding-right-x-small		{padding-right: $evo-spacer-xsmall !important;}
+	.evo-spacer-padding-right-small			{padding-right: $evo-spacer-small !important;}
+	.evo-spacer-padding-right-medium		{padding-right: $evo-spacer-medium !important;}
+	.evo-spacer-padding-right-large			{padding-right: $evo-spacer-large !important;}
+	.evo-spacer-padding-right-x-large		{padding-right: $evo-spacer-xlarge !important;}
+	.evo-spacer-padding-right-xx-large		{padding-right: $evo-spacer-xxlarge !important;}
+	.evo-spacer-padding-right-xxx-large		{padding-right: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-padding-bottom-x-small		{padding-bottom: $evo-spacer-xsmall !important;}
+	.evo-spacer-padding-bottom-small		{padding-bottom: $evo-spacer-small !important;}
+	.evo-spacer-padding-bottom-medium		{padding-bottom: $evo-spacer-medium !important;}
+	.evo-spacer-padding-bottom-large		{padding-bottom: $evo-spacer-large !important;}
+	.evo-spacer-padding-bottom-x-large		{padding-bottom: $evo-spacer-xlarge !important;}
+	.evo-spacer-padding-bottom-xx-large		{padding-bottom: $evo-spacer-xxlarge !important;}
+	.evo-spacer-padding-bottom-xxx-large	{padding-bottom: $evo-spacer-xxxlarge !important;}
+
+	.evo-spacer-padding-left-x-small		{padding-left: $evo-spacer-xsmall !important;}
+	.evo-spacer-padding-left-small			{padding-left: $evo-spacer-small !important;}
+	.evo-spacer-padding-left-medium			{padding-left: $evo-spacer-medium !important;}
+	.evo-spacer-padding-left-large			{padding-left: $evo-spacer-large !important;}
+	.evo-spacer-padding-left-x-large		{padding-left: $evo-spacer-xlarge !important;}
+	.evo-spacer-padding-left-xx-large		{padding-left: $evo-spacer-xxlarge !important;}
+	.evo-spacer-padding-left-xxx-large		{padding-left: $evo-spacer-xxxlarge !important;}
+
+
+	// RESPONSIVE HELPERS
+	// ------------------------------------------------------------------------------------------
+
+	// PREVENT FOUC (FLASH OF UNSTYLED CONTENT) FOR FOUNDATION'S RESPONSIVE NAVIGATION
+	.no-js 									{
+		@include breakpoint(small only) 		{
+			.top-bar 								{display: none;}
+												}
+		@include breakpoint(medium) 			{
+			.title-bar 								{display: none;}
+												}
+											}
+
+	// IE10 Metro responsive
+	// Required for Windows 8 Metro split-screen snapping with IE10
+	// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+	@-ms-viewport 							{width:device-width;}
+
+	// IE10 on Windows Phone 8
+	// IE10 on WP8 doesn't report CSS pixels, but actual device pixels. In
+	// other words, say on a Lumia, you'll get 768px as the device width,
+	// meaning users will see the tablet styles and not phone styles.
+	//
+	// Alternatively you can override this with JS (see source below), but
+	// we won't be doing that here given our limited scope.
+	//
+	// Source: http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+	@media screen and (max-width: 400px) 	{
+		@-ms-viewport 							{width: 320px;}
+											}
+
+}//endif

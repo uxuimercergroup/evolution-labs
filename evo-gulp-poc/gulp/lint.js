@@ -5,19 +5,22 @@ var gulp       = require('gulp');               // Require Gulp
     sequence   = require('run-sequence');       // Require Run Sequence
 
 
-// Lints Sass and JavaScript files for formatting issues
-gulp.task('lint', function(done){
-  sequence(['lint:sass', 'lint:javascript'], 'lint:notify', done);
-});
-
+// Lint Sass
 gulp.task('lint:sass', function() {
-  return gulp.src(config.src.scss)
+  return gulp.src([
+    config.src.scss,
+    config.src.patterns.scss
+  ])
   .pipe(sassLint())
   .pipe(sassLint.format())
 });
 
-gulp.task('lint:javascript', function () {
-  return gulp.src(config.src.js)
+// Lint JS
+gulp.task('lint:js', function () {
+  return gulp.src([
+    config.src.js,
+    config.src.patterns.js
+  ])
   .pipe(eslint({
   	useEslintrc: true,
   	configFile: '.eslintrc'
@@ -31,4 +34,9 @@ gulp.task('lint:notify', function(){
     title: config.notify.lint.title,
     message: config.notify.lint.message
   });
+});
+
+// Lints Sass and JavaScript files for formatting issues
+gulp.task('lint', function(done){
+  sequence(['lint:sass', 'lint:js'], 'lint:notify', done);
 });

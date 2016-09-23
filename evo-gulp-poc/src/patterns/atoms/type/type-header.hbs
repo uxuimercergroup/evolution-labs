@@ -1,0 +1,10 @@
+{{!--
+Class options:
+evo-h1-hdr-background, evo-h2-hdr-background, evo-h3-hdr-background: add a background color to the header
+evo-hdr-dbl-rule: adds a rule to the top and bottom of the header
+evo-hdr-rule: add a rule to the bottom of the header
+subheader: basic gray color subheader
+size: 1, 2, 3, 4, 5, 6
+text: your content
+--}}
+<h{{#if size}}{{size}}{{else}}1{{/if}}{{#if class}} class="{{class}}"{{/if}}>{{#if text}}{{{text}}}{{else}}Header{{/if}}</h{{#if size}}{{size}}{{else}}1{{/if}}>

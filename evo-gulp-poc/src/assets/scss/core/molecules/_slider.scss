@@ -1,0 +1,156 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Slider Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-slider-container-padding: rem-calc(12 10 9 10) !default;
+
+// HEADER
+$evo-slider-header-margin-bottom: rem-calc(15) !default;
+$evo-slider-header-value-font-color: $onyx-dark-50 !default;
+$evo-slider-header-value-font-size: rem-calc(14) !default;
+$evo-slider-header-value-font-padding-left: rem-calc(5) !default;
+
+// SLIDER
+$evo-slider-border-radius: 0 !default;
+$evo-slider-background-color: $onyx-dark-10 !default;
+$evo-slider-range-background-color: $onyx-dark-30 !default;
+$evo-slider-height: rem-calc(6) !default;
+$evo-slider-width: 100% !default;
+
+// SLIDER HANDLE
+$evo-slider-handle-border-radius: rem-calc(30) !default;
+$evo-slider-handle-background-color: $evo-primary-color !default;
+$evo-slider-handle-border-size: rem-calc(3) !default;
+$evo-slider-handle-border-style: solid !default;
+$evo-slider-handle-border-color: $white !default;
+$evo-slider-handle-shadow-horizontal: 0 !default;
+$evo-slider-handle-shadow-vertical: rem-calc(1) !default;
+$evo-slider-handle-shadow-blur: rem-calc(3) !default;
+$evo-slider-handle-shadow-spread: 0 !default;
+$evo-slider-handle-shadow-color: $black !default;
+$evo-slider-handle-height: rem-calc(24) !default;
+$evo-slider-handle-width: rem-calc(24) !default;
+$evo-slider-handle-margin-left: rem-calc(-11) !default;
+$evo-slider-handle-position-top: -10px !default;
+$evo-slider-handle-position-top-ie9: -11px !default;
+
+// SLIDER TICK MARKS
+$evo-slider-tick-marker-margin: rem-calc(3 0 0 0) !default;
+$evo-slider-tick-marker-width: rem-calc(1) !default;
+$evo-slider-tick-marker-height: rem-calc(10) !default;
+$evo-slider-tick-marker-color: $evo-slider-background-color !default;
+$evo-slider-tick-marker-container-margin-top: rem-calc(7) !default;
+$evo-slider-tick-marker-number-font-size: $small-font-size !default;
+$evo-slider-tick-marker-number-min-position-left: -5px !default;
+$evo-slider-tick-marker-number-max-position-right: -10px !default;
+$evo-slider-tick-marker-min-max-margin: rem-calc(-28 0 0 0) !default;
+$evo-slider-tick-marker-min-position-left: 5px !default;
+$evo-slider-tick-marker-max-position-right: 10px !default;
+
+
+@if $use-slider == true{
+
+	.evo-slider-ctn					{
+									padding: $evo-slider-container-padding;
+		// HEADER
+		.evo-slider-hdr					{
+										margin-bottom: $evo-slider-header-margin-bottom;
+			.evo-slider-hdr-value			{
+											color: $evo-slider-header-value-font-color;
+											font-size: $evo-slider-header-value-font-size;
+											padding-left: $evo-slider-header-value-font-padding-left;
+											position: relative;
+				// SLIDER RANGE INPUTS
+				.evo-slider-range-input			{
+												border: 0;
+												padding: 0;
+												position: relative;
+												font-size: 100%;
+												background-color: $transparent;
+												}
+											}
+										}
+
+		// SLIDER
+		.evo-slider.ui-slider			{
+										@include border-radius($evo-slider-border-radius);
+										background-color: $evo-slider-background-color;
+										height: $evo-slider-height;
+										width: $evo-slider-width;
+										position: relative;
+										z-index: $evo-base-zindex-slider;
+			// SLIDER HANDLE
+			.ui-slider-handle				{
+											@include border-radius($evo-slider-handle-border-radius);
+											@include box-shadow($evo-slider-handle-shadow-horizontal $evo-slider-handle-shadow-vertical $evo-slider-handle-shadow-blur $evo-slider-handle-shadow-spread $evo-slider-handle-shadow-color);
+											background-color: $evo-slider-handle-background-color;
+											border: $evo-slider-handle-border-size $evo-slider-handle-border-style $evo-slider-handle-border-color;
+											cursor: pointer;
+											width: $evo-slider-handle-width;
+											height: $evo-slider-handle-height;
+											margin-left: $evo-slider-handle-margin-left;	
+											outline: none;
+											position: absolute;
+											top: $evo-slider-handle-position-top;
+											z-index: $evo-base-zindex-slider-handle;
+											}
+
+			// SLIDER RANGE
+			.ui-slider-range				{					
+											@include border-radius($evo-slider-border-radius);
+											background-color: $evo-slider-range-background-color;
+											border: 0;
+											display: block;
+											height: $evo-slider-height;
+											position: absolute;
+											z-index: $evo-base-zindex-slider-handle;
+											}
+
+			.ui-slider-range-max			{right: 0;}
+
+										}
+
+
+		// SLIDER TICKS
+		.evo-slider-tick-marker			{
+										position: absolute;
+										display: block;
+										margin: $evo-slider-tick-marker-margin;
+										width: $evo-slider-tick-marker-width;
+										height: $evo-slider-tick-marker-height;
+										background-color: $evo-slider-tick-marker-color;
+										}
+
+		.evo-slider-tick-ctn			{
+										margin-top: $evo-slider-tick-marker-container-margin-top;
+			.evo-slider-tick-number			{
+											position: relative;
+											font-size: $evo-slider-tick-marker-number-font-size;
+											}
+			.evo-slider-tick-number-min		{left: $evo-slider-tick-marker-number-min-position-left;}
+			.evo-slider-tick-number-max		{right: $evo-slider-tick-marker-number-max-position-right;}
+			.evo-slider-tick-marker			{margin: $evo-slider-tick-marker-min-max-margin;}
+			.evo-slider-tick-number-min-marker
+											{left: $evo-slider-tick-marker-min-position-left;}
+			.evo-slider-tick-number-max-marker
+											{right: $evo-slider-tick-marker-max-position-right;}
+										}
+									}
+
+	// SLIDER IE9 FIXES
+	.ie9							{
+		.evo-slider-ctn					{
+			
+			// SLIDER
+			.evo-slider.ui-slider			{
+				
+				// SLIDER HANDLE
+				.ui-slider-handle				{top: $evo-slider-handle-position-top-ie9;}
+											}
+										}
+									}
+
+}//endif

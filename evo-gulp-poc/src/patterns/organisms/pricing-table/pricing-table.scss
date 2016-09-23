@@ -1,0 +1,160 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }}
+{{ pricing_table_meta_name }} v{{ pricing_table_meta_version }} - SASS
+DATE: {{ pricing_table_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+--------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+//
+// @core sass imports - IMPORTANT: DO NOT MODIFY!
+//
+@import	"../../../assets/scss/core/global";
+@import	"../../../assets/scss/core/foundation-settings";
+@import	"../../../assets/scss/core/settings";
+
+//
+// @variables - IMPORTANT: DO NOT MODIFY! MODIFY VARIABLE OVERRIDES ONLY.
+//
+
+// Organism default variables
+$evo-pricing-table-bg-color: $evo-secondary-color !default;
+$evo-pricing-table-base-font: rem-calc(17) !default;
+$evo-pricing-table-padding: rem-calc(10) !default;
+$evo-pricing-table-margin-bottom: rem-calc(2) !default;
+$evo-pricing-table-amt-text-align: right !default;
+$evo-pricing-table-amt-text-transform: none !default;
+$evo-pricing-table-label-font-size: rem-calc(12) !default;
+$evo-pricing-table-label-position: relative !default;
+$evo-pricing-table-item-label-font-color: $onyx-dark-40 !default;
+$evo-pricing-table-item-label-top-position: rem-calc(13) !default;
+$evo-pricing-table-time-value-label-color: $onyx-dark-40 !default;
+$evo-pricing-table-time-value-label-text-align: right !default;
+$evo-pricing-table-time-value-label-top-position: -3px !default;
+$evo-pricing-table-break-down-row-bg-color: $onyx-light !default;
+$evo-pricing-table-total-row-bg-color: $evo-primary-color !default;
+$evo-pricing-table-total-row-font-color: $white !default;
+
+//
+// @Product organism component theme variables - IMPORTANT: DO NOT MODIFY!
+//
+
+// Product setting
+$evo-product: core;
+
+// Communications
+@if $evo-product == comm {
+
+	$evo-pricing-table-bg-color: $evo-secondary-color;
+	$evo-pricing-table-item-label-font-color: $onyx-dark-40;
+	$evo-pricing-table-time-value-label-color: $onyx-dark-40;
+	$evo-pricing-table-break-down-row-bg-color: $onyx-light;
+	$evo-pricing-table-total-row-bg-color: $evo-primary-color;
+	$evo-pricing-table-total-row-font-color: $white;
+
+// Benefits Portals
+} @else if $evo-product == bp {
+
+	$evo-pricing-table-bg-color: $evo-secondary-color;
+	$evo-pricing-table-item-label-font-color: $onyx-dark-40;
+	$evo-pricing-table-time-value-label-color: $onyx-dark-40;
+	$evo-pricing-table-break-down-row-bg-color: $onyx-light;
+	$evo-pricing-table-total-row-bg-color: $evo-primary-color;
+	$evo-pricing-table-total-row-font-color: $white;
+
+}
+
+//
+// @variable overrides
+//
+// $evo-pricing-table-bg-color: $evo-secondary-color;
+// $evo-pricing-table-base-font: rem-calc(17);
+// $evo-pricing-table-padding: rem-calc(10);
+// $evo-pricing-table-margin-bottom: rem-calc(2);
+// $evo-pricing-table-amt-text-align: right;
+// $evo-pricing-table-amt-text-transform: uppercase;
+// $evo-pricing-table-label-font-size: rem-calc(12);
+// $evo-pricing-table-label-position: relative;
+// $evo-pricing-table-item-label-font-color: $onyx-dark-40;
+// $evo-pricing-table-item-label-top-position: rem-calc(13);
+// $evo-pricing-table-time-value-label-color: $onyx-dark-40;
+// $evo-pricing-table-time-value-label-text-align: right;
+// $evo-pricing-table-time-value-label-top-position: -3px;
+// $evo-pricing-table-break-down-row-bg-color: $onyx-light;
+// $evo-pricing-table-total-row-bg-color: $evo-primary-color;
+// $evo-pricing-table-total-row-font-color: $white;
+
+
+// PRICING TABLE - BEGINS
+	.evo-pricing-table			{
+		[class*="small-up-"]
+									{
+									background-color: $evo-pricing-table-bg-color;
+									font-size: $evo-pricing-table-base-font;
+									padding: $evo-pricing-table-padding;
+									margin: 0;
+									margin-bottom: $evo-pricing-table-margin-bottom;
+			.evo-pricing-table-item-amt,
+			.evo-pricing-table-break-down-amt,
+			.evo-pricing-table-total-amt
+										{text-align: $evo-pricing-table-amt-text-align;}
+
+			.evo-pricing-table-item-label,
+			.evo-pricing-table-break-down-label,
+			.evo-pricing-table-total-label
+										{text-transform: $evo-pricing-table-amt-text-transform;}
+
+			.evo-pricing-table-item-label,
+			.evo-pricing-table-value-label
+										{
+										font-size: $evo-pricing-table-label-font-size;
+										position: $evo-pricing-table-label-position;
+										}
+									}
+
+	// PRICING TABLE ITEM LABEL - BEGINS
+		.evo-pricing-table-category-label
+									{
+									padding-top: 0;
+									padding-bottom: 0;
+									margin-top: 0;
+									margin-bottom: 0;
+			.evo-pricing-table-item-label
+										{
+										color: $evo-pricing-table-item-label-font-color;
+										top: $evo-pricing-table-item-label-top-position;
+										}
+									}
+	// PRICING TABLE ITEM LABEL - ENDS
+		
+	// PRICING TABLE ITEM - BEGINS
+		.evo-pricing-table-item-amt	{
+			.evo-pricing-table-value-label
+										{
+										color: $evo-pricing-table-time-value-label-color;
+										text-align: $evo-pricing-table-time-value-label-text-align;
+										top: $evo-pricing-table-time-value-label-top-position;
+										}
+									}
+	// PRICING TABLE ITEM - ENDS
+
+	// PRICING TABLE TOTAL ROW - BEGINS
+		.evo-pricing-table-break-down-row
+									{background-color: $evo-pricing-table-break-down-row-bg-color;}
+	// PRICING TABLE TOTAL ROW - ENDS
+
+	// PRICING TABLE TOTAL ROW - BEGINS
+		.evo-pricing-table-total-row
+									{
+									background-color: $evo-pricing-table-total-row-bg-color;
+			.evo-pricing-table-total-label
+										{color: $evo-pricing-table-total-row-font-color;}
+			.evo-pricing-table-total-amt
+										{color: $evo-pricing-table-total-row-font-color;}
+									}
+	// PRICING TABLE TOTAL ROW - ENDS
+
+								}
+// PRICING TABLE - ENDS

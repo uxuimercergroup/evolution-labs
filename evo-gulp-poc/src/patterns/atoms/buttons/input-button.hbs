@@ -1,0 +1,21 @@
+{{!--
+aria-label: button aria label
+button-name: custom name used for button
+button-title: title of the button
+button-value: custom value for button - for input buttons this is the text of the button
+custom-class: custom class for button
+data-open: reveal modal open id value
+data-toggle: dropdown menu toggle id value
+disabled: if the button is disabled [TRUE] is the value
+dropdown: if the button is a dropdown style [TRUE] is the value
+expanded: if the button is going to be 100% width [TRUE] is the value
+hollow: if the button is going to be a hollow button [TRUE] is the value
+id: custom id for button
+interactive-data-value: data value for interactive button - must match value used in init of interactive button in JS
+min-width: sets a min-width on the button [TRUE] is the value
+size: tiny, small, large, xlarge, xxlarge - default size is medium, no size option needed
+secondary: if the button is going to be a secondary button [TRUE] is the value
+tabindex: the tab index order number
+type: button, submit, reset
+--}}
+<input class="button{{#if size}} {{size}}{{/if}}{{#if expanded}} expanded{{/if}}{{#if secondary}} secondary{{/if}}{{#if hollow}} hollow{{/if}}{{#if dropdown}} dropdown{{/if}}{{#if disabled}} disabled{{/if}} evo-button{{#if custom-class}} {{custom-class}}{{/if}}"{{#if interactive-data-value}} data-evo-button-interactive="{{interactive-data-value}}"{{/if}}{{#if id}} id="{{id}}"{{/if}} role="button"{{#if button-name}} name="{{button-name}}"{{/if}}{{#if button-value}} value="{{{button-value}}}"{{/if}}{{#if type}} type="{{type}}"{{/if}}{{#if disabled}} disabled{{/if}}{{#if tabindex}} tabindex="{{tabindex}}"{{/if}}{{#if button-title}} title="{{{button-title}}}"{{/if}}{{#if aria-label}} aria-label="{{aria-label}}"{{/if}}{{#if min-width}} data-evo-button-min-width{{/if}}{{#if data-toggle}} data-toggle="{{data-toggle}}"{{/if}}{{#if data-open}} data-open="{{data-open}}"{{/if}}>

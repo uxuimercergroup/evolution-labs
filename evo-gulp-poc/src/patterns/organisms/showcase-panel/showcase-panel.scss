@@ -1,0 +1,262 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v{{ evo_meta_version }}
+{{ showcase_panel_meta_name }} v{{ showcase_panel_meta_version }} - SASS
+DATE: {{ showcase_panel_meta_date }}
+AUTHOR: {{ evo_meta_author }}
+URL: {{ evo_meta_url }}
+--------------------------------------------------------------------------------------------*/
+
+@charset 'utf-8';
+
+//
+// @core sass imports - IMPORTANT: DO NOT MODIFY!
+//
+@import	"../../../assets/scss/core/global";
+@import	"../../../assets/scss/core/foundation-settings";
+@import	"../../../assets/scss/core/settings";
+
+//
+// @variables - IMPORTANT: DO NOT MODIFY! MODIFY VARIABLE OVERRIDES ONLY.
+//
+
+// Organism default variables
+$evo-showcase-panel-shadow-horizontal: $evo-base-shadow-horizontal !default;
+$evo-showcase-panel-shadow-vertical: $evo-base-shadow-vertical !default;
+$evo-showcase-panel-shadow-blur: $evo-base-shadow-blur !default;
+$evo-showcase-panel-shadow-spread: $evo-base-shadow-spread !default;
+$evo-showcase-panel-shadow-color: $evo-base-shadow-color !default;
+$evo-showcase-panel-background-color: $white !default;
+$evo-showcase-panel-item-min-height: rem-calc(100) !default;
+$evo-showcase-panel-item-padding: rem-calc(10 0) !default;
+$evo-showcase-panel-item-text-align: center !default;
+$evo-showcase-panel-item-font-color: $onyx-dark-50 !default;
+$evo-showcase-panel-item-icon-position-top: 4px !default;
+$evo-showcase-panel-item-label-font-family: $evo-font-bold-stack !default;
+$evo-showcase-panel-item-label-line-height: 1 !default;
+$evo-showcase-panel-item-label-sup-font-family: $evo-base-font-family !default;
+$evo-showcase-panel-item-sub-label-font-family: $evo-font-medium-stack !default;
+$evo-showcase-panel-item-sub-label-font-size: rem-calc(16) !default;
+$evo-showcase-panel-item-sub-label-text-transform: uppercase !default;
+$evo-showcase-panel-item-sub-text-font-size: rem-calc(11) !default;
+$evo-showcase-panel-item-large-padding-top: rem-calc(23) !default;
+$evo-showcase-panel-item-large-padding-bottom: rem-calc(15) !default;
+$evo-showcase-panel-item-large-label-font-size: rem-calc(48) !default;
+$evo-showcase-panel-item-large-label-letter-spacing: rem-calc(-2) !default;
+$evo-showcase-panel-item-large-label-sup-font-size: rem-calc(14) !default;
+$evo-showcase-panel-item-large-label-sup-position-top: -22px !default;
+$evo-showcase-panel-item-large-label-sup-position-left: -3px !default;
+$evo-showcase-panel-item-large-sub-label-position-top: 0 !default;
+$evo-showcase-panel-item-large-sub-label-position-left: -9px !default;
+$evo-showcase-panel-item-large-sub-label-letter-spacing: 0 !default;
+$evo-showcase-panel-item-large-sub-text-position-top: -7px !default;
+$evo-showcase-panel-item-small-padding-top: rem-calc(30) !default;
+$evo-showcase-panel-item-small-padding-bottom: rem-calc(30) !default;
+$evo-showcase-panel-item-small-label-font-size: rem-calc(26) !default;
+$evo-showcase-panel-item-small-label-letter-spacing: rem-calc(-.2) !default;
+$evo-showcase-panel-item-small-label-sup-font-size: rem-calc(11) !default;
+$evo-showcase-panel-item-small-label-sup-position-top: -9px !default;
+$evo-showcase-panel-item-small-label-sup-position-left: -1px !default;
+$evo-showcase-panel-item-small-sub-label-position-top: 0 !default;
+$evo-showcase-panel-item-small-sub-label-position-left: -5px !default;
+$evo-showcase-panel-item-small-sub-label-letter-spacing: 0 !default;
+$evo-showcase-panel-item-small-sub-label-font-family: $evo-font-bold-stack !default;
+$evo-showcase-panel-item-small-sub-label-text-transform: lowercase !default;
+$evo-showcase-panel-color-reverse-background-color: $evo-primary-color !default;
+$evo-showcase-panel-color-reverse-font-color: $white !default;
+$evo-showcase-panel-fixed-position-top: 44px !default;
+$evo-showcase-panel-fixed-position-left: 0 !default;
+$evo-showcase-panel-fixed-z-index: 80 !default;
+$evo-showcase-panel-fixed-width: 100% !default;
+
+//
+// @Product organism theme variables - IMPORTANT: DO NOT MODIFY!
+//
+
+// Product setting
+$evo-product: core;
+
+// Communications
+@if $evo-product == comm {
+
+	$evo-showcase-panel-background-color: $white;
+	$evo-showcase-panel-item-font-color: $onyx-dark-50;
+	$evo-showcase-panel-color-reverse-background-color: $evo-primary-color;
+	$evo-showcase-panel-color-reverse-font-color: $white;
+
+// Benefits Portals
+} @else if $evo-product == bp {
+
+	$evo-showcase-panel-background-color: $white;
+	$evo-showcase-panel-item-font-color: $onyx-dark-50;
+	$evo-showcase-panel-color-reverse-background-color: $evo-primary-color;
+	$evo-showcase-panel-color-reverse-font-color: $white;
+
+}
+
+//
+// @variable overrides
+//
+// $evo-showcase-panel-shadow-horizontal: $evo-base-shadow-horizontal;
+// $evo-showcase-panel-shadow-vertical: $evo-base-shadow-vertical;
+// $evo-showcase-panel-shadow-blur: $evo-base-shadow-blur;
+// $evo-showcase-panel-shadow-spread: $evo-base-shadow-spread;
+// $evo-showcase-panel-shadow-color: $evo-base-shadow-color;
+// $evo-showcase-panel-background-color: $white;
+// $evo-showcase-panel-item-min-height: rem-calc(100);
+// $evo-showcase-panel-item-padding: rem-calc(10 0);
+// $evo-showcase-panel-item-text-align: center;
+// $evo-showcase-panel-item-font-color: $onyx-dark-50;
+// $evo-showcase-panel-item-icon-position-top: 4px;
+// $evo-showcase-panel-item-label-font-family: $evo-font-bold-stack;
+// $evo-showcase-panel-item-label-line-height: 1;
+// $evo-showcase-panel-item-label-sup-font-family: $evo-base-font-family;
+// $evo-showcase-panel-item-sub-label-font-family: $evo-font-medium-stack;
+// $evo-showcase-panel-item-sub-label-font-size: rem-calc(16);
+// $evo-showcase-panel-item-sub-label-text-transform: uppercase;
+// $evo-showcase-panel-item-sub-text-font-size: rem-calc(11);
+// $evo-showcase-panel-item-large-padding-top: rem-calc(23);
+// $evo-showcase-panel-item-large-padding-bottom: rem-calc(15);
+// $evo-showcase-panel-item-large-label-font-size: rem-calc(48);
+// $evo-showcase-panel-item-large-label-letter-spacing: rem-calc(-2);
+// $evo-showcase-panel-item-large-label-sup-font-size: rem-calc(14);
+// $evo-showcase-panel-item-large-label-sup-position-top: -22px;
+// $evo-showcase-panel-item-large-label-sup-position-left: -3px;
+// $evo-showcase-panel-item-large-sub-label-position-top: 0;
+// $evo-showcase-panel-item-large-sub-label-position-left: -9px;
+// $evo-showcase-panel-item-large-sub-label-letter-spacing: 0;
+// $evo-showcase-panel-item-large-sub-text-position-top: -7px;
+// $evo-showcase-panel-item-small-padding-top: rem-calc(30);
+// $evo-showcase-panel-item-small-padding-bottom: rem-calc(30);
+// $evo-showcase-panel-item-small-label-font-size: rem-calc(26);
+// $evo-showcase-panel-item-small-label-letter-spacing: rem-calc(-.2);
+// $evo-showcase-panel-item-small-label-sup-font-size: rem-calc(11);
+// $evo-showcase-panel-item-small-label-sup-position-top: -9px;
+// $evo-showcase-panel-item-small-label-sup-position-left: -1px;
+// $evo-showcase-panel-item-small-sub-label-position-top: 0;
+// $evo-showcase-panel-item-small-sub-label-position-left: -5px;
+// $evo-showcase-panel-item-small-sub-label-letter-spacing: 0;
+// $evo-showcase-panel-item-small-sub-label-font-family: $evo-font-bold-stack;
+// $evo-showcase-panel-item-small-sub-label-text-transform: lowercase;
+// $evo-showcase-panel-color-reverse-background-color: $evo-primary-color;
+// $evo-showcase-panel-color-reverse-font-color: $white;
+// $evo-showcase-panel-fixed-position-top: 44px;
+// $evo-showcase-panel-fixed-position-left: 0;
+// $evo-showcase-panel-fixed-z-index: 80;
+// $evo-showcase-panel-fixed-width: 100%;
+
+
+// SHOWCASE PANEL - BEGINS
+	.evo-showcase-panel				{
+										@include box-shadow($evo-showcase-panel-shadow-horizontal $evo-showcase-panel-shadow-vertical $evo-showcase-panel-shadow-blur $evo-showcase-panel-shadow-spread $evo-showcase-panel-shadow-color);
+										background-color: $evo-showcase-panel-background-color;
+
+	// SHOWCASE PANEL ITEM - BEGINS
+		.evo-showcase-panel-item 			{
+											min-height: $evo-showcase-panel-item-min-height;
+											padding: $evo-showcase-panel-item-padding;
+											text-align: $evo-showcase-panel-item-text-align;
+											color: $evo-showcase-panel-item-font-color;
+
+			[class^="evo-icon-"]				{top: $evo-showcase-panel-item-icon-position-top;}
+											}
+	// SHOWCASE PANEL ITEM - ENDS
+
+	// SHOWCASE PANEL ITEM LABEL - BEGINS
+		.evo-showcase-panel-item-label		{
+											font-family: $evo-showcase-panel-item-label-font-family;
+											line-height: $evo-showcase-panel-item-label-line-height;
+			sup									{
+												position: relative;
+												font-family: $evo-showcase-panel-item-label-sup-font-family;
+												}
+											}
+	// SHOWCASE PANEL ITEM LABEL - ENDS
+
+	// SHOWCASE PANEL ITEM SUB LABEL - BEGINS
+		.evo-showcase-panel-item-sub-label	{
+											position: relative;
+											font-family: $evo-showcase-panel-item-sub-label-font-family;
+											font-size: $evo-showcase-panel-item-sub-label-font-size;
+											text-transform: $evo-showcase-panel-item-sub-label-text-transform;
+											}
+	// SHOWCASE PANEL ITEM SUB LABEL - ENDS
+
+	// SHOWCASE PANEL ITEM SUB TEXT - BEGINS
+		.evo-showcase-panel-item-sub-text	{
+											display: block;
+											font-size: $evo-showcase-panel-item-sub-text-font-size;
+											}
+	// SHOWCASE PANEL ITEM SUB TEXT - ENDS
+
+	// SHOWCASE PANEL ITEM - LARGE - BEGINS
+		.evo-showcase-panel-item-large		{
+											padding-top: $evo-showcase-panel-item-large-padding-top;
+											padding-bottom: $evo-showcase-panel-item-large-padding-bottom;
+			.evo-showcase-panel-item-label		{
+												font-size: $evo-showcase-panel-item-large-label-font-size;
+												letter-spacing: $evo-showcase-panel-item-large-label-letter-spacing;
+				sup									{
+													font-size: $evo-showcase-panel-item-large-label-sup-font-size;
+													top: $evo-showcase-panel-item-large-label-sup-position-top;
+													left: $evo-showcase-panel-item-large-label-sup-position-left;
+													}
+												}
+			.evo-showcase-panel-item-sub-label	{
+												top: $evo-showcase-panel-item-large-sub-label-position-top;
+												left: $evo-showcase-panel-item-large-sub-label-position-left;
+												letter-spacing: $evo-showcase-panel-item-large-sub-label-letter-spacing;
+												}
+			.evo-showcase-panel-item-sub-text	{
+												position: relative;
+												top: $evo-showcase-panel-item-large-sub-text-position-top;
+												}
+											}
+	// SHOWCASE PANEL ITEM - LARGE - ENDS
+
+	// SHOWCASE PANEL ITEM - SMALL - BEGINS
+		.evo-showcase-panel-item-small		{
+											padding-top: $evo-showcase-panel-item-small-padding-top;
+											padding-bottom: $evo-showcase-panel-item-small-padding-bottom;
+			.evo-showcase-panel-item-label		{
+												font-size: $evo-showcase-panel-item-small-label-font-size;
+												letter-spacing: $evo-showcase-panel-item-small-label-letter-spacing;
+				sup									{
+													font-size: $evo-showcase-panel-item-small-label-sup-font-size;
+													top: $evo-showcase-panel-item-small-label-sup-position-top;
+													left: $evo-showcase-panel-item-small-label-sup-position-left;
+													}
+												}
+			.evo-showcase-panel-item-sub-label	{
+												top: $evo-showcase-panel-item-small-sub-label-position-top;
+												left: $evo-showcase-panel-item-small-sub-label-position-left;
+												letter-spacing: $evo-showcase-panel-item-small-sub-label-letter-spacing;
+												font-family: $evo-showcase-panel-item-small-sub-label-font-family;
+												text-transform: $evo-showcase-panel-item-small-sub-label-text-transform;
+												}
+											}
+	// SHOWCASE PANEL ITEM - SMALL - ENDS
+
+	// SHOWCASE PANEL - COLOR REVERSE - BEGINS
+		&[data-evo-showcase-panel-color-reverse]
+											{
+											background-color: $evo-showcase-panel-color-reverse-background-color;
+			.evo-showcase-panel-item 			{
+												color: $evo-showcase-panel-color-reverse-font-color;
+				a									{color: $evo-showcase-panel-color-reverse-font-color;}
+				[class^="evo-icon-"]				{color: $evo-showcase-panel-color-reverse-font-color;}
+												}
+											}
+	// SHOWCASE PANEL - COLOR REVERSE - BEGINS
+
+	// SHOWCASE PANEL - FIXED - BEGINS
+		&[data-evo-showcase-panel-fixed]	{
+											position: fixed;
+											top: $evo-showcase-panel-fixed-position-top;
+											left: $evo-showcase-panel-fixed-position-left;
+											z-index: $evo-showcase-panel-fixed-z-index;
+											width: $evo-showcase-panel-fixed-width;
+											}
+	// SHOWCASE PANEL - FIXED - ENDS
+
+										}
+// SHOWCASE PANEL - ENDS

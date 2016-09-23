@@ -1,0 +1,192 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Global Color Variables Partial
+//-------------------------------------------------------------------------------------------
+
+// BASE COLORS
+// ------------------------------------------------------------------------------------------
+$black:										#0A0A0A !default;
+$white:										#FEFEFE !default;
+$transparent:								transparent !default;
+
+// SAPPHIRE COLORS
+// ------------------------------------------------------------------------------------------
+$sapphire-dark:								#002C77 !default;
+$sapphire-medium:							#006D9E !default;
+$sapphire-bright:							#00A8C8 !default;
+$sapphire-light:							#A6E2EF !default;
+
+// ONYX COLORS
+// ------------------------------------------------------------------------------------------
+$onyx-dark:									#000000 !default;
+$onyx-medium:								#404040 !default;
+$onyx-bright:								#808080 !default; // Gray
+$onyx-light:								#BFBFBF !default;
+
+$onyx-dark-90:								scale-color($onyx-dark, $lightness: 10%) !default; // #1A1A1A
+$onyx-dark-80:								scale-color($onyx-dark, $lightness: 20%) !default; // #333333
+$onyx-dark-70:								scale-color($onyx-dark, $lightness: 30%) !default; // #4D4D4D
+$onyx-dark-60:								scale-color($onyx-dark, $lightness: 40%) !default; // #666666
+$onyx-dark-50:								scale-color($onyx-dark, $lightness: 50%) !default; // #808080 or Gray
+$onyx-dark-40:								scale-color($onyx-dark, $lightness: 60%) !default; // #999999
+$onyx-dark-30:								scale-color($onyx-dark, $lightness: 70%) !default; // #B3B3B3
+$onyx-dark-20:								scale-color($onyx-dark, $lightness: 80%) !default; // #CCCCCC
+$onyx-dark-14:								scale-color($onyx-dark, $lightness: 86%) !default; // #DBDBDB
+$onyx-dark-10:								scale-color($onyx-dark, $lightness: 90%) !default; // #E6E6E6
+$onyx-dark-6:								scale-color($onyx-dark, $lightness: 94%) !default; // #F0F0F0
+$onyx-dark-2:								scale-color($onyx-dark, $lightness: 98%) !default; // #FAFAFA
+
+// AMETHYST COLORS
+// ------------------------------------------------------------------------------------------
+$amethyst-dark:								#570054 !default;
+$amethyst-medium:							#932077 !default;
+$amethyst-bright:							#CF3D96 !default;
+$amethyst-light:							#E7B8D6 !default;
+
+// RUBY COLORS
+// ------------------------------------------------------------------------------------------
+$ruby-dark:									#690031 !default;
+$ruby-medium:								#A9194F !default;
+$ruby-bright:								#ED2C67 !default;
+$ruby-light:								#F7B6BB !default;
+
+// TOPAZ COLORS
+// ------------------------------------------------------------------------------------------
+$topaz-dark:								#905501 !default;
+$topaz-medium:								#C98414 !default;
+$topaz-bright:								#FBAE17 !default;
+$topaz-light:								#FFDDAC !default;
+
+// TURQUOISE COLORS
+// ------------------------------------------------------------------------------------------
+$turquoise-dark:							#004C50 !default;
+$turquoise-medium:							#008075 !default;
+$turquoise-bright:							#0FB694 !default;
+$turquoise-light:							#A7D9C8 !default;
+
+// IOLITE COLORS
+// ------------------------------------------------------------------------------------------
+$iolite-dark:								#43286D !default;
+$iolite-medium:								#595998 !default;
+$iolite-bright:								#6F85C2 !default;
+$iolite-light:								#C5CAE7 !default;
+
+// GARNET COLORS
+// ------------------------------------------------------------------------------------------
+$garnet-dark:								#820009 !default;
+$garnet-medium:								#BB2C2B !default;
+$garnet-bright:								#EF4E45 !default;
+$garnet-light:								#F9BEAD !default;
+
+// CITRINE COLORS
+// ------------------------------------------------------------------------------------------
+$citrine-dark:								#8D380A !default;
+$citrine-medium:							#C55F24 !default;
+$citrine-bright:							#F48132 !default;
+$citrine-light:								#FCCFAB !default;
+
+// PERIDOT COLORS
+// ------------------------------------------------------------------------------------------
+$peridot-dark:								#516021 !default;
+$peridot-medium:							#838E30 !default;
+$peridot-bright:							#B3BA35 !default;
+$peridot-light:								#D9D99F !default;
+
+// EMERALD COLORS
+// ------------------------------------------------------------------------------------------
+$emerald-dark:								#00582D !default;
+$emerald-medium:							#128C3F !default;
+$emerald-bright:							#72BE44 !default;
+$emerald-light:								#BDDDA3 !default;
+
+
+// ==========================================================================================
+// COLOR PALETTE ARRAY
+// ==========================================================================================
+
+$color-palette: (
+
+	// BASE COLORS
+	"black": 				(color: $black),
+	"white": 				(color: $white),
+	"transparent": 			(color: $transparent),
+
+	// SAPPHIRE COLORS
+	sapphire-dark: 			(color: $sapphire-dark),
+	sapphire-medium: 		(color: $sapphire-medium),
+	sapphire-bright: 		(color: $sapphire-bright),
+	sapphire-light: 		(color: $sapphire-light),
+
+	// ONYX COLORS
+	onyx-dark: 				(color: $onyx-dark),
+	onyx-medium: 			(color: $onyx-medium),
+	onyx-bright: 			(color: $onyx-bright),
+	onyx-light: 			(color: $onyx-light),
+
+	onyx-dark-90:			(color: $onyx-dark-90),
+	onyx-dark-80:			(color: $onyx-dark-80),
+	onyx-dark-70:			(color: $onyx-dark-70),
+	onyx-dark-60:			(color: $onyx-dark-60),
+	onyx-dark-50:			(color: $onyx-dark-50),
+	onyx-dark-40:			(color: $onyx-dark-40),
+	onyx-dark-30:			(color: $onyx-dark-30),
+	onyx-dark-20:			(color: $onyx-dark-20),
+	onyx-dark-14:			(color: $onyx-dark-14),
+	onyx-dark-10:			(color: $onyx-dark-10),
+	onyx-dark-6:			(color: $onyx-dark-6),
+	onyx-dark-2:			(color: $onyx-dark-2),
+
+	// AMETHYST COLORS
+	amethyst-dark: 			(color: $amethyst-dark),
+	amethyst-medium: 		(color: $amethyst-medium),
+	amethyst-bright: 		(color: $amethyst-bright),
+	amethyst-light: 		(color: $amethyst-light),
+
+	// RUBY COLORS
+	ruby-dark: 				(color: $ruby-dark),
+	ruby-medium: 			(color: $ruby-medium),
+	ruby-bright: 			(color: $ruby-bright),
+	ruby-light: 			(color: $ruby-light),
+
+	// TOPAZ COLORS
+	topaz-dark: 			(color: $topaz-dark),
+	topaz-medium:			(color: $topaz-medium),
+	topaz-bright:			(color: $topaz-bright),
+	topaz-light: 			(color: $topaz-light),
+
+	// TURQUOISE COLORS
+	turquoise-dark: 		(color: $turquoise-dark),
+	turquoise-medium:		(color: $turquoise-medium),
+	turquoise-bright:		(color: $turquoise-bright),
+	turquoise-light:		(color: $turquoise-light),
+
+	// IOLITE COLORS
+	iolite-dark: 			(color: $iolite-dark),
+	iolite-medium: 			(color: $iolite-medium),
+	iolite-bright: 			(color: $iolite-bright),
+	iolite-light: 			(color: $iolite-light),
+
+	// GARNET COLORS
+	garnet-dark: 			(color: $garnet-dark),
+	garnet-medium: 			(color: $garnet-medium),
+	garnet-bright: 			(color: $garnet-bright),
+	garnet-light: 			(color: $garnet-light),
+
+	// CITRINE COLORS
+	citrine-dark: 			(color: $citrine-dark),
+	citrine-medium:			(color: $citrine-medium),
+	citrine-bright:			(color: $citrine-bright),
+	citrine-light:			(color: $citrine-light),
+
+	// PERIDOT COLORS
+	peridot-dark: 			(color: $peridot-dark),
+	peridot-medium:			(color: $peridot-medium),
+	peridot-bright:			(color: $peridot-bright),
+	peridot-light:			(color: $peridot-light),
+
+	// EMERALD COLORS
+	emerald-dark: 			(color: $emerald-dark),
+	emerald-medium:			(color: $emerald-medium),
+	emerald-bright:			(color: $emerald-bright),
+	emerald-light:			(color: $emerald-light)
+
+);

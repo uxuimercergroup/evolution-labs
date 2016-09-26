@@ -17,6 +17,25 @@ gulp.task('patterns:clean', function(done){
   rimraf(config.dest.patterns, done);
 });
 
+// Patterns HTML Task
+gulp.task('patterns:html', function(){
+	return gulp.src(config.src.patterns.html, {
+		base: config.src.patterns_base
+	})
+	.pipe(plugins.newer({
+		dest: config.dest.patterns,
+		ext: '.html'
+	}))
+	.pipe(panini({
+		root: config.panini.root,
+		layouts: config.panini.layouts,
+		partials: config.panini.partials,
+		data: config.panini.data,
+		helpers: config.panini.helpers
+	}))
+	.pipe(gulp.dest(config.dest.patterns));
+});
+
 // Patterns Sass Task
 gulp.task('patterns:sass', function(){
 	return gulp.src(config.src.patterns.scss, {
@@ -338,5 +357,5 @@ gulp.task('patterns:notify', function() {
 
 // Package Patterns Task
 gulp.task('patterns', function(done){
-  sequence('patterns:clean', ['patterns:sass', 'patterns:js'], 'patterns:notify', done);
+  sequence('patterns:clean', ['patterns:html', 'patterns:sass', 'patterns:js'], 'patterns:notify', done);
 });

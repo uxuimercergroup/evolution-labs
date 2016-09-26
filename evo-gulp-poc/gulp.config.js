@@ -3,7 +3,7 @@ module.exports = function(){
   var paths = {
     src: 'src/',
     src_assets: 'src/assets/',
-    src_patterns: 'src/patterns/',
+    src_patterns: 'src/pages/patterns/',
     dest: 'dist/',
     dest_assets: 'dist/assets/',
     dest_patterns: 'dist/patterns/'
@@ -11,6 +11,7 @@ module.exports = function(){
    
   var config = {
       global: {
+        src: paths.src,
         dest: paths.dest
       },
       src: {
@@ -21,7 +22,8 @@ module.exports = function(){
         assets_base: paths.src_assets,
         pages: paths.src + 'pages/**/*.html',
         layouts: [
-          paths.src + '{layouts,partials}/**/*.hbs',
+          paths.src + '{layouts,partials}/**/*.{hbs,html}',
+          paths.src_patterns + '**/*.{hbs,html}',
           paths.src + 'pages/doc.hbs'
         ],
         data: paths.src + 'data/**/*.{json,yml}',
@@ -101,8 +103,9 @@ module.exports = function(){
         ],
         patterns_base: paths.src_patterns,
         patterns: {
-          scss: paths.src_patterns + '/**/*.scss',
-          js: paths.src_patterns + '/**/*.js'
+          html: paths.src_patterns + 'organisms/**/*.{hbs,html}',
+          scss: paths.src_patterns + '**/*.scss',
+          js: paths.src_patterns + '**/*.js'
         },
         scss : paths.src_assets + 'scss/**/*.scss'
       },
@@ -174,7 +177,10 @@ module.exports = function(){
       panini: {
         root: paths.src + '/pages/',
         layouts: paths.src + '/layouts/',
-        partials: paths.src + '/partials/',
+        partials: [
+          paths.src + '/partials/',
+          paths.src_patterns
+        ],
         data: paths.src + '/data/',
         helpers: paths.src + '/helpers/'
       },

@@ -1,5 +1,41 @@
-<ul>
-	{{#each test.nav}}
-	<li><a href="{{url}}" {{#ifpage slug}}class="active"{{/ifpage}}>{{name}}</a></li>
-	{{/each}}
-</ul>
+<!-- TOP BAR - BEGINS -->
+<nav class="top-bar show-for-large evo-top-bar" role="navigation">
+
+<!-- TOP BAR TITLE - BEGINS -->
+	<div class="top-bar-title">
+		<a href="/index.html">Mercer <span>Evolution</span></a>
+		<!-- <a href="#/"><img src="/images/core/corp-logos/mercer/mercer_logo_rgb_reverse.png" alt="Mercer - Make Tomorrow, Today" width="160"></a> -->
+	</div>
+<!-- TOP BAR TITLE - ENDS -->
+
+<!-- TOP BAR CONTENT - BEGINS -->
+	<div class="evo-top-bar-content">
+
+	<!-- TOP BAR RIGHT SECTION - BEGINS -->
+		<div class="top-bar-right">
+			<ul class="dropdown menu" data-dropdown-menu>
+			{{#each test.nav}}
+				<li>
+					<a href="{{url}}" {{#ifpage slug}}class="active"{{/ifpage}}>{{name}}</a>
+					<ul class="dropdown menu" data-dropdown-menu>
+						<li>
+							<a href="#/">Sub-item 1</a>
+						</li>
+						<li>
+							<a href="#/">Sub-item 2</a>
+						</li>
+						<li>
+							<a href="#/">Sub-item 3</a>
+						</li>
+					</ul>
+				</li>
+			{{/each}}
+			</ul>
+		</div>
+	<!-- TOP BAR RIGHT SECTION - ENDS -->
+
+	</div>
+<!-- TOP BAR CONTENT - ENDS -->
+
+</nav>
+<!-- TOP BAR - ENDS -->

@@ -1,9 +1,15 @@
 <header class="header">
+	{{> nav}}
+
 	<h3>Header Partial</h3>
 
 	{{#ifpage 'index' 'about'}}
 	 <p>This is definitely either the Index or About page.</p>
 	{{/ifpage}}
 
-	{{> nav}}
+	<ul>
+	  {{#each test.inPageNav}}
+	  <li><a href="{{url}}" {{#ifpage slug}}class="active"{{/ifpage}}>{{name}}</a></li>
+	  {{/each}}
+	</ul>
 </header>

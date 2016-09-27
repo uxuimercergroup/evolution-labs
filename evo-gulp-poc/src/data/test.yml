@@ -1,6 +1,23 @@
 animal: lion
 
 nav:
+  - name: Learn
+    url :
+    slug: learn
+
+  - name: Design
+    url :
+    slug: design
+
+  - name: Develop
+    url :
+    slug: develop
+
+  - name: Resources
+    url :
+    slug: resources
+
+inPageNav:
   # This is a comment
   - name: Home
     url : /index.html

@@ -24,7 +24,7 @@ module.exports = function(){
         layouts: [
           paths.src + '{layouts,partials}/**/*.{hbs,html}',
           paths.src_patterns + '**/*.{hbs,html}',
-          paths.src + 'pages/doc.hbs'
+          paths.src + 'pages/doc-template.html'
         ],
         data: paths.src + 'data/**/*.{json,yml}',
         docs: paths.src + 'pages/**/*.md',

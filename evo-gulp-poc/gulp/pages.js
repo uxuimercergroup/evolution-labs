@@ -1,8 +1,11 @@
-var gulp     = require('gulp');                 // Require Gulp
-    config   = require('../gulp.config')();     // Require Gulp config
-    plugins  = require('gulp-load-plugins')();  // Require Gulp Load Plugins plugin
-    notifier = require('node-notifier');        // Require Gulp Notify and Notifier
-    panini   = require('panini');               // Require Panini
+var gulp       = require('gulp');                 // Require Gulp
+    config     = require('../gulp.config')();     // Require Gulp config
+    cacheBust  = require('gulp-cache-bust');      // Require Cache Bust
+    plugins    = require('gulp-load-plugins')();  // Require Gulp Load Plugins plugin
+    notifier   = require('node-notifier');        // Require Gulp Notify and Notifier
+    panini     = require('panini');               // Require Panini
+    argv       = require('yargs').argv;           // Require Yargs
+    production = !!(argv.production);             // Check for --production flag
 
 
 // Compile page templates into finished HTML files
@@ -19,6 +22,7 @@ gulp.task('pages', function(){
     data: config.panini.data,
     helpers: config.panini.helpers
   }))
+  .pipe(plugins.if(production, cacheBust()))
   .pipe(gulp.dest(config.global.dest));
 });
 
@@ -32,6 +36,7 @@ gulp.task('pages:all', function(){
     data: config.panini.data,
     helpers: config.panini.helpers
   }))
+  .pipe(plugins.if(production, cacheBust()))
   .pipe(gulp.dest(config.global.dest));
 });
 

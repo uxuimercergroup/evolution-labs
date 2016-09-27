@@ -22,18 +22,20 @@ gulp.task('reload', function(done){
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build', function(done){
-  sequence('clean', [
-    'pages',
-    'docs',
-    'sass',
-    'js:core',
-    'js:core_animation',
-    'js:app',
-    'images',
-    'copy',
-    'patterns:html',
-    'patterns:sass',
-    'patterns:js'
+  sequence(
+    'clean', 
+    [
+      'pages',
+      'docs',
+      'sass',
+      'js:core',
+      'js:core_animation',
+      'js:app',
+      'images',
+      'copy',
+      'patterns:html',
+      'patterns:sass',
+      'patterns:js'
     ],
     'build:notify',
     done

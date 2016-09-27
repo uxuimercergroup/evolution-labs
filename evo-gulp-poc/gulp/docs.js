@@ -5,12 +5,14 @@ var gulp           = require('gulp');                 // Require Gulp
     foundationDocs = require('foundation-docs');      // Require Foundation Docs
     supercollider  = require('supercollider');        // Require Supercollider
     panini         = require('panini');               // Require Panini
+    argv           = require('yargs').argv;           // Require Yargs
+    production     = !!(argv.production);             // Check for --production flag
 
 
 // Supercollider Config
 supercollider
   .config({
-    template: 'src/pages/doc.hbs',
+    template: 'src/pages/doc-template.html',
     marked: foundationDocs.marked,
     handlebars: foundationDocs.handlebars,
     keepFm: true
@@ -33,7 +35,7 @@ gulp.task('docs', function() {
     data: config.panini.data,
     helpers: config.panini.helpers
   }))
-  .pipe(cacheBust())
+  .pipe(plugins.if(production, cacheBust()))
   .pipe(gulp.dest(config.dest.docs));
 });
 
@@ -48,6 +50,6 @@ gulp.task('docs:all', function() {
     data: config.panini.data,
     helpers: config.panini.helpers
   }))
-  .pipe(cacheBust())
+  .pipe(plugins.if(production, cacheBust()))
   .pipe(gulp.dest(config.dest.docs));
 });

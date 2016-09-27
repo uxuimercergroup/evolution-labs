@@ -27,7 +27,7 @@ module.exports = function(){
           paths.src + 'pages/doc.hbs'
         ],
         data: paths.src + 'data/**/*.{json,yml}',
-        docs: paths.src + 'content/**/*.md',
+        docs: paths.src + 'pages/**/*.md',
         images: paths.src_assets + 'images/**/*',
         js : paths.src_assets + 'js/**/*.js',
         js_core: [
@@ -112,7 +112,7 @@ module.exports = function(){
       dest: {
         assets: paths.dest_assets,
         css: paths.dest_assets + 'css/',
-        docs: paths.dest + 'docs/',
+        docs: paths.dest,
         images: paths.dest_assets + 'images/',
         js: paths.dest_assets + 'js/',
         patterns: paths.dest_patterns

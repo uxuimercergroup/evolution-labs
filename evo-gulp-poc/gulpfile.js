@@ -22,7 +22,22 @@ gulp.task('reload', function(done){
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build', function(done){
-  sequence('clean', ['pages', 'docs', 'sass', 'js:core', 'js:core_animation', 'js:app', 'images', 'copy', 'patterns:html', 'patterns:sass', 'patterns:js'], 'build:notify', done);
+  sequence('clean', [
+    'pages',
+    'docs',
+    'sass',
+    'js:core',
+    'js:core_animation',
+    'js:app',
+    'images',
+    'copy',
+    'patterns:html',
+    'patterns:sass',
+    'patterns:js'
+    ],
+    'build:notify',
+    done
+    );
 });
 
 // Build Notifier Task
@@ -53,19 +68,19 @@ gulp.task('server:notify', function(){
 gulp.task('watch', function(){
   
   // Application Watches
-  gulp.watch(config.src.pages, function(){sequence(['pages'], 'reload', 'pages:notify')});
-  gulp.watch(config.src.layouts, function(){sequence(['pages:all', 'docs:all', 'patterns:html'], 'reload', 'pages:notify')});
-  gulp.watch(config.src.data, function(){sequence('pages:all', 'reload', 'pages:notify')});
-  gulp.watch(config.src.docs, function(){sequence('docs', 'reload', 'pages:notify')});
-  gulp.watch(config.src.scss, function(){sequence(['sass', 'docs:all'], 'reload', 'sass:notify')});
-  gulp.watch(config.src.js, function(){sequence(['js:core', 'js:app', 'docs:all'], 'reload', 'js:notify')});
-  gulp.watch(config.src.images, function(){sequence(['images'], 'reload', 'images:notify')});
-  gulp.watch(config.src.assets, function(){sequence(['copy'], 'copy:notify')});
+  gulp.watch(config.src.pages,    function(){sequence(['pages'], 'reload', 'pages:notify')});
+  gulp.watch(config.src.layouts,  function(){sequence(['pages:all', 'docs:all', 'patterns:html'], 'reload', 'pages:notify')});
+  gulp.watch(config.src.data,     function(){sequence('pages:all', 'reload', 'pages:notify')});
+  gulp.watch(config.src.docs,     function(){sequence('docs', 'reload', 'pages:notify')});
+  gulp.watch(config.src.scss,     function(){sequence(['sass', 'docs:all'], 'reload', 'sass:notify')});
+  gulp.watch(config.src.js,       function(){sequence(['js:core', 'js:app', 'docs:all'], 'reload', 'js:notify')});
+  gulp.watch(config.src.images,   function(){sequence(['images'], 'reload', 'images:notify')});
+  gulp.watch(config.src.assets,   function(){sequence(['copy'], 'copy:notify')});
 
   // Patterns Watches
-  gulp.watch(config.src.patterns.html, function(){sequence(['patterns:html'], 'reload', 'patterns:notify')});
-  gulp.watch(config.src.patterns.scss, function(){sequence(['patterns:sass', 'docs:all'], 'sass', 'reload', 'patterns:notify')});
-  gulp.watch(config.src.patterns.js, function(){sequence(['patterns:js', 'docs:all'], 'js:app', 'reload', 'patterns:notify')});
+  gulp.watch(config.src.patterns.html,  function(){sequence(['patterns:html'], 'reload', 'patterns:notify')});
+  gulp.watch(config.src.patterns.scss,  function(){sequence(['patterns:sass', 'docs:all'], 'sass', 'reload', 'patterns:notify')});
+  gulp.watch(config.src.patterns.js,    function(){sequence(['patterns:js', 'docs:all'], 'js:app', 'reload', 'patterns:notify')});
 });
 
 // Default Task

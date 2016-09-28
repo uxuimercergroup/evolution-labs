@@ -1,0 +1,121 @@
+nav:
+
+- header: Setup
+  section:
+  - name: Getting Started
+    url : "/pattern-library/getting-started.html"
+  - name: Installation
+    url : "/pattern-library/installation.html"
+  - name: Page Templates
+    url : "/page-templates.html"
+
+- header: Resources
+  section:
+  - name: Accessibility
+    url : "/pattern-library/accessibility.html"
+  - name: Change Log
+    url : "/change-log.html"
+  - name: Compatibility
+    url : "/compatibility.html"
+  - name: FAQs
+    url : "/faq.html"
+  - name: Glossary
+    url : "/glossary.html"
+  - name: Kitchen Sink
+    url : "/pattern-library/kitchen-sink.html"
+  - name: Media Queries
+    url : "/media-queries.html"
+  - name: Previous Versions
+    url : "/previous-versions.html"
+
+- header: Design
+  section:
+  - name: Color Palette
+    url : "/pattern-library/color-palette.html"
+  - name: Corporate Logos
+    url : "/pattern-library/corp-logos.html"
+  - name: Icons
+    url : "/pattern-library/icons.html"
+  - name: Type
+    url : "/pattern-library/type.html"
+
+- header: Atoms
+  section:
+  - name: Animations
+    url : "/pattern-library/animations.html"
+  - name: Buttons
+    url : "/pattern-library/buttons.html"
+  - name: Callout
+    url : "/pattern-library/callout.html"
+  - name: Equalizer
+    url : "/pattern-library/equalizer.html"
+  - name: Form Elements
+    url : "/pattern-library/form-elements.html"
+  - name: Grids
+    url : "/pattern-library/grids.html"
+  - name: Helpers
+    url : "/pattern-library/helpers.html"
+  - name: Lists
+    url : "/pattern-library/lists.html"
+  - name: Tables
+    url : "/pattern-library/tables.html"
+
+- header: Molecules
+  section:
+  - name: Accordion
+    url : "/pattern-library/accordion.html"
+  - name: Alert Boxes
+    url : "/pattern-library/alert-boxes.html"
+  - name: Autocomplete
+    url : "/pattern-library/autocomplete.html"
+  - name: Badges
+    url : "/pattern-library/badges.html"
+  - name: Breadcrumbs
+    url : "/pattern-library/breadcrumbs.html"
+  - name: Carousel
+    url : "/pattern-library/carousel.html"
+  - name: Data Table
+    url : "/pattern-library/data-tables.html"
+  - name: Datepicker
+    url : "/pattern-library/datepicker.html"
+  - name: Dropdowns
+    url : "/pattern-library/dropdowns.html"
+  - name: Forms
+    url : "/pattern-library/forms.html"
+  - name: Labels
+    url : "/pattern-library/labels.html"
+  - name: Off-canvas
+    url : "/pattern-library/off-canvas.html"
+  - name: Pagination
+    url : "/pattern-library/pagination.html"
+  - name: Progress Bar
+    url : "/pattern-library/progress-bar.html"
+  - name: Reveal Modal
+    url : "/pattern-library/reveal.html"
+  - name: Slider
+    url : "/pattern-library/slider.html"
+  - name: Tabs
+    url : "/pattern-library/tabs.html"
+  - name: Tooltips
+    url : "/pattern-library/tooltips.html"
+  - name: Top Bar
+    url : "/pattern-library/top-bar.html"
+
+- header: Organisms
+  section:
+  - name: Conversational Form
+    url : "/pattern-library/conversational-form.html"
+  - name: Fat Footer
+    url : "/pattern-library/fat-footer.html"
+  - name: Item Selection Panel
+    url : "/pattern-library/item-selection-panel.html"
+  - name: Pricing Table
+    url : "/pattern-library/pricing-table.html"
+  - name: Showcase Panel
+    url : "/pattern-library/showcase-panel.html"
+  - name: Social Media Badges
+    url : "/pattern-library/social-media-badges.html"
+  - name: Stepper
+    url : "/pattern-library/stepper.html"
+  - name: Thin Footer
+    url : "/pattern-library/thin-footer.html"

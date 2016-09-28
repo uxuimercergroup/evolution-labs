@@ -1,27 +1,44 @@
 <!doctype html>
 <html class="no-js" lang="">
-	<head>
-		<title>Evolution Gulp POC</title>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
-		<link rel="shortcut icon" href="{{root}}assets/images/core/favicon.ico">
 
-		<link href="{{root}}assets/css/evolution.css" rel="stylesheet" type="text/css">
-		<link href="{{root}}assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
-		<link href="{{root}}assets/css/app.css" rel="stylesheet" type="text/css">
-		<!--[if IE 9]><link href="{{root}}assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
-	</head>
+	{{> head }}
+
 	<body>
-		{{> header}}
 
-		{{> body}}
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+		<div class="off-canvas-wrapper evo-off-canvas">
+			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-		<footer class="footer"></footer>
+			<!-- HEADER - BEGINS -->
+				{{> header }}
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+				<div class="off-canvas-content" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+					<section role="main">
+						<div class="row expanded">
+							<div class="medium-9 medium-push-3 large-10 large-push-2 columns">
+								{{> body }} 
+							</div>
+							<div class="medium-3 medium-pull-9 large-2 large-pull-10 columns" id="jumpToNav">
+								{{> doc-sidebar }}
+							</div>
+						</div>
+					</section>
+				<!-- PAGE - ENDS -->
+
+				<!-- FOOTER - BEGINS -->
+					{{> footer }}
+				<!-- FOOTER - ENDS -->
+
+				</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+			</div>
+		</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
 
 		<script src="{{root}}assets/js/evolution.js"></script>
 		<script src="{{root}}assets/js/evolution-animations.js"></script>

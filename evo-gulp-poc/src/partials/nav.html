@@ -14,22 +14,25 @@
 	<!-- TOP BAR RIGHT SECTION - BEGINS -->
 		<div class="top-bar-right">
 			<ul class="dropdown menu" data-dropdown-menu>
-			{{#each test.nav}}
+				{{#each navigation.nav}}
 				<li>
-					<a href="{{url}}" {{#ifpage slug}}class="active"{{/ifpage}}>{{name}}</a>
+					<a href="javascript:;">{{section}}</a>
 					<ul class="dropdown menu" data-dropdown-menu>
+					{{#each sub_section}}
+						{{#if label}}
 						<li>
-							<a href="#/">Sub-item 1</a>
+							<label>{{label}}</label>
 						</li>
+						{{/if}}
+						{{#each nav_items}}
 						<li>
-							<a href="#/">Sub-item 2</a>
+							<a href="{{url}}">{{name}}</a>
 						</li>
-						<li>
-							<a href="#/">Sub-item 3</a>
-						</li>
+						{{/each}}
+					{{/each}}
 					</ul>
 				</li>
-			{{/each}}
+				{{/each}}
 			</ul>
 		</div>
 	<!-- TOP BAR RIGHT SECTION - ENDS -->

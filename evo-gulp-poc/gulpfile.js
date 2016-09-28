@@ -33,7 +33,7 @@ gulp.task('build', function(done){
       'js:app',
       'images',
       'copy',
-      'patterns:html',
+      'patterns:pages',
       'patterns:sass',
       'patterns:js'
     ],
@@ -71,8 +71,8 @@ gulp.task('watch', function(){
   
   // Application Watches
   gulp.watch(config.src.pages,    function(){sequence(['pages'], 'reload', 'pages:notify')});
-  gulp.watch(config.src.layouts,  function(){sequence(['pages:all', 'docs:all', 'patterns:html'], 'reload', 'pages:notify')});
-  gulp.watch(config.src.data,     function(){sequence('pages:all', 'reload', 'pages:notify')});
+  gulp.watch(config.src.layouts,  function(){sequence(['pages:all', 'docs:all', 'patterns:pages'], 'reload', 'pages:notify')});
+  gulp.watch(config.src.data,     function(){sequence(['pages:all', 'docs:all'], 'reload', 'pages:notify')});
   gulp.watch(config.src.docs,     function(){sequence('docs', 'reload', 'pages:notify')});
   gulp.watch(config.src.scss,     function(){sequence(['sass', 'docs:all'], 'reload', 'sass:notify')});
   gulp.watch(config.src.js,       function(){sequence(['js:core', 'js:app', 'docs:all'], 'reload', 'js:notify')});
@@ -80,9 +80,9 @@ gulp.task('watch', function(){
   gulp.watch(config.src.assets,   function(){sequence(['copy'], 'copy:notify')});
 
   // Patterns Watches
-  gulp.watch(config.src.patterns.html,  function(){sequence(['patterns:html'], 'reload', 'patterns:notify')});
-  gulp.watch(config.src.patterns.scss,  function(){sequence(['patterns:sass', 'docs:all'], 'sass', 'reload', 'patterns:notify')});
-  gulp.watch(config.src.patterns.js,    function(){sequence(['patterns:js', 'docs:all'], 'js:app', 'reload', 'patterns:notify')});
+  gulp.watch(config.src.patterns.content,  function(){sequence(['patterns:pages'], 'reload', 'patterns:notify')});
+  gulp.watch(config.src.patterns.scss,  function(){sequence(['patterns:sass', 'patterns:all'], 'sass', 'reload', 'patterns:notify')});
+  gulp.watch(config.src.patterns.js,    function(){sequence(['patterns:js', 'patterns:all'], 'js:app', 'reload', 'patterns:notify')});
 });
 
 // Default Task

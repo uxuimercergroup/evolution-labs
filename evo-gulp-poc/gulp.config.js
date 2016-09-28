@@ -20,44 +20,50 @@ module.exports = function(){
           paths.src_assets + 'fonts/**/*'
         ],
         assets_base: paths.src_assets,
-        pages: paths.src + 'pages/**/*.html',
+        pages: [
+          paths.src + 'pages/**/*.html',
+          '!' + paths.src + 'pages/patterns/**/*.html'
+        ],
         layouts: [
           paths.src + '{layouts,partials}/**/*.{hbs,html}',
           paths.src_patterns + '**/*.{hbs,html}',
           paths.src + 'pages/doc-template.html'
         ],
         data: paths.src + 'data/**/*.{json,yml}',
-        docs: paths.src + 'pages/**/*.md',
+        docs: [
+          paths.src + 'pages/**/*.md',
+          '!' + paths.src + 'pages/patterns/**/*.md'
+        ],
         images: paths.src_assets + 'images/**/*',
         js : paths.src_assets + 'js/**/*.js',
         js_core: [
           // JS Libraries required by Foundation
-          'node_modules/jquery/dist/jquery.js',
-          'node_modules/what-input/what-input.js',
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/what-input/what-input.js',
           // Core Foundation JS files
-          'node_modules/foundation-sites/js/foundation.core.js',
-          'node_modules/foundation-sites/js/foundation.util.*.js',
+          'bower_components/foundation-sites/js/foundation.core.js',
+          'bower_components/foundation-sites/js/foundation.util.*.js',
           // Individual Foundation JS components
           // If you aren't using a component, just remove it from the list
-          'node_modules/foundation-sites/js/foundation.abide.js',
-          'node_modules/foundation-sites/js/foundation.accordion.js',
-          'node_modules/foundation-sites/js/foundation.accordionMenu.js',
-          'node_modules/foundation-sites/js/foundation.drilldown.js',
-          'node_modules/foundation-sites/js/foundation.dropdown.js',
-          'node_modules/foundation-sites/js/foundation.dropdownMenu.js',
-          'node_modules/foundation-sites/js/foundation.equalizer.js',
-          'node_modules/foundation-sites/js/foundation.interchange.js',
-          'node_modules/foundation-sites/js/foundation.magellan.js',
-          'node_modules/foundation-sites/js/foundation.offcanvas.js',
-          'node_modules/foundation-sites/js/foundation.orbit.js', // Requires Evolution Animations JS
-          'node_modules/foundation-sites/js/foundation.responsiveMenu.js',
-          'node_modules/foundation-sites/js/foundation.responsiveToggle.js',
-          'node_modules/foundation-sites/js/foundation.reveal.js',
-          'node_modules/foundation-sites/js/foundation.slider.js',
-          'node_modules/foundation-sites/js/foundation.sticky.js',
-          'node_modules/foundation-sites/js/foundation.tabs.js',
-          'node_modules/foundation-sites/js/foundation.toggler.js',
-          'node_modules/foundation-sites/js/foundation.tooltip.js',
+          'bower_components/foundation-sites/js/foundation.abide.js',
+          'bower_components/foundation-sites/js/foundation.accordion.js',
+          'bower_components/foundation-sites/js/foundation.accordionMenu.js',
+          'bower_components/foundation-sites/js/foundation.drilldown.js',
+          'bower_components/foundation-sites/js/foundation.dropdown.js',
+          'bower_components/foundation-sites/js/foundation.dropdownMenu.js',
+          'bower_components/foundation-sites/js/foundation.equalizer.js',
+          'bower_components/foundation-sites/js/foundation.interchange.js',
+          'bower_components/foundation-sites/js/foundation.magellan.js',
+          'bower_components/foundation-sites/js/foundation.offcanvas.js',
+          'bower_components/foundation-sites/js/foundation.orbit.js', // Requires Evolution Animations JS
+          'bower_components/foundation-sites/js/foundation.responsiveMenu.js',
+          'bower_components/foundation-sites/js/foundation.responsiveToggle.js',
+          'bower_components/foundation-sites/js/foundation.reveal.js',
+          'bower_components/foundation-sites/js/foundation.slider.js',
+          'bower_components/foundation-sites/js/foundation.sticky.js',
+          'bower_components/foundation-sites/js/foundation.tabs.js',
+          'bower_components/foundation-sites/js/foundation.toggler.js',
+          'bower_components/foundation-sites/js/foundation.tooltip.js',
           // Core JS Libraries required by jQuery UI
           'bower_components/jquery-ui/ui/core.js',
           'bower_components/jquery-ui/ui/widget.js',
@@ -71,9 +77,9 @@ module.exports = function(){
           'bower_components/jquery-ui/ui/slider.js',
           // jQuery Plugins
           // If you aren't using a component, just remove it from the list
-          'node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
-          'node_modules/datatables.net/js/jquery.dataTables.js',
-          'node_modules/datatables.net-zf/js/dataTables.foundation.js',
+          'bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js',
+          'bower_components/datatables.net/js/jquery.dataTables.js',
+          'bower_components/datatables.net-zf/js/dataTables.foundation.js',
           'bower_components/jquery.maskedinput/dist/jquery.maskedinput.js',
           'src/assets/js/core/lib/jquery/plugins/jquery.autosize.input.js',
           // Mobile
@@ -88,7 +94,7 @@ module.exports = function(){
         ],
         js_core_animation: [
           // Evolution Animations JS
-          'node_modules/motion-ui/dist/motion-ui.js',
+          'bower_components/motion-ui/dist/motion-ui.js',
           'bower_components/AniJS/dist/anijs.js',
           'bower_components/AniJS/dist/helpers/dom/anijs-helper-dom.js',
           'bower_components/AniJS/dist/helpers/scrollreveal/anijs-helper-scrollreveal.js',
@@ -96,14 +102,14 @@ module.exports = function(){
         ],
         js_app: [
           // Application or project level JS files
-          'node_modules/clipboard/dist/clipboard.js',
+          'bower_components/clipboard/dist/clipboard.js',
           paths.src_assets + 'js/app/**/!(app).js',
           paths.src_assets + 'js/app.js',
           paths.src_patterns + 'organisms/**/*.js'
         ],
         patterns_base: paths.src_patterns,
         patterns: {
-          html: paths.src_patterns + 'organisms/**/*.{hbs,html}',
+          content: paths.src_patterns + 'organisms/**/*.md',
           scss: paths.src_patterns + '**/*.scss',
           js: paths.src_patterns + '**/*.js'
         },
@@ -186,8 +192,8 @@ module.exports = function(){
       },
       sass: {
         include_paths: [
-          'node_modules/foundation-sites/scss',
-          'node_modules/motion-ui/src'
+          'bower_components/foundation-sites/scss',
+          'bower_components/motion-ui/src'
         ],
         output_style: 'expanded'
       },

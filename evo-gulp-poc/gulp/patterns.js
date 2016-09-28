@@ -1,14 +1,28 @@
-var gulp       = require('gulp');					// Require Gulp
-	config     = require('../gulp.config')();		// Require Gulp config
-	plugins    = require('gulp-load-plugins')();	// Require Gulp Load Plugins plugin
-	browser    = require('browser-sync').create();	// Require Browser Sync
-	notifier   = require('node-notifier');			// Require Gulp Notify and Notifier
-	pkg        = require('../package.json');		// Require package.json data
-	replace    = require('gulp-replace-task');		// Require Replace Task
-	rimraf 	   = require('rimraf');					// Require Rimraf
-	argv       = require('yargs').argv;				// Require Yargs
-	production = !!(argv.production);				// Check for --production flag
+var gulp           = require('gulp');					// Require Gulp
+	config         = require('../gulp.config')();		// Require Gulp config
+	plugins    	   = require('gulp-load-plugins')();	// Require Gulp Load Plugins plugin
+	browser    	   = require('browser-sync').create();	// Require Browser Sync
+	cacheBust      = require('gulp-cache-bust');     	// Require Cache Bust
+	foundationDocs = require('foundation-docs');      	// Require Foundation Docs
+	notifier   	   = require('node-notifier');			// Require Gulp Notify and Notifier
+	pkg        	   = require('../package.json');		// Require package.json data
+	replace    	   = require('gulp-replace-task');		// Require Replace Task
+	rimraf 	   	   = require('rimraf');					// Require Rimraf
+    supercollider  = require('supercollider');       	// Require Supercollider
+	argv       	   = require('yargs').argv;				// Require Yargs
+	production 	   = !!(argv.production);				// Check for --production flag
 
+
+// Supercollider Config
+supercollider
+  .config({
+    template: 'src/pages/doc-template.html',
+    marked: foundationDocs.marked,
+    handlebars: foundationDocs.handlebars,
+    keepFm: true
+  })
+  .adapter('sass')
+  .adapter('js');
 
 // Patterns Clean Task
 // Delete the "patterns" folder
@@ -17,15 +31,16 @@ gulp.task('patterns:clean', function(done){
   rimraf(config.dest.patterns, done);
 });
 
-// Patterns HTML Task
-gulp.task('patterns:html', function(){
-	return gulp.src(config.src.patterns.html, {
+// Patterns Pages Task
+gulp.task('patterns:pages', function(){
+	return gulp.src(config.src.patterns.content, {
 		base: config.src.patterns_base
 	})
 	.pipe(plugins.newer({
 		dest: config.dest.patterns,
 		ext: '.html'
 	}))
+	.pipe(supercollider.init())
 	.pipe(panini({
 		root: config.panini.root,
 		layouts: config.panini.layouts,
@@ -33,6 +48,24 @@ gulp.task('patterns:html', function(){
 		data: config.panini.data,
 		helpers: config.panini.helpers
 	}))
+	.pipe(plugins.if(production, cacheBust()))
+	.pipe(gulp.dest(config.dest.patterns));
+});
+
+// Patterns All Task
+gulp.task('patterns:all', function(){
+	return gulp.src(config.src.patterns.content, {
+		base: config.src.patterns_base
+	})
+	.pipe(supercollider.init())
+	.pipe(panini({
+		root: config.panini.root,
+		layouts: config.panini.layouts,
+		partials: config.panini.partials,
+		data: config.panini.data,
+		helpers: config.panini.helpers
+	}))
+	.pipe(plugins.if(production, cacheBust()))
 	.pipe(gulp.dest(config.dest.patterns));
 });
 
@@ -357,5 +390,5 @@ gulp.task('patterns:notify', function() {
 
 // Package Patterns Task
 gulp.task('patterns', function(done){
-  sequence('patterns:clean', ['patterns:html', 'patterns:sass', 'patterns:js'], 'patterns:notify', done);
+  sequence('patterns:clean', ['patterns:pages', 'patterns:sass', 'patterns:js'], 'patterns:notify', done);
 });

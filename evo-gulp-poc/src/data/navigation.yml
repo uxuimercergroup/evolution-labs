@@ -4,56 +4,56 @@ nav:
   sub_section:
   - nav_items:
     - name: What is Evolution?
-      url: "/what.html"
+      url : "/what.html"
     - name: Why Evolution?
-      url: "/why.html"
+      url : "/why.html"
     - name: Product Suites
-      url: "/product-suites.html"
+      url : "/product-suites.html"
     - name: User Personas
-      url: "/user-personas.html"
+      url : "/user-personas.html"
     - name: User Journeys
-      url: "/user-journeys.html"
+      url : "/user-journeys.html"
 - section: Design
   sub_section:
   - nav_items:
     - name: Color Palette
-      url: "/pattern-library/color-palette.html"
+      url : "/pattern-library/color-palette.html"
     - name: Corporate Logos
-      url: "/pattern-library/corp-logos.html"
+      url : "/pattern-library/corp-logos.html"
     - name: Icons
-      url: "/pattern-library/icons.html"
+      url : "/pattern-library/icons.html"
     - name: Type
-      url: "/pattern-library/type.html"
+      url : "/pattern-library/type.html"
 - section: Develop
   sub_section:
   - label: Setup
     nav_items:
     - name: Getting Started
-      url: "/pattern-library/getting-started.html"
+      url : "/pattern-library/getting-started.html"
     - name: Installation
-      url: "/pattern-library/installation.html"
+      url : "/pattern-library/installation.html"
     - name: Page Templates
-      url: "/page-templates.html"
+      url : "/page-templates.html"
   - label: Patterns
     nav_items:
     - name: Pattern Library
-      url: "/pattern-library/"
+      url : "/pattern-library/"
     - name: Kitchen Sink
-      url: "/pattern-library/kitchen-sink.html"
+      url : "/pattern-library/kitchen-sink.html"
 - section: Resources
   sub_section:
   - nav_items:
     - name: Accessibility
-      url: "/pattern-library/accessibility.html"
+      url : "/pattern-library/accessibility.html"
     - name: Change Log
-      url: "/change-log.html"
+      url : "/change-log.html"
     - name: Compatibility
-      url: "/compatibility.html"
+      url : "/compatibility.html"
     - name: FAQs
-      url: "/faq.html"
+      url : "/faq.html"
     - name: Glossary
-      url: "/glossary.html"
+      url : "/glossary.html"
     - name: Media Queries
-      url: "/media-queries.html"
+      url : "/media-queries.html"
     - name: Previous Versions
-      url: "/previous-versions.html"
+      url : "/previous-versions.html"

@@ -103,6 +103,7 @@ module.exports = function(){
         js_app: [
           // Application or project level JS files
           'bower_components/clipboard/dist/clipboard.js',
+          'bower_components/typeahead.js/dist/typeahead.bundle.js',
           paths.src_assets + 'js/app/**/!(app).js',
           paths.src_assets + 'js/app.js',
           paths.src_patterns + 'organisms/**/*.js'

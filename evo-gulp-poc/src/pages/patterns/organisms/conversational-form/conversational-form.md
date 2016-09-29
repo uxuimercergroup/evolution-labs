@@ -3,6 +3,9 @@ title: Conversational Form
 description: pattern description
 sass: src/pages/patterns/organisms/conversational-form/conversational-form.scss
 js: src/pages/patterns/organisms/conversational-form/conversational-form.js
+tags:
+  - joe
+  - bob
 ---
 
 ## Header 1

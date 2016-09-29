@@ -1,0 +1,9 @@
+# These are search results that lead to the old versions of Evolution.
+-
+  type: old version
+  name: Evolution
+  description: Documentation for Evolution 4.0.0
+  link: 'http://evolution-archive.mercer.com/v4.0.0/'
+  tags:
+    - old
+    - previous

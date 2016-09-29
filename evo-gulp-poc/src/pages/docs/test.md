@@ -1,7 +1,7 @@
 ---
 title: Accordion
 description: Accordions are elements that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.
-sass: src/assets/scss/styles.scss
+sass: src/assets/scss/app.scss
 js: src/assets/js/app.js
 ---
 

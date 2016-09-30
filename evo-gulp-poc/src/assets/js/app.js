@@ -36,13 +36,10 @@ $(function() {
 	  source: function(query, sync, async) {
 	    query = query.toLowerCase();
 
-	    $.getJSON('./data/search.json', function(data, status) {
+	    $.getJSON('/data/search.json', function(data, status) {
 	      async(data.filter(function(elem, i, arr) {
 	        var name = elem.name.toLowerCase();
 	        var terms = [name, name.replace('-', '')].concat(elem.tags || []);
-
-var link = elem.link
-
 	        for (var i in terms) if (terms[i].indexOf(query) > -1) return true;
 	        return false;
 	      }));
@@ -70,7 +67,8 @@ var link = elem.link
 	$('[data-docs-search]')
 	  .typeahead({ highlight: false }, source)
 	  .on('typeahead:select', function(e, sel) {
-	    window.location.href = sel.link;
+	  	var link = sel.link.replace('src/pages', '');
+	    window.location.href = link;
 	  });
 
 	// Auto-highlight unless it's a phone

@@ -27,6 +27,10 @@ var SEARCH_PAGE_TYPES = {
   }
 }
 
+function buildSearch() {
+  supercollider.buildSearch('dist/data/search.json', function() {});
+}
+
 // Supercollider Config
 supercollider
   .config({
@@ -78,7 +82,3 @@ gulp.task('docs:all', function() {
   .pipe(gulp.dest(config.dest.docs))
   .on('finish', buildSearch);
 });
-
-function buildSearch() {
-  supercollider.buildSearch('dist/data/search.json', function() {});
-}

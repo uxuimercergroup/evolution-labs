@@ -67,7 +67,7 @@ $(function() {
 	$('[data-docs-search]')
 	  .typeahead({ highlight: false }, source)
 	  .on('typeahead:select', function(e, sel) {
-	  	var link = sel.link.replace('src/pages', '');
+	  	var link = '/' + sel.link;
 	    window.location.href = link;
 	  });
 

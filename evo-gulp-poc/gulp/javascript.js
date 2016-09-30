@@ -61,7 +61,7 @@ gulp.task('js:core_animation', function(){
 gulp.task('js:app', function(){
   return gulp.src(config.src.js_app)
   .pipe(plugins.sourcemaps.init())
-//  .pipe(plugins.babel())
+//  .pipe(plugins.babel()) /* Turned off babel because it was in conflict with typeahead.js */
   .pipe(plugins.newer(config.dest.js))
   .pipe(concat('app.js'))
   .pipe(replace({

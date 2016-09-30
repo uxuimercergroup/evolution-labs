@@ -9,7 +9,7 @@ var gulp           = require('gulp');                 // Require Gulp
     production     = !!(argv.production);             // Check for --production flag
 
 // Search
-var SEARCH_SORT_ORDER = [
+var search_sort_order = [
   'page',
   'component',
   'sass variable',
@@ -21,7 +21,7 @@ var SEARCH_SORT_ORDER = [
   'js event'
 ];
 
-var SEARCH_PAGE_TYPES = {
+var search_pages_types = {
   'library': function(item) {
     return !!(item.library);
   }
@@ -37,39 +37,24 @@ supercollider
     template: 'src/pages/doc-template.html',
     marked: foundationDocs.marked,
     handlebars: foundationDocs.handlebars,
-    keepFm: true
+    keepFm: true,
+    silent: false,
+    pageRoot: config.src.pages_base
   })
   .searchConfig({
     extra: 'src/data/search.yml',
-    sort: SEARCH_SORT_ORDER,
-    pageTypes: SEARCH_PAGE_TYPES
+    sort: search_sort_order,
+    pageTypes: search_pages_types
   })
   .adapter('sass')
   .adapter('js');
 
 // Copy docs into finished HTML files
 gulp.task('docs', function() {
-  return gulp.src(config.src.docs)
-  .pipe(plugins.newer({
-    dest: config.dest.docs,
-    ext: '.html'
-  }))
-  .pipe(supercollider.init())
-  .pipe(panini({
-    root: config.panini.root,
-    layouts: config.panini.layouts,
-    partials: config.panini.partials,
-    data: config.panini.data,
-    helpers: config.panini.helpers
-  }))
-  .pipe(plugins.if(production, cacheBust()))
-  .pipe(gulp.dest(config.dest.docs))
-  .on('finish', buildSearch);
-});
-
-gulp.task('docs:all', function() {
   panini.refresh();
-  return gulp.src(config.src.docs)
+  return gulp.src(config.src.docs, {
+    base: config.src.pages_base
+  })
   .pipe(supercollider.init())
   .pipe(panini({
     root: config.panini.root,
@@ -79,6 +64,6 @@ gulp.task('docs:all', function() {
     helpers: config.panini.helpers
   }))
   .pipe(plugins.if(production, cacheBust()))
-  .pipe(gulp.dest(config.dest.docs))
+  .pipe(gulp.dest(config.global.dest))
   .on('finish', buildSearch);
 });

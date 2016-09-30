@@ -22,18 +22,16 @@ module.exports = function(){
         assets_base: paths.src_assets,
         pages: [
           paths.src + 'pages/**/*.html',
+          '!' + paths.src + 'pages/**/*-template.html',
           '!' + paths.src + 'pages/patterns/**/*.html'
         ],
+        pages_base: paths.src + 'pages',
         layouts: [
           paths.src + '{layouts,partials}/**/*.{hbs,html}',
-          paths.src_patterns + '**/*.{hbs,html}',
-          paths.src + 'pages/doc-template.html'
+          paths.src_patterns + '**/*.{hbs,html}'
         ],
         data: paths.src + 'data/**/*.{json,yml}',
-        docs: [
-          paths.src + 'pages/**/*.md',
-          '!' + paths.src + 'pages/patterns/**/*.md'
-        ],
+        docs: paths.src + 'pages/**/*.md',
         images: paths.src_assets + 'images/**/*',
         js : paths.src_assets + 'js/**/*.js',
         js_core: [
@@ -110,19 +108,17 @@ module.exports = function(){
         ],
         patterns_base: paths.src_patterns,
         patterns: {
-          content: paths.src_patterns + 'organisms/**/*.md',
           scss: paths.src_patterns + '**/*.scss',
           js: paths.src_patterns + '**/*.js'
         },
         scss : paths.src_assets + 'scss/**/*.scss'
       },
       dest: {
+        patterns: paths.dest_patterns,
         assets: paths.dest_assets,
         css: paths.dest_assets + 'css/',
-        docs: paths.dest,
         images: paths.dest_assets + 'images/',
-        js: paths.dest_assets + 'js/',
-        patterns: paths.dest_patterns
+        js: paths.dest_assets + 'js/'
       },
       autoprefixer: {
         browsers: [

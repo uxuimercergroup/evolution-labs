@@ -62,7 +62,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum felis
 		</div>
 		<div class="row">
 			<fieldset class="small-12 columns">
-				<button class="button secondary evo-button" type="reset" title="Reset">Reset1</button>
+				<button class="button secondary evo-button" type="reset" title="Reset">Reset</button>
 				<button class="button evo-button" title="Done">Done</button>
 			</fieldset>
 		</div>

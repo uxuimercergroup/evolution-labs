@@ -11,6 +11,9 @@ title: "Homepage"
 
 <p>{{test.animal}}</p>
 
+{{#ifpage 'index' 'about'}}
+ <p>This is definitely either the Index or About page.</p>
+{{/ifpage}}
 
 {{#ifequal test.animal 'lion'}}
 <p>Yes, {{test.animal}}</p>

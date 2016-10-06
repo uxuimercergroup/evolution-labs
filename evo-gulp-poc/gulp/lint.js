@@ -1,4 +1,4 @@
-var gulp       = require('gulp');               // Require Gulp
+
     sassLint   = require('gulp-sass-lint');     // Require Sass Lint
     eslint 	   = require('gulp-eslint');        // Require ESlint
     notifier   = require('node-notifier');      // Require Gulp Notify and Notifier

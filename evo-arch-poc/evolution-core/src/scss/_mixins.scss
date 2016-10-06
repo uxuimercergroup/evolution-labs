@@ -1,0 +1,281 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Global Mixins Partial
+//-------------------------------------------------------------------------------------------
+
+// ==========================================================================================
+// CSS3 MIXINS
+// ==========================================================================================
+
+// BACKGROUND GRADIENTS
+// ------------------------------------------------------------------------------------------
+
+@mixin background-gradient($startColor, $endColor) {
+	background-color: mix($startColor, $endColor, 62.5%);
+	background-image: linear-gradient(to bottom, $startColor, $endColor);
+	background-repeat: repeat-x;
+}
+
+@mixin background-gradient-horizontal($startColor, $endColor) {
+	background-color: $endColor;
+	background-image: linear-gradient(to right, $startColor, $endColor);
+	background-repeat: repeat-x;
+}
+
+@mixin background-gradient-directional($startColor, $endColor, $deg) {
+	background-color: $endColor;
+	background-image: linear-gradient($deg, $startColor, $endColor);
+	background-repeat: repeat-x;
+}
+
+@mixin background-gradient-vertical-three-colors($startColor, $midColor, $colorStop, $endColor) {
+	background-color: mix($midColor, $endColor, 80%);
+	background-image: linear-gradient($startColor, $midColor $colorStop, $endColor);
+	background-repeat: no-repeat;
+}
+
+@mixin background-gradient-radial($innerColor, $outerColor) {
+	background-color: $outerColor;
+	background-image: radial-gradient(circle, $innerColor, $outerColor);
+	background-repeat: no-repeat;
+}
+
+// TRANSLUCENCY - BACKGROUND
+// ------------------------------------------------------------------------------------------
+// Give mixin a hexidecimal color and Sass converts to rgba
+@mixin translucent-background($hex-color: #fff, $alpha: 1) {
+	background-color: $hex-color; // for IE8 since it does not understand rgba colors
+	background-color: rgba($hex-color, $alpha);
+}
+
+// TRANSLUCENCY - BORDER
+// ------------------------------------------------------------------------------------------
+// Give mixin a hexidecimal color and Sass converts to rgba
+@mixin translucent-border($hex-color: #fff, $alpha: 1) {
+	border-color: $hex-color; // for IE8 since it does not understand rgba colors
+	border-color: rgba($hex-color, $alpha);
+	@include background-clip(padding-box);
+}
+
+// BORDER RADIUS
+// ------------------------------------------------------------------------------------------
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	background-clip: padding-box;
+}
+
+// BOX SHADOW
+// ------------------------------------------------------------------------------------------
+@mixin box-shadow($shadow1, $shadow2:false) {
+	$params: $shadow1;
+	@if $shadow2 
+		{$params: $shadow1, $shadow2;}
+	box-shadow: $params;
+}
+
+// TEXT SHADOW
+// ------------------------------------------------------------------------------------------
+@mixin text-shadow($h-shadow, $v-shadow, $blur, $color) {
+	text-shadow:$h-shadow $v-shadow $blur $color;
+}
+
+// TRANSITIONS
+// ------------------------------------------------------------------------------------------
+@mixin transition($transition) {
+	transition: $transition;
+}
+
+// TRANSFORMATIONS
+// ------------------------------------------------------------------------------------------
+@mixin transform($transform) {
+	transform: $transform;
+}
+
+@mixin rotate($degrees) {
+	transform: rotate($degrees);
+}
+
+@mixin scale($ratio) {
+	transform: scale($ratio);
+}
+
+@mixin translate($x, $y) {
+	transform: translate($x, $y);
+}
+
+@mixin skew($x, $y) {
+	transform: skew($x, $y);
+}
+
+@mixin translate3d($x, $y, $z) {
+	transform: translate3d($x, $y, $z);
+}
+
+@mixin keyframe($animationName) {
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@mixin animation($animationSettings) {
+	animation: $animationSettings;
+}
+
+// BACKFACE VISIBILITY
+// ------------------------------------------------------------------------------------------
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is 'visible', but can be changed to 'hidden'.
+@mixin backface-visibility($visibility){
+	backface-visibility: $visibility;
+}
+
+// BACKGROUND CLIPPING
+// ------------------------------------------------------------------------------------------
+@mixin background-clip($clip) {
+	background-clip: $clip;
+}
+
+// BACKFGROUND SIZING
+// ------------------------------------------------------------------------------------------
+@mixin background-size($bkgd-size) {
+	background-size: $bkgd-size;
+}
+
+// BOX SIZING
+// ------------------------------------------------------------------------------------------
+@mixin box-sizing($boxmodel) {
+	box-sizing: $boxmodel;
+}
+
+// USER SELECT
+// ------------------------------------------------------------------------------------------
+// For selecting text on the page, disables the ability to select certain text on the page if 'none' is used.
+@mixin user-select($select) {
+	user-select: $select;
+}
+
+// TYPE SELECTION
+// ------------------------------------------------------------------------------------------
+// For selecting text on the page, color and background color
+@mixin type-selection($text-color,$bkgd-color) {
+	&::selection {
+		color: $text-color;
+		background:$bkgd-color;
+	}
+}
+
+// RESIZE ANYTHING
+// ------------------------------------------------------------------------------------------
+@mixin resizable($direction) {
+	resize: $direction; // Options: horizontal, vertical, both
+	overflow: auto; // Safari fix
+}
+
+// HYPHENATION
+// ------------------------------------------------------------------------------------------
+@mixin hyphens($mode: auto) {
+	word-wrap: break-word;
+	hyphens: $mode;
+}
+
+// OPACITY
+// ------------------------------------------------------------------------------------------
+@mixin opacity($opacity) {
+	opacity: $opacity / 100;
+}
+
+
+// ==========================================================================================
+// UTILITY MIXINS
+// ==========================================================================================
+
+// CLEARFIX
+// ------------------------------------------------------------------------------------------
+@mixin clearfix {
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		clear: both;
+		overflow: hidden;
+		visibility: hidden;
+	}
+}
+
+// CENTER ALIGN BLOCK LEVEL ELEMENT
+// ------------------------------------------------------------------------------------------
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// PLACEHOLDER TEXT
+// ------------------------------------------------------------------------------------------
+@mixin placeholder($color: $placeholderTextColor) {
+	&::placeholder {
+		color: $color;
+	}
+}
+
+// TEXT OVERFLOW
+// ------------------------------------------------------------------------------------------
+// Requires inline-block or block for proper styling
+@mixin text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+@mixin text-overflow-disabled {
+	overflow: visible;
+	text-overflow: none;
+	white-space: normal;
+}
+
+// CSS IMAGE REPLACEMENT
+// ------------------------------------------------------------------------------------------
+@mixin hide-text {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+
+// FONT FACE
+// ------------------------------------------------------------------------------------------
+// Order of the includes matters, and it is: normal, bold, italic, bold+italic.
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('#{$file-path}.eot'); // IE9 Compat Modes
+		src: url('#{$file-path}.eot?#iefix')			format('embedded-opentype'), // IE6-IE8
+			url('#{$file-path}.woff')					format('woff'), // Modern Browsers
+			url('#{$file-path}.ttf')					format('truetype'),  // Safari, Android, iOS
+			url('#{$file-path}.svg##{$font-family}')	format('svg'); // Legacy iOS
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+
+// ==========================================================================================
+// LINK MIXINS
+// ==========================================================================================
+
+@mixin href-link($baseLinkColor:#01417E, $baseLinkTextDeco:underline) {
+	color:$baseLinkColor;
+	text-decoration:$baseLinkTextDeco;
+}
+@mixin href-link-hover($baseLinkHoverTextDeco:none) {
+	text-decoration:$baseLinkHoverTextDeco;
+}
+
+
+// ==========================================================================================
+// RESPONSIVE MIXINS
+// ==========================================================================================
+
+// TEXT SIZE ADJUST
+@mixin text-size-adjust($size-adjust:100%) {
+	text-size-adjust: $size-adjust;
+}

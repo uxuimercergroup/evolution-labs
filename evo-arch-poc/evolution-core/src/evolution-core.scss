@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+// Evolution global partials
+@import	"scss/colors";
+@import	"scss/mixins";
+@import	"scss/util";
+
+// Import Foundation framework from package manager
+@import "node_modules/foundation-sites/scss/foundation";
+
+// Export mixin which prints out the Sass for everything in Foundation
+@include foundation-everything();
+
+// Evolution core partials
+@import	"scss/vars";
+@import	"scss/helpers";
+@import	"scss/icons";
+@import	"scss/type";

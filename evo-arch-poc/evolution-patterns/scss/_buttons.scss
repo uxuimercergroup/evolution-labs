@@ -1,0 +1,230 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Base Buttons Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-button-min-width: rem-calc(120) !default;
+$evo-button-tiny-text-transform: uppercase !default;
+$evo-button-hollow-secondary-color: $onyx-dark-40 !default;
+$evo-button-icon-font-family: $evo-icon-font-stack !default;
+$evo-button-dropdown-icon: '\edc6' !default;
+$evo-button-close-icon-color: $evo-primary-color !default;
+$evo-button-close-icon-hover-color: scale-color($evo-button-close-icon-color, $lightness: 10%) !default;
+
+
+@if $use-buttons == true{
+
+	// BUTTON
+	.evo-button 					{
+
+		// TINY
+		&.tiny							{text-transform: $evo-button-tiny-text-transform;}
+
+		// EXPANDED
+		&.expanded						{display: inline-block;}
+
+		// HOLLOW
+		&.hollow						{
+			&.secondary						{
+											border-color: $evo-button-hollow-secondary-color;
+											color: $evo-button-hollow-secondary-color;
+											}
+										}
+
+		// DROPDOWN
+		&.dropdown						{
+			&:after							{
+											position: relative;
+											top: 0;
+											bottom: 0;
+											border: 0;
+											font-size: inherit;
+											height: inherit;
+											width: inherit;
+											font-family: $evo-button-icon-font-family;
+											content: $evo-button-dropdown-icon;
+											}
+										}			
+
+		// BUTTON MIN WIDTH
+		&[data-evo-button-min-width]	{min-width: $evo-button-min-width;}
+
+		// BUTTON ICONS
+		&[data-evo-button-icons]		{
+			[class^="evo-icon-"]			{
+											line-height: inherit;
+											color: inherit;
+											top: -1px;
+											}
+			.evo-icon-position-left			{
+											float: left;
+											margin-right: rem-calc(8);
+											}
+			.evo-icon-position-right		{
+											float: right;
+											margin-left: rem-calc(8);
+											}
+			.evo-button-text				{
+											position: relative;
+											top: -1px;
+											}
+
+			// BUTTON ICON - TINY
+			&.tiny							{
+				[class^="evo-icon-"]			{
+												top: 1px;
+												font-size: rem-calc(12);
+												}
+				.evo-icon-position-left			{margin-right: rem-calc(6);}
+				.evo-icon-position-right		{margin-left: rem-calc(6);}
+				.evo-button-text				{top: 2px}
+											}
+
+			// BUTTON ICON - SMALL
+			&.small							{
+				[class^="evo-icon-"]			{
+												top: 0;
+												font-size: rem-calc(14);
+												}
+				.evo-icon-position-left			{margin-right: rem-calc(7);}
+				.evo-icon-position-right		{margin-left: rem-calc(7);}
+				.evo-button-text				{top: 1px}
+											}
+
+			// BUTTON ICON - LARGE
+			&.large							{
+				[class^="evo-icon-"]			{
+												top: 1px;
+												font-size: rem-calc(18);
+												}
+				.evo-icon-position-left			{margin-right: rem-calc(9);}
+				.evo-icon-position-right		{margin-left: rem-calc(9);}
+				.evo-button-text				{top: 0}
+											}
+
+			// BUTTON ICON - X-LARGE
+			&.xlarge						{
+				[class^="evo-icon-"]			{
+												top: 1px;
+												font-size: rem-calc(20);
+												}
+				.evo-icon-position-left			{margin-right: rem-calc(10);}
+				.evo-icon-position-right		{margin-left: rem-calc(10);}
+				.evo-button-text				{top: 0}
+											}
+
+			// BUTTON ICON - XX-LARGE
+			&.xxlarge						{
+				[class^="evo-icon-"]			{
+												top: 2px;
+												font-size: rem-calc(22);
+												}
+				.evo-icon-position-left			{margin-right: rem-calc(11);}
+				.evo-icon-position-right		{margin-left: rem-calc(11);}
+				.evo-button-text				{top: 0}
+											}
+										}
+		
+		// BUTTON ICON - POSITION LEFT
+		&[data-evo-button-icons="left"]	{
+			&.expanded						{
+											padding-left: rem-calc(16);
+											padding-right: rem-calc(32);
+				&.tiny							{
+												padding-left: rem-calc(10);
+												padding-right: rem-calc(20);
+												}
+				&.small							{
+												padding-left: rem-calc(14);
+												padding-right: rem-calc(28);
+												}
+				&.large							{
+												padding-left: rem-calc(18);
+												padding-right: rem-calc(36);
+												}
+				&.xlarge						{
+												padding-left: rem-calc(20);
+												padding-right: rem-calc(40);
+												}
+				&.xxlarge						{
+												padding-left: rem-calc(22);
+												padding-right: rem-calc(44);
+												}
+											}
+										}
+
+		// BUTTON ICON - POSITION RIGHT
+		&[data-evo-button-icons="right"]
+										{
+			&.expanded						{
+											padding-left: rem-calc(32);
+											padding-right: rem-calc(16);
+				&.tiny							{
+												padding-left: rem-calc(20);
+												padding-right: rem-calc(10);
+												}
+				&.small							{
+												padding-left: rem-calc(28);
+												padding-right: rem-calc(14);
+												}
+				&.large							{
+												padding-left: rem-calc(36);
+												padding-right: rem-calc(18);
+												}
+				&.xlarge						{
+												padding-left: rem-calc(40);
+												padding-right: rem-calc(20);
+												}
+				&.xxlarge						{
+												padding-left: rem-calc(44);
+												padding-right: rem-calc(22);
+												}
+											}
+										}
+									}
+
+	// LINK BUTTON
+	a.evo-button 					{text-decoration: none;}
+
+	// BUTTON GROUP
+	.evo-button-group				{
+		.evo-button						{
+										border-radius: 0;
+			&:first-child					{border-radius: $evo-base-radius 0 0 $evo-base-radius;}
+			&:last-child					{border-radius: 0 $evo-base-radius $evo-base-radius 0;}
+										}
+									}
+
+	// BUTTON GROUP - STACKED
+	.evo-button-group				{
+		&.stacked,
+		&.stacked-for-small,
+		&.stacked-for-medium			{
+			.evo-button						{
+				&:first-child					{border-radius: $evo-base-radius $evo-base-radius 0 0;}
+				&:last-child					{border-radius: 0 0 $evo-base-radius $evo-base-radius;}
+											}
+										}
+									}
+
+	// BUTTON GROUP EVEN FOUNDATION FIX
+	// Remove this fix when Foundation release next patch: https://github.com/zurb/foundation-sites/pull/8616
+	.button-group.expanded			{
+		.button							{
+										margin-right: 0 !important;
+			&:not(:last-child)				{border-right: 1px solid $white;}
+			&.hollow:not(:last-child)		{border-right: 0;}
+										}
+									}
+
+	// CLOSE BUTTON
+	.close-button					{
+		[class^="evo-icon-"]			{color: $evo-button-close-icon-color;}
+		&:hover							{
+			[class^="evo-icon-"]			{color: $evo-button-close-icon-hover-color;}
+										}
+									}
+
+}//endif

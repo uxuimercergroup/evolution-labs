@@ -1,0 +1,40 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Carousel Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-carousel-nav-icon-color: $onyx-dark-40 !default;
+$evo-carousel-nav-icon-color-hover: scale-color($evo-carousel-nav-icon-color, $lightness: 30%) !default;
+$evo-carousel-nav-icon-position-top: -27px !default;
+
+
+@if $use-carousel == true{
+
+	// CAROUSEL
+	.evo-orbit			{
+
+		// NAV
+		.orbit-previous,
+		.orbit-next			{
+			[class^="evo-icon-"]
+								{color: $evo-carousel-nav-icon-color;}
+			&:hover				{
+				[class^="evo-icon-"]
+									{color: $evo-carousel-nav-icon-color-hover;}
+								}
+							}
+
+		// CONTENT NAV
+		.evo-orbit-nav		{
+							position: relative;
+							top: $evo-carousel-nav-icon-position-top;
+			.orbit-previous,
+			.orbit-next			{background: none;}
+			.orbit-previous		{padding-left: 0;}
+			.orbit-next			{padding-right: 0;}
+							}
+						}
+
+}//endif

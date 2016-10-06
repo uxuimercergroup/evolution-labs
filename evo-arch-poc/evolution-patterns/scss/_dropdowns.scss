@@ -1,0 +1,12 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Dropdowns Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+
+@if $use-dropdowns == true{
+	.evo-dropdown-pane		{@include box-shadow($evo-base-shadow-horizontal $evo-base-shadow-vertical $evo-base-shadow-blur $evo-base-shadow-spread $evo-base-shadow-color);}
+}

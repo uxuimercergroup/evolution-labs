@@ -1,0 +1,25 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Callout Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+// CALLOUT
+$evo-callout-background-color: $white !default;
+$evo-callout-border: $callout-border !default;
+
+
+@if $use-callout == true{
+
+	// CALLOUT
+	.evo-callout				{
+								background-color: $evo-callout-background-color;
+								border: $evo-callout-border;
+		header,
+		section,
+		footer						{padding-bottom: rem-calc(1);} // 1px padding at bottom fixes reported height of container when margin is used inside of it
+								}
+
+}//endif

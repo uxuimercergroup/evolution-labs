@@ -1,0 +1,303 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Datepicker Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+$evo-datepicker-icon-font-family: $evo-icon-font-stack !default;
+$evo-datepicker-border-radius: $evo-base-radius !default;
+$evo-datepicker-max-width: rem-calc(268) !default;
+$evo-datepicker-margin-top: rem-calc(5) !default;
+$evo-datepicker-padding: rem-calc(5 4) !default;
+$evo-datepicker-background-color: $white !default;
+$evo-datepicker-border: 1px solid $evo-secondary-color !default;
+$evo-datepicker-th-font-color: $onyx-dark-80 !default;
+$evo-datepicker-th-padding: rem-calc(7 3) !default;
+$evo-datepicker-link-color: $onyx-dark-70 !default;
+$evo-datepicker-link-padding: rem-calc(7) !default;
+$evo-datepicker-hdr-background-color: $onyx-dark-14 !default;
+$evo-datepicker-hdr-padding: rem-calc(4 0) !default;
+$evo-datepicker-hdr-nav-icon-color: $onyx-dark-50 !default;
+$evo-datepicker-hdr-nav-icon-prev: '\edc7' !default;
+$evo-datepicker-hdr-nav-icon-next: '\edc5' !default;
+$evo-datepicker-hdr-font-color: $onyx-dark-80 !default;
+$evo-datepicker-hdr-font-family: $evo-font-medium-stack !default;
+$evo-datepicker-current-day-background-color: $evo-primary-color !default;
+$evo-datepicker-current-day-font-family: $evo-font-medium-stack !default;
+$evo-datepicker-current-day-font-color: $white !default;
+$evo-datepicker-today-background-color: $onyx-dark-70 !default;
+$evo-datepicker-today-font-family: $evo-font-medium-stack !default;
+$evo-datepicker-today-font-color: $onyx-dark-14 !default;
+$evo-datepicker-hover-background-color: $evo-secondary-color !default;
+$evo-datepicker-hover-font-color: $onyx-dark-80 !default;
+$evo-datepicker-unselectable-font-color: $onyx-dark-30 !default;
+$evo-datepicker-unselectable-background-color: $white !default;
+$evo-datepicker-unselectable-border: 1px solid $evo-secondary-color !default;
+$evo-datepicker-multi-max-width: rem-calc(536) !default;
+$evo-datepicker-input-icon-position-top: 10px !default;
+$evo-datepicker-input-icon-margin-left: rem-calc(-24) !default;
+$evo-datepicker-input-icon-size: rem-calc(16) !default;
+$evo-datepicker-input-icon: '\ea62' !default;
+$evo-datepicker-input-icon-color: $onyx-dark-50 !default;
+$evo-datepicker-input-icon-hover-background-color: $transparent !default;
+$evo-datepicker-input-min-width: rem-calc(110) !default;
+
+
+@if $use-datepicker == true{
+
+	// DATEPICKER
+	.ui-datepicker		{
+						@include border-radius($evo-datepicker-border-radius);
+						@include box-shadow($evo-base-shadow-horizontal $evo-base-shadow-vertical $evo-base-shadow-blur $evo-base-shadow-spread $evo-base-shadow-color);
+						width: 100%;
+						z-index: $evo-base-zindex-datepicker;
+						max-width: $evo-datepicker-max-width;
+						margin-top: $evo-datepicker-margin-top;
+						padding: $evo-datepicker-padding;
+						background-color: $evo-datepicker-background-color;
+						border: $evo-datepicker-border;
+						display: none;
+
+		// DATEPICKER GLOBAL TABLE STYLES
+		table				{
+							width: 100%;
+							border-collapse: collapse;
+							margin: 0;
+			th					{
+								background-color: $evo-datepicker-background-color;
+								border: $evo-datepicker-border;
+								color: $evo-datepicker-th-font-color;
+								padding: $evo-datepicker-th-padding;
+								text-align: center;
+								font-weight: normal;
+								}
+			td					{
+								background-color: $evo-datepicker-background-color;
+								border: $evo-datepicker-border;
+								padding: 0;
+								text-align: center;
+				a					{
+									display: block;
+									padding: $evo-datepicker-link-padding;
+									color: $evo-datepicker-link-color;
+									text-decoration: none;
+									}
+								}
+							}
+
+		// DATEPICKER HEADER
+		.ui-datepicker-header
+							{
+							@include border-radius($evo-datepicker-border-radius $evo-datepicker-border-radius 0 0);
+							background-color: $evo-datepicker-hdr-background-color;
+							padding: $evo-datepicker-hdr-padding;
+							position: relative;
+
+			.ui-icon			{text-indent: -99999px;}
+
+			// DATEPICKER NAVIGATION
+			.ui-datepicker-prev,
+			.ui-datepicker-next {
+								position: absolute;
+								top: 0;
+								height: rem-calc(44);
+								width: rem-calc(36);
+								padding: rem-calc(10 0 0 10);
+								font-size: rem-calc(16);
+								cursor: pointer;
+								text-decoration: none;
+				span				{position: absolute;}
+				&.ui-state-disabled
+									{display: none;}
+				&:hover				{text-decoration: none;}
+				&:before			{font-family: $evo-datepicker-icon-font-family;}
+								}
+
+			.ui-datepicker-prev	{
+								left: 0;
+				&:before
+									{
+									color: $evo-datepicker-hdr-nav-icon-color;
+									content: $evo-datepicker-hdr-nav-icon-prev;
+									}
+								}
+			.ui-datepicker-next	{
+								right: 0;
+				&:before
+									{
+									color: $evo-datepicker-hdr-nav-icon-color;
+									content: $evo-datepicker-hdr-nav-icon-next;
+									}
+								}
+
+			// DATEPICKER TITLE
+			.ui-datepicker-title
+								{
+								@include clearfix;
+								margin: 0 2.3em;
+								line-height: 1.8em;
+								text-align: center;
+								font-family: $evo-datepicker-hdr-font-family;
+								color: $evo-datepicker-hdr-font-color;
+				select				{
+									float: left;
+									height: auto;
+									padding: rem-calc(4 5);
+									margin: rem-calc(2 0 3 0);
+									}
+				select.ui-datepicker-month-year
+									{width: 100%;}
+				select.ui-datepicker-month,
+				select.ui-datepicker-year
+									{width: 49%;}
+				select.ui-datepicker-year
+									{float: right;}
+								}
+							}
+
+		// DATEPICKER CALENDAR
+		.ui-datepicker-calendar
+							{
+
+			// CURRENTLY SELECTED DAY
+			.ui-datepicker-current-day
+								{
+				.ui-state-active	{
+									background-color: $evo-datepicker-current-day-background-color;
+									font-family:  $evo-datepicker-current-day-font-family;
+									color: $evo-datepicker-current-day-font-color;
+									}
+								}
+			
+			// TODAY					
+			.ui-datepicker-today
+								{
+				.ui-state-highlight	{
+									background-color: $evo-datepicker-today-background-color;
+									font-family: $evo-datepicker-today-font-family;
+									color: $evo-datepicker-today-font-color;
+									}
+								}
+
+			// DAY HOVER STATE
+			.ui-state-hover		{
+								@include transition(background-color 300ms ease-out);
+								background-color: $evo-datepicker-hover-background-color;
+								color: $evo-datepicker-hover-font-color;
+								}
+
+			// UNSELECTABLE DAYS
+			.ui-datepicker-unselectable
+								{
+								padding: $evo-datepicker-link-padding;
+								color: $evo-datepicker-unselectable-font-color;
+								background-color: $evo-datepicker-unselectable-background-color;
+								border: $evo-datepicker-unselectable-border;
+								}
+			
+			// UNSELECTABLE DAYS WHEN THEN FALL IN OTHER MONTH IN SAME CALENDAR
+			.ui-datepicker-other-month.ui-datepicker-unselectable
+								{
+								background-color: $evo-datepicker-unselectable-background-color;
+								border: $evo-datepicker-unselectable-border;
+								}
+							}
+
+		// DATEPICKER BUTTON PANE
+		.ui-datepicker-buttonpane
+							{
+							@include clearfix;
+							clear: left;
+							padding-top: rem-calc(7);
+							margin: 0 auto .5em;
+							text-align:  center;
+							}
+						}
+
+	// DATEPICKER WITH MULTIPLE CALENDARS
+	.ui-datepicker-multi
+						{
+						width: auto;
+						max-width: $evo-datepicker-multi-max-width;
+		.ui-datepicker-group
+							{
+							float: left;
+			table 				{
+								width: 95%;
+								margin: 0 auto .4em;
+								}
+			.ui-datepicker-header
+								{
+								width: 95%;
+								margin: 0 auto auto .4em;
+								}
+							}
+		.ui-datepicker-group-middle
+							{
+			.ui-datepicker-header
+								{border-left-width: 0;}
+							}
+		.ui-datepicker-group-last
+							{
+			.ui-datepicker-header
+								{border-left-width: 0;}
+							}
+						}
+
+	// DATEPICKER WITH MULTIPLE CALENDARS (2)					
+	.ui-datepicker-multi-2
+						{
+		.ui-datepicker-group
+							{width: 50%;}
+						}
+
+	// DATEPICKER WITH MULTIPLE CALENDARS (3)					
+	.ui-datepicker-multi-3
+						{
+		.ui-datepicker-group
+							{width: 33.3%;}
+						}
+
+	// DATEPICKER WITH MULTIPLE CALENDARS (4)					
+	.ui-datepicker-multi-4
+						{
+		.ui-datepicker-group
+							{width: 25%;}
+						}
+
+	// DATEPICKER TEXT INPUT ICON
+	.ui-datepicker-trigger
+						{
+						position: relative;
+						top: $evo-datepicker-input-icon-position-top;
+						margin-left: $evo-datepicker-input-icon-margin-left;
+						float: left;
+						font-size: $evo-datepicker-input-icon-size;
+						width: $evo-datepicker-input-icon-size;
+						height: $evo-datepicker-input-icon-size;
+						padding: 0;
+						border: 0;
+						color: transparent;
+						background-color: transparent;
+						outline: 0;
+		&:before			{
+							font-family: $evo-datepicker-icon-font-family;
+							content: $evo-datepicker-input-icon;
+							color: $evo-datepicker-input-icon-color;
+							position: relative;
+							top: 0;
+							left: 0;
+							}
+		&:hover				{background-color: $evo-datepicker-input-icon-hover-background-color;}
+						}
+
+	// DATEPICKER TEXT INPUT
+	input[data-evo-datepicker]
+						{
+						width: 100%;
+						min-width: $evo-datepicker-input-min-width;
+						float: left !important;
+						}
+
+}//endif

@@ -1,0 +1,30 @@
+{
+  "name": "evolution-core",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Douglas Fraize, Matthew Holmes",
+  "date": "October 5, 2016",
+  "homepage": "http://evolution.mercer.com",
+  "bugs": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "lint": "gulp lint"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-sass-lint": "^1.2.0",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.2.3"
+  }
+}

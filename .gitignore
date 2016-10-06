@@ -47,3 +47,9 @@ evo-gulp-poc/.sass-cache/*
 evo-gulp-poc/bower_components/*
 evo-gulp-poc/dist/*
 evo-gulp-poc/node_modules/*
+
+evo-arch-poc/evolution-core/.ftppass
+evo-arch-poc/evolution-core/.sass-cache/*
+evo-arch-poc/evolution-core/bower_components/*
+evo-arch-poc/evolution-core/dist/*
+evo-arch-poc/evolution-core/node_modules/*

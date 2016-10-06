@@ -1,0 +1,22 @@
+//-------------------------------------------------------------------------------------------
+// Mercer Evolution - Tooltip Partial
+//-------------------------------------------------------------------------------------------
+
+//
+// @variables
+//
+
+
+
+@if $use-tooltip == true{
+
+	// TOOLTIP
+	a.evo-tooltip,
+	img.evo-tooltip  	{
+						border-bottom: 0;
+		&:hover,
+		&:focus
+							{border-bottom: 0;}
+						}
+
+}

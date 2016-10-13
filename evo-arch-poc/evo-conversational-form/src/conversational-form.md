@@ -1,0 +1,71 @@
+---
+title: Conversational Form
+description: pattern description
+sass: src/pages/patterns/organisms/conversational-form/conversational-form.scss
+js: src/pages/patterns/organisms/conversational-form/conversational-form.js
+tags:
+  - joe
+  - bob
+---
+
+## Header 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum felis vitae ligula fringilla, eu aliquet velit sagittis. Integer eu ante ac elit bibendum aliquam at eu enim.
+
+<!-- CONVERSATIONAL FORM - BEGINS -->
+<div class="evo-conversational-form">
+	<form data-abide novalidate>
+		<div class="row">
+			<fieldset class="small-12 columns evo-conversational-form-ctn">
+				<div class="evo-conversational-form-item">
+					<label>
+						My name is
+						<input type="text" required data-evo-conversational-form-element data-evo-conversational-form-item-toggle="1" data-autosize-input='{"space": 16}'>
+						.&nbsp;
+					</label>
+				</div>
+				<div class="evo-hide evo-conversational-form-item" id="evo-conversational-form-item-1">
+					<label>
+						I'm
+						<input type="number" min="0" step="1" required data-evo-conversational-form-element data-evo-conversational-form-item-toggle="2" data-autosize-input='{"space": 2}'>
+						years old&nbsp;
+					</label>
+				</div>
+				<div class="evo-hide evo-conversational-form-item" id="evo-conversational-form-item-2">
+					<label>
+						and
+						<select required data-evo-conversational-form-element data-evo-conversational-form-item-toggle="3">
+							<option value=""></option>
+							<option value="single">single</option>
+							<option value="married">married</option>
+							<option value="divorced">divorced</option>
+							<option value="cohabitating">cohabitating</option>
+						</select>
+						.&nbsp;
+					</label>
+				</div>
+				<div class="evo-hide evo-conversational-form-item" id="evo-conversational-form-item-3">
+					<label>
+						I have
+						<input type="number" min="0" step="1" required data-evo-conversational-form-element data-evo-conversational-form-item-toggle="4" data-autosize-input='{"space": 2}'>
+						kids,&nbsp;
+					</label>
+				</div>
+				<div class="evo-hide evo-conversational-form-item" id="evo-conversational-form-item-4">
+					<label>
+						 and live in
+						<input type="tel" maxlength="5" pattern="number" placeholder="ZIP" required data-autosize-input='{"space": 5}'>
+						.
+					</label>
+				</div>
+			</fieldset>
+		</div>
+		<div class="row">
+			<fieldset class="small-12 columns">
+				<button class="button secondary evo-button" type="reset" title="Reset">Reset</button>
+				<button class="button evo-button" title="Done">Done</button>
+			</fieldset>
+		</div>
+	</form>
+</div>
+<!-- CONVERSATIONAL FORM - ENDS -->

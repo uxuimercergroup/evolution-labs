@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+	{{> head }}
+
+	<body>
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+		<div class="off-canvas-wrapper evo-off-canvas">
+			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+				{{> header }}
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+				<div class="off-canvas-content" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+					<section role="main">
+						<div class="row expanded">
+							<div class="medium-9 medium-push-3 large-10 large-push-2 columns">
+								{{> body }} 
+							</div>
+							<div class="medium-3 medium-pull-9 large-2 large-pull-10 columns" id="jumpToNav">
+								Right
+							</div>
+						</div>
+					</section>
+				<!-- PAGE - ENDS -->
+
+				<!-- FOOTER - BEGINS -->
+					{{> footer }}
+				<!-- FOOTER - ENDS -->
+
+				</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+			</div>
+		</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+		{{> scripts }}
+	</body>
+</html>

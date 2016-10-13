@@ -1,0 +1,322 @@
+//-------------------------------------------------------------------------------------------
+// Application Variables Partial
+//-------------------------------------------------------------------------------------------
+
+// DEVELOPER TOOLS
+
+	// CODE
+	$evo-site-code-border-radius: $evo-base-radius;
+	$evo-site-code-font-color: $ruby-dark;
+	$evo-site-code-bg-color: $onyx-dark-10;
+
+	// ANNOTATIONS
+	$evo-site-annotations-background-color: $evo-highlight-color;
+	$evo-site-annotations-border-radius: $evo-base-radius;
+	$evo-site-annotations-border-width: 0;
+	$evo-site-annotations-padding: rem-calc(16 16 1 16);
+
+
+// SITE GLOBAL
+
+	// LAYOUTS
+
+		// MAIN BODY SECTION
+		$evo-site-main-section-min-height: rem-calc(600);
+
+	// TYPE
+
+		// PULL OUT
+		$evo-site-pull-out-border-color: $onyx-dark-20;
+
+	// BUTTONS
+
+		// CALL TO ACTION BUTTON
+		$evo-site-cta-button-min-width: rem-calc(200);
+
+	// HERO
+
+		// HERO BANNER
+		$evo-site-hero-background-color: $evo-quaternary-color;
+		$evo-site-hero-background-image: "../images/hero/evo-site-hero-background.png";
+		$evo-site-hero-background-repeat: no-repeat;
+		$evo-site-hero-background-position: center;
+		$evo-site-hero-background-size: cover;
+		$evo-site-hero-height: rem-calc(100);
+
+		// HERO HEADER
+		$evo-site-hero-hdr-border-width: 2px;
+		$evo-site-hero-hdr-border-style: solid;
+		$evo-site-hero-hdr-border-color: $white;
+		$evo-site-hero-hdr-color: $white;
+		$evo-site-hero-hdr-font-family: $evo-font-thin-stack;
+		$evo-site-hero-hdr-font-size: rem-calc(20);
+		$evo-site-hero-hdr-line-height: ($evo-site-hero-hdr-font-size*1.5);
+		$evo-site-hero-hdr-letter-spacing: rem-calc(4.5);
+		$evo-site-hero-hdr-letter-spacing-medium: rem-calc(6.5);
+		$evo-site-hero-hdr-letter-spacing-large: rem-calc(9.5);
+		$evo-site-hero-hdr-padding: rem-calc(8 10 6 14);
+		$evo-site-hero-hdr-padding-medium: rem-calc(10 9 6 15);
+		$evo-site-hero-hdr-padding-large: rem-calc(13 9 8 18);
+		$evo-site-hero-hdr-margin-top: 0;
+		$evo-site-hero-hdr-margin-bottom: rem-calc(22);
+		$evo-site-hero-hdr-sub-name-font-family: $evo-font-medium-stack;
+
+		// HERO TAGLINE
+		$evo-site-hero-tagline-color: $white;
+		$evo-site-hero-tagline-font-family: $evo-base-font-family;
+		$evo-site-hero-tagline-font-size-small: rem-calc(14);
+		$evo-site-hero-tagline-max-width-small: 75%;
+		$evo-site-hero-tagline-max-width-medium: 90%;
+		$evo-site-hero-tagline-max-width-large: 100%;
+
+		// HERO FOOTNOTE
+		$evo-site-hero-footnote-margin: rem-calc(10 0 0 0);
+		$evo-site-hero-footnote-color: $white;
+		$evo-site-hero-footnote-text-transform: uppercase;
+		$evo-site-hero-footnote-letter-spacing: 3px;
+
+	// BANDS
+	$evo-site-band-padding: rem-calc(40 0);
+	$evo-site-band-padding-medium: rem-calc(80 0);
+
+		// DARK BAND
+		$evo-site-band-dark-font-color: $white;
+
+		// MARKETING BAND
+		$evo-site-band-marketing-background-color: $onyx-dark-2;
+		$evo-site-band-marketing-h3-margin-bottom: rem-calc(30);
+		$evo-site-band-marketing-h3-margin-bottom-medium: rem-calc(80);
+		$evo-site-band-marketing-h6-margin-bottom: rem-calc(30);
+		$evo-site-band-marketing-h6-margin-bottom-medium: rem-calc(80);
+		$evo-site-band-marketing-h3-font-size-small: rem-calc(18);
+		$evo-site-band-marketing-h6-font-size-small: rem-calc(12);
+		$evo-site-band-marketing-cta-button-margin-bottom: rem-calc(30);
+		$evo-site-band-marketing-block-grid-item-padding-bottom-small: rem-calc(20);
+		$evo-site-band-marketing-block-grid-h4-font-size-small: rem-calc(16);
+		$evo-site-band-marketing-block-grid-h4-margin-small: 0;
+		$evo-site-band-marketing-block-grid-h5-font-size-small: rem-calc(14);
+		$evo-site-band-marketing-block-grid-icon-color: $onyx-dark-20;
+		$evo-site-band-marketing-block-grid-h4-color: $evo-quaternary-color;
+		$evo-site-band-marketing-block-grid-link-text-decoration: none;
+		$evo-site-band-marketing-block-grid-h5-margin-top: rem-calc(10);
+		$evo-site-band-marketing-block-grid-h5-margin-top-medium: rem-calc(20);
+		$evo-site-band-marketing-block-grid-h5-font-family: $evo-font-medium-stack;
+		$evo-site-band-marketing-block-grid-paragraph-color: $onyx-medium;
+
+		// INFORMATION BAND
+		$evo-site-band-library-info-border-bottom: 1px solid $onyx-dark-20;
+		$evo-site-band-library-info-spacing: rem-calc(50);
+
+		// LEARN BAND
+		$evo-site-band-learn-background-color: $sapphire-medium;
+
+		// TESTIMONIALS BAND
+		$evo-site-band-testimonials-blockquote-font-family: $evo-font-regular-stack;
+		$evo-site-band-testimonials-blockquote-font-color: $onyx-medium;
+		$evo-site-band-testimonials-blockquote-quote-icon-color: $onyx-light;
+		$evo-site-band-testimonials-blockquote-cite-font-color: $black;
+		$evo-site-band-testimonials-blockquote-cite-title-font-color: $onyx-bright;
+
+		// TAB BAND
+		$evo-site-band-tab-box-shadow-horizontal: 0;
+		$evo-site-band-tab-box-shadow-vertical: 0;
+		$evo-site-band-tab-box-shadow-blur: 8px;
+		$evo-site-band-tab-box-shadow-spread: 1px;
+		$evo-site-band-tab-box-shadow-color: $black;
+		$evo-site-band-tab-box-shadow-alpha: .15;
+		$evo-site-band-tab-hdr-background-color: $onyx-dark-2;
+		$evo-site-band-tab-hdr-tab-border-radius: rem-calc(15) rem-calc(15) 0 0;
+		$evo-site-band-tab-hdr-tab-padding: rem-calc(30);
+		$evo-site-band-tab-hdr-tab-padding-small: rem-calc(20);
+		$evo-site-band-tab-hdr-tab-h3-font-size-small: rem-calc(18);
+		$evo-site-band-tab-hdr-tab-margin-bottom: rem-calc(-10);
+		$evo-site-band-tab-hdr-tab-font-color: $evo-quaternary-color;
+		$evo-site-band-tab-panel-background-color: $white;
+		$evo-site-band-tab-panel-padding: rem-calc(30 15);
+		$evo-site-band-tab-panel-marketing-content-header-font-color: $evo-quaternary-color;
+		$evo-site-band-tab-panel-marketing-content-header-margin: rem-calc(0 0 15 0);
+		$evo-site-band-tab-panel-marketing-content-header-margin-medium: rem-calc(0 0 30 0);
+		$evo-site-band-tab-panel-marketing-content-header-h3-font-size: rem-calc(26);
+		$evo-site-band-tab-panel-marketing-content-paragraph-font-color: $onyx-medium;
+		$evo-site-band-tab-panel-marketing-content-paragraph-font-size: rem-calc(18);
+		$evo-site-band-tab-panel-marketing-content-paragraph-font-size-medium: rem-calc(26);
+		$evo-site-band-tab-panel-marketing-content-paragraph-line-height: 1.25;
+		$evo-site-band-tab-panel-marketing-content-paragraph-margin-bottom: rem-calc(15);
+		$evo-site-band-tab-panel-marketing-content-paragraph-margin-bottom-medium: rem-calc(30);
+		$evo-site-band-tab-panel-marketing-content-paragraph-strong-font-color: $black;
+
+	// TILES
+	$evo-site-tile-padding: rem-calc(20 30 30 30);
+	$evo-site-tile-margin: rem-calc(0 15 15 0);
+	$evo-site-tile-min-height: rem-calc(410);
+	$evo-site-tile-background-color: $onyx-medium;
+	$evo-site-tile-hdr-font-family: $evo-font-thin-stack;
+	$evo-site-tile-hdr-font-size: rem-calc(110);
+	$evo-site-tile-hdr-line-height: 1;
+	$evo-site-tile-hdr-font-color: $white;
+	$evo-site-tile-hdr-margin-bottom: rem-calc(148);
+	$evo-site-tile-body-font-color: $white;
+
+	// SWATCH
+	$evo-site-swatch-background-color: $onyx-bright;
+	$evo-site-swatch-border-radius: $evo-base-radius;
+	$evo-site-swatch-border-width: 1px;
+	$evo-site-swatch-border-style: solid;
+	$evo-site-swatch-border-color: $onyx-dark-70;
+	$evo-site-swatch-height: rem-calc(60);
+	$evo-site-swatch-width: rem-calc(110);
+	$evo-site-swatch-margin-bottom: rem-calc(5);
+	$evo-site-swatch-details-font-size: $evo-base-small-font-size;
+	$evo-site-swatch-details-text-align: center;
+
+
+// PATTERN LIBRARY PAGES
+
+	// PATTERN LIBRARY HOMEPAGE
+	$evo-site-pattern-library-homepage-hero-background-color: $onyx-dark-70;
+	$evo-site-pattern-library-homepage-marketing-band-background-color: $onyx-dark-2;
+
+		// TAB BAND
+		$evo-site-pattern-library-band-tab-panel-background-image: "../images/evo-site-tablet-desktop-vector.png";
+		$evo-site-pattern-library-band-tab-panel-background-repeat: no-repeat;
+		$evo-site-pattern-library-band-tab-panel-background-size: auto;
+		$evo-site-pattern-library-band-tab-panel-background-position: right -200px top 76px;
+		$evo-site-pattern-library-band-tab-panel-padding: rem-calc(80 15 73 15);
+		$evo-site-pattern-library-band-tab-panel-marketing-content-padding: rem-calc(0 30);
+		$evo-site-pattern-library-band-tab-panel-marketing-content-padding-large: rem-calc(40 0 40 40);;
+		$evo-site-pattern-library-band-tab-panel-marketing-content-keyline-border-color: $onyx-dark-10;
+
+	// PATTERN LIBRARY TEMPLATE
+	$evo-site-pattern-library-keyline-color: $onyx-dark-10;
+	$evo-site-pattern-library-keyline-min-height: rem-calc(1500);
+
+		// INTRO
+		$evo-site-pattern-library-intro-border-bottom-width: 1px;
+		$evo-site-pattern-library-intro-border-bottom-style: solid;
+		$evo-site-pattern-library-intro-border-bottom-color: $onyx-dark-10;
+		$evo-site-pattern-library-intro-padding-bottom: rem-calc(8);
+
+		// CONTENT TABS
+		$evo-site-tabs-pattern-library-tabs-margin-bottom: rem-calc(22);
+		$evo-site-tabs-pattern-library-tab-background-color: $onyx-dark-10;
+		$evo-site-tabs-pattern-library-tab-font-color: $onyx-dark-80;
+		$evo-site-tabs-pattern-library-tab-hover-background-color: $onyx-dark-14;
+		$evo-site-tabs-pattern-library-tab-hover-font-color: $onyx-dark-80;
+		$evo-site-tabs-pattern-library-tab-active-background-color: $onyx-dark-20;
+		$evo-site-tabs-pattern-library-tab-active-font-color: $onyx-dark-80;
+		$evo-site-tabs-pattern-library-tab-active-hover-background-color: $onyx-dark-20;
+		$evo-site-tabs-pattern-library-tab-width-small: 100%;
+		$evo-site-tabs-pattern-library-tab-link-border-top-color-small: $white;
+		$evo-site-tabs-pattern-library-tab-active-link-background-color-small: $onyx-dark-20;
+		$evo-site-tabs-pattern-library-tab-active-link-font-color-small: $onyx-dark-80;
+		$evo-site-tabs-pattern-library-tab-active-link-hover-background-color-small: $onyx-dark-20;
+		$evo-site-tabs-pattern-library-tab-content-section-margin-bottom: rem-calc(30);
+
+		// SIDEBAR
+		$evo-site-pattern-library-sidebar-background-color: $evo-quaternary-color;
+		$evo-site-pattern-library-sidebar-padding: rem-calc(20);
+		$evo-site-pattern-library-sidebar-hdr-margin: rem-calc(0 0 10 0);
+		$evo-site-pattern-library-sidebar-hdr-font-color: $evo-quinary-color;
+		$evo-site-pattern-library-sidebar-hdr-border-bottom-color: $evo-quinary-color;
+		$evo-site-pattern-library-sidebar-hdr-border-bottom-style: solid;
+		$evo-site-pattern-library-sidebar-list-margin-bottom: rem-calc(18);
+		$evo-site-pattern-library-sidebar-list-item-line-height: 1.75;
+		$evo-site-pattern-library-sidebar-link-font-color: $white;
+
+		// SIDENAV
+
+			// SIDENAV MAGELLAN
+			$evo-site-sidenav-magellan-padding: rem-calc(6);
+			$evo-site-sidenav-magellan-active-background: $onyx-dark-20;
+			$evo-site-sidenav-magellan-active-color: $onyx-dark-80;
+
+		// EXAMPLE BOX
+		$evo-site-example-box-background-color: $white;
+		$evo-site-example-box-margin-bottom: rem-calc(80);
+		$evo-site-example-box-code-hdr-border-radius: $evo-base-radius $evo-base-radius 0 0;
+		$evo-site-example-box-code-hdr-background-color: $onyx-dark-10;
+		$evo-site-example-box-code-hdr-font-size: rem-calc(12);
+		$evo-site-example-box-code-hdr-padding: rem-calc(4 4 4 8);
+		$evo-site-example-box-code-hdr-icon-color: $onyx-dark-70;
+		$evo-site-example-box-code-hdr-hover-icon-color: $onyx-dark-80;
+
+		// MARKDOWN CONTENT BLOCK
+		$evo-site-markdown-hdr-rule-border-size: 1px;
+		$evo-site-markdown-hdr-rule-border-style: dotted;
+		$evo-site-markdown-hdr-rule-border-color: $onyx-dark-30;
+		$evo-site-markdown-hdr-rule-margin-bottom: rem-calc(10);
+		$evo-site-markdown-content-margin: rem-calc(40);
+
+
+// HOME PAGE
+
+	// HERO BANNER
+	$evo-site-home-hero-background-color: $onyx-medium;
+	$evo-site-home-hero-background-image: "../images/hero/evo-site-home-hero-background.jpg";
+	$evo-site-home-hero-background-repeat: no-repeat;
+	$evo-site-home-hero-background-position: center;
+	$evo-site-home-hero-background-size: cover;
+
+	// BENEFITS BAND
+	$evo-site-home-benefits-band-tab-panel-padding: rem-calc(15 0 0 15);
+	$evo-site-home-benefits-band-tile-background-repeat: no-repeat;
+	$evo-site-home-benefits-band-tile-background-position: center;
+	$evo-site-home-benefits-band-tile-background-size: cover;
+	$evo-site-home-benefits-band-benefits1-tile-background-color: $evo-tertiary-color;
+	$evo-site-home-benefits-band-benefits1-tile-background-image: "../images/evo-site-home-benefits-tile-1.png";
+	$evo-site-home-benefits-band-benefits2-tile-background-color: $evo-quaternary-color;
+	$evo-site-home-benefits-band-benefits2-tile-background-image: "../images/evo-site-home-benefits-tile-2.png";
+	$evo-site-home-benefits-band-benefits3-tile-background-color: $topaz-bright;
+	$evo-site-home-benefits-band-benefits3-tile-background-image: "../images/evo-site-home-benefits-tile-3.png";
+	$evo-site-home-benefits-band-benefits4-tile-background-color: #eb3169;
+	$evo-site-home-benefits-band-benefits4-tile-background-image: "../images/evo-site-home-benefits-tile-4.png";
+	$evo-site-home-benefits-band-benefits5-tile-background-color: $turquoise-bright;
+	$evo-site-home-benefits-band-benefits5-tile-background-image: "../images/evo-site-home-benefits-tile-5.png";
+
+
+// ANIMATIONS PAGE
+
+	// SWATCH
+	$evo-site-animation-block-swatch-font-color: $white;
+
+
+// CORPORATE LOGOS
+$evo-site-corp-logo-img-ctn-border-radius: $evo-base-radius;
+$evo-site-corp-logo-favicon-img-ctn-border-color: $onyx-dark-20;
+$evo-site-corp-logo-favicon-img-ctn-background-color: $onyx-dark-2;
+
+
+// ICONS PAGE
+$evo-site-icon-table-ctn-margin-bottom: rem-calc(20);
+$evo-site-icon-table-background-color: $white;
+$evo-site-icon-table-td-border-radius: $evo-base-radius;
+$evo-site-icon-table-td-background-color: $white;
+$evo-site-icon-table-td-border-width: 1px;
+$evo-site-icon-table-td-border-style: solid;
+$evo-site-icon-table-td-border-color: $onyx-dark-20;
+
+
+// PAGE TEMPLATES PAGE
+$evo-site-page-template-thumbnail-border-radius: $evo-base-radius;
+$evo-site-page-template-thumbnail-margin-bottom: rem-calc(14);
+$evo-site-page-template-thumbnail-background-color: $evo-secondary-color;
+
+
+// WHAT IS PAGE
+
+	// INSIDE AND OUT BAND
+	$evo-site-what-is-band-tab-panel-padding: rem-calc(25 15 50 15);
+	$evo-site-what-is-band-tab-panel-keyline-border-color: $onyx-dark-10;
+
+// WHY PAGE
+
+	// NAVBAR
+	$evo-site-why-navbar-background: $white;
+	$evo-site-why-navbar-border: 1px solid $onyx-dark-10;
+	$evo-site-why-navbar-item-padding: rem-calc(14 10 10 10);
+	$evo-site-why-navbar-item-font-size: rem-calc(14);
+	$evo-site-why-navbar-active-item-border-size: rem-calc(2);
+	$evo-site-why-navbar-active-item-border-color: $topaz-bright;
+
+	// CONTENT BAND
+	$evo-site-why-band-background-color: $onyx-dark-2;

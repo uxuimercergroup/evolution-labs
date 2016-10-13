@@ -48,6 +48,18 @@ evo-gulp-poc/bower_components/*
 evo-gulp-poc/dist/*
 evo-gulp-poc/node_modules/*
 
+evo-arch-poc/app/.ftppass
+evo-arch-poc/app/.sass-cache/*
+evo-arch-poc/app/bower_components/*
+evo-arch-poc/app/dist/*
+evo-arch-poc/app/node_modules/*
+
+evo-arch-poc/evo-conversational-form/.ftppass
+evo-arch-poc/evo-conversational-form/.sass-cache/*
+evo-arch-poc/evo-conversational-form/bower_components/*
+evo-arch-poc/evo-conversational-form/dist/*
+evo-arch-poc/evo-conversational-form/node_modules/*
+
 evo-arch-poc/evolution-core/.ftppass
 evo-arch-poc/evolution-core/.sass-cache/*
 evo-arch-poc/evolution-core/bower_components/*

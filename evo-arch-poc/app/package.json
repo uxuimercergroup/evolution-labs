@@ -1,0 +1,57 @@
+{
+  "name": "evolution-boilerplate",
+  "version": "5.0.0",
+  "description": "Global Framework for Digital Design, Development and maintained by the Mercer Global Technology",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Douglas Fraize, Matthew Holmes",
+  "date": "October 11, 2016",
+  "homepage": "http://evolution.mercer.com",
+  "bugs": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "prod": "gulp --production",
+    "build": "gulp build --production",
+    "deploy": "gulp deploy --production",
+    "lint": "gulp lint",
+    "patterns": "gulp patterns",
+    "patterns_prod": "gulp patterns --production"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.14.0",
+    "browser-sync": "^2.15.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cache-bust": "^1.0.2",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-newer": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-replace-task": "^0.11.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sftp": "^0.1.5",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "handlebars-helper-lorem": "^0.2.0",
+    "helper-moment": "^0.1.0",
+    "panini": "^1.3.0",
+    "require-dir": "^0.3.0",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2",
+    "yargs": "^5.0.0"
+  },
+  "dependencies": {
+    "evo-conversational-form": "file:///Users/douglas-fraize/Documents/GitHub/evolution-labs/evo-arch-poc/evo-conversational-form/evo-conversational-form-1.0.0.tgz"
+  }
+}

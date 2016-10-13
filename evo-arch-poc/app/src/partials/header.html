@@ -1,0 +1,9 @@
+<header class="header">
+	{{> nav}}
+
+	<ul class="evo-inline-list">
+	{{#each test.inPageNav}}
+		<li><a href="{{url}}" {{#ifpage slug}}class="active"{{/ifpage}}>{{name}}</a></li>
+	{{/each}}
+	</ul>
+</header>
